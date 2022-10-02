@@ -1,1 +1,1 @@
-# hades-cluster
+# Hades Cluster
