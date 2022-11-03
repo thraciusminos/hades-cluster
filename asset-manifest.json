@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/hades-cluster/static/css/main.073c9b0a.css",
-    "main.js": "/hades-cluster/static/js/main.eecb4687.js",
+    "main.css": "/hades-cluster/static/css/main.c04917bb.css",
+    "main.js": "/hades-cluster/static/js/main.8adc8eb4.js",
     "static/js/787.a580566c.chunk.js": "/hades-cluster/static/js/787.a580566c.chunk.js",
-    "static/media/logo.svg": "/hades-cluster/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/respite-holo-display-sharp.jpg": "/hades-cluster/static/media/respite-holo-display-sharp.23f678e9d44a01b9f6be.jpg",
+    "static/media/overlay.svg": "/hades-cluster/static/media/overlay.0486c2d6d3f8709c330294a7bb304567.svg",
     "index.html": "/hades-cluster/index.html",
-    "main.073c9b0a.css.map": "/hades-cluster/static/css/main.073c9b0a.css.map",
-    "main.eecb4687.js.map": "/hades-cluster/static/js/main.eecb4687.js.map",
+    "main.c04917bb.css.map": "/hades-cluster/static/css/main.c04917bb.css.map",
+    "main.8adc8eb4.js.map": "/hades-cluster/static/js/main.8adc8eb4.js.map",
     "787.a580566c.chunk.js.map": "/hades-cluster/static/js/787.a580566c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.073c9b0a.css",
-    "static/js/main.eecb4687.js"
+    "static/css/main.c04917bb.css",
+    "static/js/main.8adc8eb4.js"
   ]
 }
