@@ -6,8 +6,8 @@ import { RespiteSurface } from './components/respiteSurface/RespiteSurface';
 function App() {
   return (
     <div className="App">
-        <Overlay />
         <RespiteSurface />
+        <Overlay />
     </div>
   );
 }
