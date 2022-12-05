@@ -1,70 +1,54 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 
 import respite from "../../assets/respite-holo-display-sharp.jpg";
-import location from "../../assets/icons/Maps-Define-Location-icon-green.png";
+import { locations } from "./respiteLocations";
+import { Location } from "./SurfaceUtils";
+import { LocationMarker } from "./LocationMarker";
+import { LocationPanel } from "./LocationPanel";
 
-interface StyledProps {
-  top: string;
-  left: string;
-}
+const StyledSurfaceContainer = styled.div`
+  height: 90%;
+  width: 94%;
 
-const StyledLocContainer = styled.div<StyledProps>`
-  position: absolute;
-  z-index: 2;
-  top: ${(props) => props.top}%;
-  left: ${(props) => props.left}%;
-  width: 32px;
-  height: 32px;
-  background-color: transparent;
-  border: none;
-
-  &:hover {
-    width: 42px;
-    height: 42px;
-    animation: spin infinite 10s linear;
+  .locationLayer {
+    position: relative;
+    height: 100%;
   }
 `;
 
 interface Props {}
 
 export const RespiteSurface: React.FC<Props> = (props) => {
-  const locations = {
-    novaBolearisExpedition: {
-      top: "12.00",
-      left: "15.00",
-      name: "Nova Borealis Expedition",
-    },
-    samaritanRefineris: {
-      top: "27.00",
-      left: "10.00",
-      name: "Primaris Hive",
-    },
-    primarisHive: {
-      top: "44.00",
-      left: "45",
-      name: "Primaris Hive",
-    },
+  const [selectedLoc, setSelectedLoc] = useState<Location | null>(null);
+
+  const getPanelAlignment = (selectedLoc: Location) =>
+    Number(selectedLoc.left) > 50 ? "left" : "right";
+
+  const handleLocClick = (location: Location) => {
+    if (location.name === selectedLoc?.name) {
+      setSelectedLoc(null);
+    } else {
+      setSelectedLoc(location);
+    }
   };
 
   return (
-    <div style={{ height: "90%", width: "94%" }}>
-      <div style={{ position: "relative", height: "100%" }}>
-        {Object.values(locations).map((value) => {
+    <StyledSurfaceContainer>
+      <div className="locationLayer">
+        {selectedLoc && (
+          <LocationPanel
+            align={getPanelAlignment(selectedLoc)}
+            location={selectedLoc}
+          />
+        )}
+
+        {Object.values(locations).map((location) => {
           return (
-            <StyledLocContainer
-              top={value.top}
-              left={value.left}
-            >
-              <img
-                src={location}
-                alt={value.name || "location"}
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
-              />
-            </StyledLocContainer>
+            <LocationMarker
+              location={location}
+              setSelectedLoc={handleLocClick}
+            />
           );
         })}
       </div>
@@ -82,6 +66,6 @@ export const RespiteSurface: React.FC<Props> = (props) => {
           width: "inherit",
         }}
       />
-    </div>
+    </StyledSurfaceContainer>
   );
 };
