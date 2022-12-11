@@ -25,8 +25,8 @@ export const RespiteSurface: React.FC<Props> = (props) => {
   const getPanelAlignment = (selectedLoc: Location) =>
     Number(selectedLoc.left) > 50 ? "left" : "right";
 
-  const handleLocClick = (location: Location) => {
-    if (location.name === selectedLoc?.name) {
+  const handleLocClick = (location: Location | null) => {
+    if (location?.name === selectedLoc?.name) {
       setSelectedLoc(null);
     } else {
       setSelectedLoc(location);
@@ -40,6 +40,7 @@ export const RespiteSurface: React.FC<Props> = (props) => {
           <LocationPanel
             align={getPanelAlignment(selectedLoc)}
             location={selectedLoc}
+            setSelectedLoc={handleLocClick}
           />
         )}
 
@@ -47,6 +48,7 @@ export const RespiteSurface: React.FC<Props> = (props) => {
           return (
             <LocationMarker
               location={location}
+              isSelected={location.name === selectedLoc?.name}
               setSelectedLoc={handleLocClick}
             />
           );

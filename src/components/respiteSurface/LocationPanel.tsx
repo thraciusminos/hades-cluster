@@ -1,6 +1,9 @@
-import { Divider, Typography } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
+
+import { ClickAwayListener, Divider, Typography } from "@mui/material";
+import { Location } from "./SurfaceUtils";
+import { FactionControlBars } from "./FactionControlBars";
 
 interface StyledProps {
   align: "left" | "right";
@@ -12,7 +15,6 @@ const StyledPanelWrapper = styled.div<StyledProps>`
   ${(props) => props.align}: 4%;
   width: 30%;
   min-height: 50%;
-  //   padding: 20px;
   background-color: rgba(104, 161, 24, 93%);
   clip-path: polygon(
     5% 0,
@@ -72,37 +74,46 @@ const StyledPanelWrapper = styled.div<StyledProps>`
   }
 `;
 
-const impsum = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco."
+const impsum =
+  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.";
 
 interface Props {
-  location: { top: string; left: string; name: string };
+  location: Location;
   align: "left" | "right";
+  setSelectedLoc: (location: Location | null) => void;
 }
 
-export const LocationPanel: React.FC<Props> = ({ location, align }) => {
+export const LocationPanel: React.FC<Props> = ({
+  location,
+  align,
+  setSelectedLoc,
+}) => {
   return (
-    <StyledPanelWrapper align={align}>
-      <div className="locationPanel">
-        <div className="bannerImage"></div>
-        <div
-          style={{
-            marginTop: "105px",
-          }}
-        >
-          <Typography className="locationTitle">{location.name}</Typography>
-          <Divider
+    <ClickAwayListener onClickAway={() => setSelectedLoc(null)}>
+      <StyledPanelWrapper align={align}>
+        <div className="locationPanel">
+          <div className="bannerImage"></div>
+          <div
             style={{
-              borderColor: "rgba(104, 161, 24, 93%)",
+              marginTop: "105px",
             }}
-          />
-          <Typography className="locationDescription">{impsum}</Typography>
-          <Divider
-            style={{
-              borderColor: "rgba(104, 161, 24, 93%)",
-            }}
-          />
+          >
+            <Typography className="locationTitle">{location?.name}</Typography>
+            <Divider
+              style={{
+                borderColor: "rgba(104, 161, 24, 93%)",
+              }}
+            />
+            <Typography className="locationDescription">{impsum}</Typography>
+            <Divider
+              style={{
+                borderColor: "rgba(104, 161, 24, 93%)",
+              }}
+            />
+            <FactionControlBars factions={location.factions} />
+          </div>
         </div>
-      </div>
-    </StyledPanelWrapper>
+      </StyledPanelWrapper>
+    </ClickAwayListener>
   );
 };
