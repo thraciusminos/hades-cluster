@@ -1,17 +1,17 @@
 {
   "files": {
     "main.css": "/hades-cluster/static/css/main.abffb06e.css",
-    "main.js": "/hades-cluster/static/js/main.b55e7953.js",
+    "main.js": "/hades-cluster/static/js/main.f72e8439.js",
     "static/js/787.a580566c.chunk.js": "/hades-cluster/static/js/787.a580566c.chunk.js",
     "static/media/respite-holo-display-sharp.jpg": "/hades-cluster/static/media/respite-holo-display-sharp.23f678e9d44a01b9f6be.jpg",
     "static/media/overlay.svg": "/hades-cluster/static/media/overlay.0486c2d6d3f8709c330294a7bb304567.svg",
     "index.html": "/hades-cluster/index.html",
     "main.abffb06e.css.map": "/hades-cluster/static/css/main.abffb06e.css.map",
-    "main.b55e7953.js.map": "/hades-cluster/static/js/main.b55e7953.js.map",
+    "main.f72e8439.js.map": "/hades-cluster/static/js/main.f72e8439.js.map",
     "787.a580566c.chunk.js.map": "/hades-cluster/static/js/787.a580566c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.abffb06e.css",
-    "static/js/main.b55e7953.js"
+    "static/js/main.f72e8439.js"
   ]
 }
