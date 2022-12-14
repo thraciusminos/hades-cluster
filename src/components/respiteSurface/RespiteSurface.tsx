@@ -6,6 +6,7 @@ import { locations } from "./respiteLocations";
 import { Location } from "./SurfaceUtils";
 import { LocationMarker } from "./LocationMarker";
 import { LocationPanel } from "./LocationPanel";
+import { ClickAwayListener } from "@mui/material";
 
 const StyledSurfaceContainer = styled.div`
   height: 90%;
@@ -35,25 +36,26 @@ export const RespiteSurface: React.FC<Props> = (props) => {
 
   return (
     <StyledSurfaceContainer>
-      <div className="locationLayer">
-        {selectedLoc && (
-          <LocationPanel
-            align={getPanelAlignment(selectedLoc)}
-            location={selectedLoc}
-            setSelectedLoc={handleLocClick}
-          />
-        )}
-
-        {Object.values(locations).map((location) => {
-          return (
-            <LocationMarker
-              location={location}
-              isSelected={location.name === selectedLoc?.name}
-              setSelectedLoc={handleLocClick}
+      <ClickAwayListener onClickAway={() => setSelectedLoc(null)}>
+        <div className="locationLayer">
+          {selectedLoc && (
+            <LocationPanel
+              align={getPanelAlignment(selectedLoc)}
+              location={selectedLoc}
             />
-          );
-        })}
-      </div>
+          )}
+
+          {Object.values(locations).map((location) => {
+            return (
+              <LocationMarker
+                location={location}
+                isSelected={location.name === selectedLoc?.name}
+                setSelectedLoc={handleLocClick}
+              />
+            );
+          })}
+        </div>
+      </ClickAwayListener>
       <img
         src={respite}
         alt="respite"

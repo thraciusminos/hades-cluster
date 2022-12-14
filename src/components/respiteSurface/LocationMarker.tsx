@@ -40,7 +40,7 @@ const StyledLocContainer = styled.div<StyledProps>`
     ${(props) =>
       props.isSelected
         ? "animation: spin infinite 10s linear"
-        : "animation: outline-out 0.25s linear"};
+        : "animation: outline-out 0.15s linear"};
   }
 
   .markerIcon:hover {
@@ -50,14 +50,14 @@ const StyledLocContainer = styled.div<StyledProps>`
     ${(props) =>
       props.isSelected
         ? "animation: spin infinite 10s linear"
-        : "animation: outline-in 0.5s ease-in-out"};
+        : "animation: outline-in 0.3s ease-in-out"};
     outline: 3px solid rgba(122, 235, 52, 70%);
   }
 
   @keyframes outline-in {
     from {
       outline: 3px solid rgba(122, 235, 52, 10%);
-      outline-offset: 24px;
+      outline-offset: 22px;
     }
     to {
       width: 42px;
@@ -72,7 +72,7 @@ const StyledLocContainer = styled.div<StyledProps>`
     }
     to {
       outline: 3px solid rgba(122, 235, 52, 10%);
-      outline-offset: 24px;
+      outline-offset: 22px;
     }
   }
 `;

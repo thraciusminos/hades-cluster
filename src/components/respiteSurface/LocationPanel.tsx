@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ClickAwayListener, Divider, Typography } from "@mui/material";
+import { Divider, Typography } from "@mui/material";
 import { Location } from "./SurfaceUtils";
 import { FactionControlBars } from "./FactionControlBars";
 
@@ -14,7 +14,7 @@ const StyledPanelWrapper = styled.div<StyledProps>`
   top: 10%;
   ${(props) => props.align}: 4%;
   width: 30%;
-  min-height: 50%;
+  min-height: 70%;
   background-color: rgba(104, 161, 24, 93%);
   clip-path: polygon(
     5% 0,
@@ -80,16 +80,13 @@ const impsum =
 interface Props {
   location: Location;
   align: "left" | "right";
-  setSelectedLoc: (location: Location | null) => void;
 }
 
 export const LocationPanel: React.FC<Props> = ({
   location,
   align,
-  setSelectedLoc,
 }) => {
   return (
-    <ClickAwayListener onClickAway={() => setSelectedLoc(null)}>
       <StyledPanelWrapper align={align}>
         <div className="locationPanel">
           <div className="bannerImage"></div>
@@ -114,6 +111,5 @@ export const LocationPanel: React.FC<Props> = ({
           </div>
         </div>
       </StyledPanelWrapper>
-    </ClickAwayListener>
   );
 };
