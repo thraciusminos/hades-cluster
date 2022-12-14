@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
+import winterHarbor from "../../assets/artwork/Koras-winter-harbor.jpg";
 import { Divider, Typography } from "@mui/material";
 import { Location } from "./SurfaceUtils";
 import { FactionControlBars } from "./FactionControlBars";
@@ -49,7 +50,7 @@ const StyledPanelWrapper = styled.div<StyledProps>`
     );
   }
 
-  .bannerImage {
+  .bannerWrapper {
     position: absolute;
     top: 5px;
     left: 5px;
@@ -57,6 +58,11 @@ const StyledPanelWrapper = styled.div<StyledProps>`
     height: 120px;
 
     background-color: rgba(95, 97, 93, 93%);
+  }
+
+  .bannerImage {
+    width: 100%;
+    height: 100%;
   }
 
   .locationTitle {
@@ -82,34 +88,37 @@ interface Props {
   align: "left" | "right";
 }
 
-export const LocationPanel: React.FC<Props> = ({
-  location,
-  align,
-}) => {
+export const LocationPanel: React.FC<Props> = ({ location, align }) => {
   return (
-      <StyledPanelWrapper align={align}>
-        <div className="locationPanel">
-          <div className="bannerImage"></div>
-          <div
-            style={{
-              marginTop: "105px",
-            }}
-          >
-            <Typography className="locationTitle">{location?.name}</Typography>
-            <Divider
-              style={{
-                borderColor: "rgba(104, 161, 24, 93%)",
-              }}
-            />
-            <Typography className="locationDescription">{impsum}</Typography>
-            <Divider
-              style={{
-                borderColor: "rgba(104, 161, 24, 93%)",
-              }}
-            />
-            <FactionControlBars factions={location.factions} />
-          </div>
+    <StyledPanelWrapper align={align}>
+      <div className="locationPanel">
+        <div className="bannerWrapper">
+          {location.name === 'South Haven Rigs' && <img
+            src={winterHarbor}
+            alt={location.name || "banner"}
+            className="bannerImage"
+          />}
         </div>
-      </StyledPanelWrapper>
+        <div
+          style={{
+            marginTop: "105px",
+          }}
+        >
+          <Typography className="locationTitle">{location?.name}</Typography>
+          <Divider
+            style={{
+              borderColor: "rgba(104, 161, 24, 93%)",
+            }}
+          />
+          <Typography className="locationDescription">{impsum}</Typography>
+          <Divider
+            style={{
+              borderColor: "rgba(104, 161, 24, 93%)",
+            }}
+          />
+          <FactionControlBars factions={location.factions} />
+        </div>
+      </div>
+    </StyledPanelWrapper>
   );
 };

@@ -358,7 +358,7 @@ export const locations = {
   southHaven: {
     top: "82.00",
     left: "59.00",
-    name: "South Haven Extractors",
+    name: "South Haven Rigs",
     description: "",
     factions: [
       {
