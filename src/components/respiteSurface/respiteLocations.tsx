@@ -4,6 +4,7 @@ export const locations = {
     left: "20.25",
     name: "Nova Borealis Observatory",
     description: "",
+    category: "site",
     factions: [
       {
         name: "Imperium",
@@ -24,6 +25,7 @@ export const locations = {
     left: "06.50",
     name: "Holy Springs",
     description: "",
+    category: "settlement",
     factions: [
       {
         name: "Church of Dawn",
@@ -40,6 +42,7 @@ export const locations = {
     left: "05.00",
     name: "Prospect-172",
     description: "",
+    category: "site",
     factions: [
       {
         name: "Church of Dawn",
@@ -56,6 +59,7 @@ export const locations = {
     left: "11.00",
     name: "Shale Basin Refineries",
     description: "",
+    category: "factory",
     factions: [
       {
         name: "Imperium",
@@ -72,6 +76,7 @@ export const locations = {
     left: "16.50",
     name: "Samaritan City",
     description: "",
+    category: "city",
     factions: [
       {
         name: "Imperium",
@@ -88,6 +93,7 @@ export const locations = {
     left: "24.50",
     name: "Viridian Harbour",
     description: "",
+    category: "city",
     factions: [
       {
         name: "Imperium",
@@ -104,6 +110,7 @@ export const locations = {
     left: "19.50",
     name: "Bountiful Harvest Ecology",
     description: "",
+    category: "city",
     factions: [
       {
         name: "Imperium",
@@ -120,6 +127,7 @@ export const locations = {
     left: "11.50",
     name: "Erudity Exclusion Zone",
     description: "",
+    category: "site",
     factions: [
       {
         name: "Imperium",
@@ -136,6 +144,7 @@ export const locations = {
     left: "2.50",
     name: "Crashsite Tango Juliet 318",
     description: "",
+    category: "site",
     factions: [
       {
         name: "Church of Dawn",
@@ -148,6 +157,7 @@ export const locations = {
     left: "29.00",
     name: "Shelley's Creek",
     description: "",
+    category: "settlement",
     factions: [
       {
         name: "Imperium",
@@ -164,6 +174,7 @@ export const locations = {
     left: "35.00",
     name: "Graceful Heights",
     description: "",
+    category: "city",
     factions: [
       {
         name: "Church of Dawn",
@@ -184,6 +195,7 @@ export const locations = {
     left: "47.50",
     name: "North Point",
     description: "",
+    category: "city",
     factions: [
       {
         name: "Imperium",
@@ -204,6 +216,7 @@ export const locations = {
     left: "40.00",
     name: "Marius Gap",
     description: "",
+    category: "city",
     factions: [
       {
         name: "Imperium",
@@ -220,6 +233,7 @@ export const locations = {
     left: "37.50",
     name: "New Elyseum Reservary",
     description: "",
+    category: "settlement",
     factions: [
       {
         name: "Imperium",
@@ -236,6 +250,7 @@ export const locations = {
     left: "59.00",
     name: "Filian Isthmus",
     description: "",
+    category: "settlement",
     factions: [
       {
         name: "Imperium",
@@ -252,6 +267,7 @@ export const locations = {
     left: "65.00",
     name: "Templar's Rest",
     description: "",
+    category: "settlement",
     factions: [
       {
         name: "Imperium",
@@ -276,6 +292,7 @@ export const locations = {
     left: "64.00",
     name: "Topological Excavation Zeta",
     description: "",
+    category: "site",
     factions: [
       {
         name: "Cult Mechanicum",
@@ -296,6 +313,7 @@ export const locations = {
     left: "82.50",
     name: "Water Extraction Site Omega Epsilon",
     description: "",
+    category: "factory",
     factions: [
       {
         name: "Imperium",
@@ -316,6 +334,7 @@ export const locations = {
     left: "83.50",
     name: "Bulwark Outpost",
     description: "",
+    category: "outpost",
     factions: [
       {
         name: "Imperium",
@@ -340,6 +359,7 @@ export const locations = {
     left: "98.00",
     name: "Icy Waters",
     description: "",
+    category: "settlement",
     factions: [
       {
         name: "Imperium",
@@ -360,6 +380,7 @@ export const locations = {
     left: "77.00",
     name: "Shear Peaks",
     description: "",
+    category: "site",
     factions: [
       {
         name: "Church of Reflection",
@@ -372,6 +393,7 @@ export const locations = {
     left: "88.00",
     name: "Garrote",
     description: "",
+    category: "settlement",
     factions: [
       {
         name: "Imperium",
@@ -396,6 +418,7 @@ export const locations = {
     left: "95.00",
     name: "Ghoulshead",
     description: "",
+    category: "site",
     factions: [
       {
         name: "Heirs of Eternal Sun",
@@ -416,6 +439,7 @@ export const locations = {
     left: "73.00",
     name: "Tariff",
     description: "",
+    category: "settlement",
     factions: [
       {
         name: "Imperium",
@@ -432,6 +456,7 @@ export const locations = {
     left: "83.00",
     name: "Mosharrad",
     description: "",
+    category: "hive",
     factions: [
       {
         name: "Imperium",
@@ -448,6 +473,7 @@ export const locations = {
     left: "83.00",
     name: "Shrine of Akka",
     description: "",
+    category: "settlement",
     factions: [
       {
         name: "Imperium",
@@ -464,6 +490,7 @@ export const locations = {
     left: "88.50",
     name: "Fesh Listening Post",
     description: "",
+    category: "outpost",
     factions: [
       {
         name: "Imperium",
@@ -484,6 +511,7 @@ export const locations = {
     left: "94.00",
     name: "Ashar Wetlands",
     description: "",
+    category: "site",
     factions: [
       {
         name: "Heirs of Eternal Sun",
@@ -504,6 +532,7 @@ export const locations = {
     left: "48.00",
     name: "Primaris Hive",
     description: "",
+    category: "hive",
     factions: [
       {
         name: "Imperium",
@@ -524,6 +553,7 @@ export const locations = {
     left: "48.50",
     name: "Ashport",
     description: "",
+    category: "city",
     factions: [
       {
         name: "Imperium",
@@ -544,6 +574,7 @@ export const locations = {
     left: "52.00",
     name: "Petroslav",
     description: "",
+    category: "city",
     factions: [
       {
         name: "Imperium",
@@ -564,6 +595,7 @@ export const locations = {
     left: "59.00",
     name: "South Haven Rigs",
     description: "",
+    category: "settlement",
     factions: [
       {
         name: "Imperium",
@@ -580,6 +612,7 @@ export const locations = {
     left: "51.50",
     name: "Antipolar Observation Station",
     description: "",
+    category: "site",
     factions: [
       {
         name: "Cult Mechanicum",

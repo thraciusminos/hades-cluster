@@ -4,6 +4,16 @@ import styled from "styled-components";
 import locIcon from "../../assets/icons/Maps-Define-Location-icon-green.png";
 import { Location } from "./SurfaceUtils";
 import { LocationTooltip } from "./LocationTooltip";
+import {
+  Apartment,
+  Factory,
+  Gite,
+  LocationCity,
+  MapsHomeWork,
+  SelectAll,
+  Style,
+  TempleHindu,
+} from "@mui/icons-material";
 
 interface StyledProps {
   top: string;
@@ -27,6 +37,25 @@ const StyledLocContainer = styled.div<StyledProps>`
 
   &:hover {
     margin: -21px;
+  }
+
+  .markerIconCommon {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    margin: -50%;
+    border-radius: 50%;
+    color: rgba(122, 235, 52, 100%);
+    animation: outline-out 0.15s linear;
+  }
+
+  .markerIconCommon:hover {
+    width: 42px;
+    height: 42px;
+    animation: outline-in 0.3s ease-in-out;
+    outline: 3px solid rgba(122, 235, 52, 70%);
   }
 
   .markerIcon {
@@ -88,6 +117,34 @@ export const LocationMarker: React.FC<Props> = ({
   isSelected,
   setSelectedLoc,
 }) => {
+  const getMarkerIcon = (location: Location) => {
+    switch (location.category) {
+      case "hive":
+        return <TempleHindu className="markerIconCommon" />;
+      case "city":
+        return <Apartment className="markerIconCommon" />;
+      // return <LocationCity className="markerIconCommon"/>;
+      // return <MapsHomeWork className="markerIconCommon"/>;
+      // return <Gite className="markerIconCommon"/>;
+
+      case "settlement":
+        return <Gite className="markerIconCommon" />;
+      case "factory":
+        return <Factory className="markerIconCommon" />;
+      case "outpost":
+        return <SelectAll className="markerIconCommon" />;
+      case "site":
+      default:
+        return (
+          <img
+            src={locIcon}
+            alt={location.name || "location"}
+            className="markerIcon"
+          />
+        );
+    }
+  };
+
   return (
     <StyledLocContainer
       top={location.top}
@@ -96,11 +153,7 @@ export const LocationMarker: React.FC<Props> = ({
       onClick={() => setSelectedLoc(location)}
     >
       <LocationTooltip location={location}>
-        <img
-          src={locIcon}
-          alt={location.name || "location"}
-          className="markerIcon"
-        />
+        {getMarkerIcon(location)}
       </LocationTooltip>
     </StyledLocContainer>
   );
