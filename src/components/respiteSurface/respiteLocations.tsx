@@ -14,7 +14,7 @@ export const locations = {
         control: 10,
       },
       {
-        name: "Eternal Sun",
+        name: "Heirs of Eternal Sun",
         control: 10,
       },
     ],
@@ -26,8 +26,12 @@ export const locations = {
     description: "",
     factions: [
       {
+        name: "Church of Dawn",
+        control: 70,
+      },
+      {
         name: "Imperium",
-        control: 50,
+        control: 10,
       },
     ],
   },
@@ -38,8 +42,12 @@ export const locations = {
     description: "",
     factions: [
       {
+        name: "Church of Dawn",
+        control: 30,
+      },
+      {
         name: "Imperium",
-        control: 50,
+        control: 20,
       },
     ],
   },
@@ -53,6 +61,10 @@ export const locations = {
         name: "Imperium",
         control: 50,
       },
+      {
+        name: "Church of Dawn",
+        control: 50,
+      },
     ],
   },
   samaritan: {
@@ -63,7 +75,11 @@ export const locations = {
     factions: [
       {
         name: "Imperium",
-        control: 50,
+        control: 60,
+      },
+      {
+        name: "Church of Dawn",
+        control: 40,
       },
     ],
   },
@@ -77,6 +93,10 @@ export const locations = {
         name: "Imperium",
         control: 50,
       },
+      {
+        name: "Church of Dawn",
+        control: 10,
+      },
     ],
   },
   bountifulHarvest: {
@@ -89,6 +109,10 @@ export const locations = {
         name: "Imperium",
         control: 50,
       },
+      {
+        name: "Church of Dawn",
+        control: 20,
+      },
     ],
   },
   erudity: {
@@ -99,7 +123,11 @@ export const locations = {
     factions: [
       {
         name: "Imperium",
-        control: 50,
+        control: 20,
+      },
+      {
+        name: "Church of Dawn",
+        control: 10,
       },
     ],
   },
@@ -110,8 +138,8 @@ export const locations = {
     description: "",
     factions: [
       {
-        name: "Imperium",
-        control: 50,
+        name: "Church of Dawn",
+        control: 10,
       },
     ],
   },
@@ -125,6 +153,10 @@ export const locations = {
         name: "Imperium",
         control: 50,
       },
+      {
+        name: "Church of Dawn",
+        control: 30,
+      },
     ],
   },
   gracefulHeights: {
@@ -134,8 +166,16 @@ export const locations = {
     description: "",
     factions: [
       {
+        name: "Church of Dawn",
+        control: 70,
+      },
+      {
+        name: "Heirs of Eternal Sun",
+        control: 20,
+      },
+      {
         name: "Imperium",
-        control: 50,
+        control: 10,
       },
     ],
   },
@@ -147,7 +187,15 @@ export const locations = {
     factions: [
       {
         name: "Imperium",
-        control: 50,
+        control: 60,
+      },
+      {
+        name: "Heirs of Eternal Sun",
+        control: 20,
+      },
+      {
+        name: "Church of Reflection",
+        control: 20,
       },
     ],
   },
@@ -161,6 +209,10 @@ export const locations = {
         name: "Imperium",
         control: 50,
       },
+      {
+        name: "Church of Reflection",
+        control: 20,
+      },
     ],
   },
   newElyseum: {
@@ -172,6 +224,10 @@ export const locations = {
       {
         name: "Imperium",
         control: 50,
+      },
+      {
+        name: "Church of Reflection",
+        control: 40,
       },
     ],
   },
@@ -185,6 +241,10 @@ export const locations = {
         name: "Imperium",
         control: 50,
       },
+      {
+        name: "Church of Reflection",
+        control: 30,
+      },
     ],
   },
   templarsRest: {
@@ -197,6 +257,18 @@ export const locations = {
         name: "Imperium",
         control: 50,
       },
+      {
+        name: "Heirs of Eternal Sun",
+        control: 30,
+      },
+      {
+        name: "Church of Reflection",
+        control: 10,
+      },
+      {
+        name: "Cult Mechanicum",
+        control: 10,
+      },
     ],
   },
   topoExcavationZ: {
@@ -206,8 +278,16 @@ export const locations = {
     description: "",
     factions: [
       {
-        name: "Imperium",
+        name: "Cult Mechanicum",
         control: 50,
+      },
+      {
+        name: "Heirs of Eternal Sun",
+        control: 40,
+      },
+      {
+        name: "Imperium",
+        control: 20,
       },
     ],
   },
@@ -221,6 +301,14 @@ export const locations = {
         name: "Imperium",
         control: 50,
       },
+      {
+        name: "Cult Mechanicum",
+        control: 30,
+      },
+      {
+        name: "Heirs of Eternal Sun",
+        control: 20,
+      },
     ],
   },
   bulwark: {
@@ -232,6 +320,18 @@ export const locations = {
       {
         name: "Imperium",
         control: 50,
+      },
+      {
+        name: "Heirs of Eternal Sun",
+        control: 20,
+      },
+      {
+        name: "Church of Dawn",
+        control: 20,
+      },
+      {
+        name: "Church of Reflection",
+        control: 10,
       },
     ],
   },
@@ -245,6 +345,14 @@ export const locations = {
         name: "Imperium",
         control: 50,
       },
+      {
+        name: "Church of Dawn",
+        control: 30,
+      },
+      {
+        name: "Heirs of Eternal Sun",
+        control: 20,
+      },
     ],
   },
   shearPeaks: {
@@ -254,8 +362,8 @@ export const locations = {
     description: "",
     factions: [
       {
-        name: "Imperium",
-        control: 50,
+        name: "Church of Reflection",
+        control: 40,
       },
     ],
   },
@@ -269,6 +377,18 @@ export const locations = {
         name: "Imperium",
         control: 50,
       },
+      {
+        name: "Church of Reflection",
+        control: 20,
+      },
+      {
+        name: "Heirs of Eternal Sun",
+        control: 20,
+      },
+      {
+        name: "Church of Dawn",
+        control: 10,
+      },
     ],
   },
   ghoulshead: {
@@ -278,8 +398,16 @@ export const locations = {
     description: "",
     factions: [
       {
+        name: "Heirs of Eternal Sun",
+        control: 40,
+      },
+      {
+        name: "Church of Dawn",
+        control: 20,
+      },
+      {
         name: "Imperium",
-        control: 50,
+        control: 10,
       },
     ],
   },
@@ -293,6 +421,10 @@ export const locations = {
         name: "Imperium",
         control: 50,
       },
+      {
+        name: "Church of Reflection",
+        control: 30,
+      },
     ],
   },
   mosharrad: {
@@ -303,7 +435,47 @@ export const locations = {
     factions: [
       {
         name: "Imperium",
+        control: 60,
+      },
+      {
+        name: "Church of Reflection",
+        control: 40,
+      },
+    ],
+  },
+  shrineAkka: {
+    top: "67.50",
+    left: "83.00",
+    name: "Shrine of Akka",
+    description: "",
+    factions: [
+      {
+        name: "Imperium",
+        control: 30,
+      },
+      {
+        name: "Church of Reflection",
         control: 50,
+      },
+    ],
+  },
+  fesh: {
+    top: "74.00",
+    left: "88.50",
+    name: "Fesh Listening Post",
+    description: "",
+    factions: [
+      {
+        name: "Imperium",
+        control: 40,
+      },
+      {
+        name: "Church of Reflection",
+        control: 20,
+      },
+      {
+        name: "Church of Dawn",
+        control: 10,
       },
     ],
   },
@@ -314,8 +486,16 @@ export const locations = {
     description: "",
     factions: [
       {
+        name: "Heirs of Eternal Sun",
+        control: 30,
+      },
+      {
+        name: "Church of Dawn",
+        control: 20,
+      },
+      {
         name: "Imperium",
-        control: 50,
+        control: 10,
       },
     ],
   },
@@ -327,7 +507,15 @@ export const locations = {
     factions: [
       {
         name: "Imperium",
-        control: 50,
+        control: 90,
+      },
+      {
+        name: "Church of Reflection",
+        control: 30,
+      },
+      {
+        name: "Cult Mechanicum",
+        control: 10,
       },
     ],
   },
@@ -339,7 +527,15 @@ export const locations = {
     factions: [
       {
         name: "Imperium",
-        control: 50,
+        control: 70,
+      },
+      {
+        name: "Church of Reflection",
+        control: 20,
+      },
+      {
+        name: "Cult Mechanicum",
+        control: 10,
       },
     ],
   },
@@ -351,7 +547,15 @@ export const locations = {
     factions: [
       {
         name: "Imperium",
-        control: 50,
+        control: 60,
+      },
+      {
+        name: "Church of Reflection",
+        control: 20,
+      },
+      {
+        name: "Cult Mechanicum",
+        control: 10,
       },
     ],
   },
@@ -365,17 +569,21 @@ export const locations = {
         name: "Imperium",
         control: 50,
       },
+      {
+        name: "Cult Mechanicum",
+        control: 20,
+      },
     ],
   },
   antipolarStation: {
     top: "90.00",
     left: "51.50",
-    name: "Antipolar Research Station",
+    name: "Antipolar Observation Station",
     description: "",
     factions: [
       {
-        name: "Imperium",
-        control: 50,
+        name: "Cult Mechanicum",
+        control: 100,
       },
     ],
   },
