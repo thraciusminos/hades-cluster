@@ -7,6 +7,7 @@ import { Location } from "./SurfaceUtils";
 import { LocationMarker } from "./LocationMarker";
 import { LocationPanel } from "./LocationPanel";
 import { ClickAwayListener } from "@mui/material";
+import { SectorsLayer } from "./SectorsLayer";
 
 const StyledSurfaceContainer = styled.div`
   height: 90%;
@@ -36,6 +37,7 @@ export const RespiteSurface: React.FC<Props> = (props) => {
 
   return (
     <StyledSurfaceContainer>
+      <SectorsLayer />
       <ClickAwayListener onClickAway={() => setSelectedLoc(null)}>
         <div className="locationLayer">
           {selectedLoc && (
