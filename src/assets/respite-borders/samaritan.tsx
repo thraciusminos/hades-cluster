@@ -1,6 +1,14 @@
-function SamaritanBorder(): JSX.Element {
+const SamaritanBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
+  props: React.SVGProps<SVGSVGElement>
+) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="11.15 0.32 81.03 88.83">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="11.15 0.32 81.03 88.83"
+      preserveAspectRatio="none"
+      className={props.className}
+      style={props.style}
+    >
       <path
         fill="none"
         stroke="#29e51a"
@@ -8,6 +16,6 @@ function SamaritanBorder(): JSX.Element {
       ></path>
     </svg>
   );
-}
+};
 
 export default SamaritanBorder;

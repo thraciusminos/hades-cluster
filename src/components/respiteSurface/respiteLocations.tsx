@@ -4,6 +4,7 @@ export const locations = {
     left: "20.25",
     name: "Nova Borealis Observatory",
     description: "",
+    sector: "nova-borealis",
     category: "site",
     factions: [
       {
@@ -25,6 +26,7 @@ export const locations = {
     left: "06.50",
     name: "Holy Springs",
     description: "",
+    sector: "holy-springs",
     category: "settlement",
     factions: [
       {
@@ -42,6 +44,7 @@ export const locations = {
     left: "05.00",
     name: "Prospect-172",
     description: "",
+    sector: "prospect-shore",
     category: "site",
     factions: [
       {
@@ -59,6 +62,7 @@ export const locations = {
     left: "11.00",
     name: "Shale Basin Refineries",
     description: "",
+    sector: "shale-basin",
     category: "factory",
     factions: [
       {
@@ -76,6 +80,7 @@ export const locations = {
     left: "16.50",
     name: "Samaritan City",
     description: "",
+    sector: "samaritan",
     category: "city",
     factions: [
       {
@@ -93,6 +98,7 @@ export const locations = {
     left: "24.50",
     name: "Viridian Harbour",
     description: "",
+    sector: "harvest-basket",
     category: "city",
     factions: [
       {
@@ -110,6 +116,7 @@ export const locations = {
     left: "19.50",
     name: "Bountiful Harvest Ecology",
     description: "",
+    sector: "harvest-basket",
     category: "city",
     factions: [
       {
@@ -127,6 +134,7 @@ export const locations = {
     left: "11.50",
     name: "Erudity Exclusion Zone",
     description: "",
+    sector: "exclusion-zone",
     category: "site",
     factions: [
       {
@@ -144,6 +152,7 @@ export const locations = {
     left: "2.50",
     name: "Crashsite Tango Juliet 318",
     description: "",
+    sector: "crashsite",
     category: "site",
     factions: [
       {
@@ -157,6 +166,7 @@ export const locations = {
     left: "29.00",
     name: "Shelley's Creek",
     description: "",
+    sector: "shelleys-creek",
     category: "settlement",
     factions: [
       {
@@ -174,6 +184,7 @@ export const locations = {
     left: "35.00",
     name: "Graceful Heights",
     description: "",
+    sector: "graceful-heights",
     category: "city",
     factions: [
       {
@@ -195,6 +206,7 @@ export const locations = {
     left: "47.50",
     name: "North Point",
     description: "",
+    sector: "north-point",
     category: "city",
     factions: [
       {
@@ -216,6 +228,7 @@ export const locations = {
     left: "40.00",
     name: "Marius Gap",
     description: "",
+    sector: "marius-gap",
     category: "city",
     factions: [
       {
@@ -233,6 +246,7 @@ export const locations = {
     left: "37.50",
     name: "New Elyseum Reservary",
     description: "",
+    sector: "elyseum",
     category: "settlement",
     factions: [
       {
@@ -250,6 +264,7 @@ export const locations = {
     left: "59.00",
     name: "Filian Isthmus",
     description: "",
+    sector: "filian-isthmus",
     category: "settlement",
     factions: [
       {
@@ -267,6 +282,7 @@ export const locations = {
     left: "65.00",
     name: "Templar's Rest",
     description: "",
+    sector: "templars-rest",
     category: "settlement",
     factions: [
       {
@@ -292,6 +308,7 @@ export const locations = {
     left: "64.00",
     name: "Topological Excavation Zeta",
     description: "",
+    sector: "templars-rest",
     category: "site",
     factions: [
       {
@@ -313,6 +330,7 @@ export const locations = {
     left: "82.50",
     name: "Water Extraction Site Omega Epsilon",
     description: "",
+    sector: "water-extraction",
     category: "factory",
     factions: [
       {
@@ -334,6 +352,7 @@ export const locations = {
     left: "83.50",
     name: "Bulwark Outpost",
     description: "",
+    sector: "bulwark-outpost",
     category: "outpost",
     factions: [
       {
@@ -359,6 +378,7 @@ export const locations = {
     left: "98.00",
     name: "Icy Waters",
     description: "",
+    sector: "icy-waters",
     category: "settlement",
     factions: [
       {
@@ -380,6 +400,7 @@ export const locations = {
     left: "77.00",
     name: "Shear Peaks",
     description: "",
+    sector: "jagged-peaks",
     category: "site",
     factions: [
       {
@@ -393,6 +414,7 @@ export const locations = {
     left: "88.00",
     name: "Garrote",
     description: "",
+    sector: "garrote",
     category: "settlement",
     factions: [
       {
@@ -418,6 +440,7 @@ export const locations = {
     left: "95.00",
     name: "Ghoulshead",
     description: "",
+    sector: "ghoulhead",
     category: "site",
     factions: [
       {
@@ -439,6 +462,7 @@ export const locations = {
     left: "73.00",
     name: "Tariff",
     description: "",
+    sector: "tariff",
     category: "settlement",
     factions: [
       {
@@ -456,6 +480,7 @@ export const locations = {
     left: "83.00",
     name: "Mosharrad",
     description: "",
+    sector: "secondary-hive",
     category: "hive",
     factions: [
       {
@@ -473,6 +498,7 @@ export const locations = {
     left: "83.00",
     name: "Shrine of Akka",
     description: "",
+    sector: "akka-shrine",
     category: "settlement",
     factions: [
       {
@@ -490,6 +516,7 @@ export const locations = {
     left: "88.50",
     name: "Fesh Listening Post",
     description: "",
+    sector: "akka-shrine",
     category: "outpost",
     factions: [
       {
@@ -511,6 +538,7 @@ export const locations = {
     left: "94.00",
     name: "Ashar Wetlands",
     description: "",
+    sector: "akka-wetlands",
     category: "site",
     factions: [
       {
@@ -532,6 +560,7 @@ export const locations = {
     left: "48.00",
     name: "Primaris Hive",
     description: "",
+    sector: "primaris-hive",
     category: "hive",
     factions: [
       {
@@ -553,6 +582,7 @@ export const locations = {
     left: "48.50",
     name: "Ashport",
     description: "",
+    sector: "ash-port",
     category: "city",
     factions: [
       {
@@ -574,6 +604,7 @@ export const locations = {
     left: "52.00",
     name: "Petroslav",
     description: "",
+    sector: "petroslav",
     category: "city",
     factions: [
       {
@@ -595,6 +626,7 @@ export const locations = {
     left: "59.00",
     name: "South Haven Rigs",
     description: "",
+    sector: "south-haven",
     category: "settlement",
     factions: [
       {
@@ -612,6 +644,7 @@ export const locations = {
     left: "51.50",
     name: "Antipolar Observation Station",
     description: "",
+    sector: "antipolar-station",
     category: "site",
     factions: [
       {

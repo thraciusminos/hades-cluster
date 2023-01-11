@@ -1,6 +1,5 @@
 import React from "react";
 import { Typography } from "@mui/material";
-import overlay from "../../assets/overlay.svg";
 
 export const Overlay: React.FC = () => {
   return (
@@ -17,22 +16,11 @@ export const Overlay: React.FC = () => {
           fontFamily: "monospace",
           textTransform: "uppercase",
           clipPath: "polygon(0 0, 100% 0, 100% 0%, 90% 100%, 0 100%)",
-          zIndex: 2,
+          zIndex: 10,
         }}
       >
         Respite Surface Command
       </Typography>
-      <img
-        src={overlay}
-        alt="overlay"
-        style={{
-          position: "fixed",
-          top: "2%",
-          left: 0,
-        }}
-        height="110%"
-        width="100%"
-      />
     </>
   );
 };

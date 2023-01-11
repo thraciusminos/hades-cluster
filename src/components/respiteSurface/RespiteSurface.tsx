@@ -5,9 +5,9 @@ import respite from "../../assets/respite-holo-display-sharp.jpg";
 import { locations } from "./respiteLocations";
 import { Location } from "./SurfaceUtils";
 import { LocationMarker } from "./LocationMarker";
-import { LocationPanel } from "./LocationPanel";
+import { SectorPanel } from "./SectorPanel";
 import { ClickAwayListener } from "@mui/material";
-import { SectorsLayer } from "./SectorsLayer";
+import { RespiteSectors } from "./RespiteSectors/RespiteSectors";
 
 const StyledSurfaceContainer = styled.div`
   height: 90%;
@@ -37,13 +37,13 @@ export const RespiteSurface: React.FC<Props> = (props) => {
 
   return (
     <StyledSurfaceContainer>
-      <SectorsLayer />
       <ClickAwayListener onClickAway={() => setSelectedLoc(null)}>
         <div className="locationLayer">
           {selectedLoc && (
-            <LocationPanel
+            <SectorPanel
               align={getPanelAlignment(selectedLoc)}
               location={selectedLoc}
+              setSelectedLoc={handleLocClick}
             />
           )}
 
@@ -58,6 +58,7 @@ export const RespiteSurface: React.FC<Props> = (props) => {
           })}
         </div>
       </ClickAwayListener>
+      <RespiteSectors />
       <img
         src={respite}
         alt="respite"

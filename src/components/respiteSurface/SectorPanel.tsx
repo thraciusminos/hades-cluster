@@ -2,9 +2,10 @@ import React from "react";
 import styled from "styled-components";
 
 import winterHarbor from "../../assets/artwork/Koras-winter-harbor.jpg";
-import { Divider, Typography } from "@mui/material";
+import { Divider, Stack, Typography } from "@mui/material";
 import { Location } from "./SurfaceUtils";
 import { FactionControlBars } from "./FactionControlBars";
+import { SectorPanelLocations } from "./SectorPanelLocation";
 
 interface StyledProps {
   align: "left" | "right";
@@ -27,7 +28,7 @@ const StyledPanelWrapper = styled.div<StyledProps>`
     0 95%,
     0 5%
   );
-  z-index: 3;
+  z-index: 4;
 
   .locationPanel {
     position: absolute;
@@ -85,38 +86,52 @@ const impsum =
 
 interface Props {
   location: Location;
+  setSelectedLoc: (location: Location | null) => void;
   align: "left" | "right";
 }
 
-export const LocationPanel: React.FC<Props> = ({ location, align }) => {
+export const SectorPanel: React.FC<Props> = ({
+  location,
+  setSelectedLoc,
+  align,
+}) => {
   return (
     <StyledPanelWrapper align={align}>
       <div className="locationPanel">
         <div className="bannerWrapper">
-          {location.name === 'South Haven Rigs' && <img
-            src={winterHarbor}
-            alt={location.name || "banner"}
-            className="bannerImage"
-          />}
+          {location.name === "South Haven Rigs" && (
+            <img
+              src={winterHarbor}
+              alt={location.name || "banner"}
+              className="bannerImage"
+            />
+          )}
         </div>
         <div
           style={{
             marginTop: "105px",
           }}
         >
-          <Typography className="locationTitle">{location?.name}</Typography>
-          <Divider
-            style={{
-              borderColor: "rgba(104, 161, 24, 93%)",
-            }}
-          />
-          <Typography className="locationDescription">{impsum}</Typography>
-          <Divider
-            style={{
-              borderColor: "rgba(104, 161, 24, 93%)",
-            }}
-          />
-          <FactionControlBars factions={location.factions} />
+          <Stack>
+            <Typography className="locationTitle">{location?.name}</Typography>
+            <Divider
+              style={{
+                borderColor: "rgba(104, 161, 24, 93%)",
+              }}
+            />
+            <Typography className="locationDescription">{impsum}</Typography>
+            <Divider
+              style={{
+                borderColor: "rgba(104, 161, 24, 93%)",
+              }}
+            />
+            {/* <FactionControlBars factions={location.factions} /> */}
+            <SectorPanelLocations
+              locations={[location]}
+              selectedLocation={location}
+              setSelectedLoc={setSelectedLoc}
+            />
+          </Stack>
         </div>
       </div>
     </StyledPanelWrapper>

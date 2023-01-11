@@ -23,7 +23,7 @@ interface StyledProps {
 
 const StyledLocContainer = styled.div<StyledProps>`
   position: absolute;
-  z-index: 2;
+  z-index: 3;
   top: ${(props) => props.top}%;
   left: ${(props) => props.left}%;
   width: ${(props) => (props.isSelected ? "42px" : "32px")};
@@ -110,12 +110,14 @@ interface Props {
   location: Location;
   isSelected: boolean;
   setSelectedLoc: (location: Location | null) => void;
+  style?: React.CSSProperties;
 }
 
 export const LocationMarker: React.FC<Props> = ({
   location,
   isSelected,
   setSelectedLoc,
+  style,
 }) => {
   const getMarkerIcon = (location: Location) => {
     switch (location.category) {
@@ -151,6 +153,7 @@ export const LocationMarker: React.FC<Props> = ({
       left={location.left}
       isSelected={isSelected}
       onClick={() => setSelectedLoc(location)}
+      style={style}
     >
       <LocationTooltip location={location}>
         {getMarkerIcon(location)}

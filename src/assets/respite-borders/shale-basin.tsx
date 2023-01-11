@@ -1,10 +1,10 @@
-const ProspectCoastBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
+const ShaleBasinBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
   props: React.SVGProps<SVGSVGElement>
 ) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="11.77 90.73 70.62 103.58"
+      viewBox="17.05 77.02 70.07 63.97"
       preserveAspectRatio="none"
       className={props.className}
       style={props.style}
@@ -12,10 +12,10 @@ const ProspectCoastBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
       <path
         fill="none"
         stroke="#29e51a"
-        d="m56.042 192.55-42.512-24.292.578-75.769 26.606 2.892 14.748 34.125 25.16 9.543z"
-      />
+        d="M18.823 95.267L53.816 79.36l19.665-.578 10.989 5.205-4.916 13.303 5.784 21.111-27.474 20.822-24.87-9.544z"
+      ></path>
     </svg>
   );
 };
 
-export default ProspectCoastBorder;
+export default ShaleBasinBorder;

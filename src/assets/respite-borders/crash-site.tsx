@@ -1,10 +1,10 @@
-const ProspectCoastBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
+const CrashSiteBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
   props: React.SVGProps<SVGSVGElement>
 ) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
-      viewBox="11.77 90.73 70.62 103.58"
+      viewBox="32.73 54.55 62.58 112.9"
       preserveAspectRatio="none"
       className={props.className}
       style={props.style}
@@ -12,10 +12,10 @@ const ProspectCoastBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
       <path
         fill="none"
         stroke="#29e51a"
-        d="m56.042 192.55-42.512-24.292.578-75.769 26.606 2.892 14.748 34.125 25.16 9.543z"
-      />
+        d="M92.786 152.217l-57.549 12.725 15.617-42.222L80.93 94.957l-2.314-36.149 14.17-1.735z"
+      ></path>
     </svg>
   );
 };
 
-export default ProspectCoastBorder;
+export default CrashSiteBorder;

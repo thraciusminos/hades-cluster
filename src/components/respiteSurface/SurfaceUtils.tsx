@@ -3,6 +3,7 @@ export interface Location {
   left: string;
   name: string;
   description: string;
+  sector: string;
   category: string;
   factions: { name: string; control: number }[];
 }
