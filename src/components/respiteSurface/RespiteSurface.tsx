@@ -35,6 +35,17 @@ export const RespiteSurface: React.FC<Props> = (props) => {
     }
   };
 
+  const getSectorLocations = (sector: string) => {
+    const sectorLocations = Object.keys(locations)
+      .filter((locName) => {
+        return (
+          (locations as Record<string, Location>)[locName].sector === sector
+        );
+      })
+      .map((locName) => (locations as Record<string, Location>)[locName]);
+    return sectorLocations;
+  };
+
   return (
     <StyledSurfaceContainer>
       <ClickAwayListener onClickAway={() => setSelectedLoc(null)}>
@@ -42,7 +53,8 @@ export const RespiteSurface: React.FC<Props> = (props) => {
           {selectedLoc && (
             <SectorPanel
               align={getPanelAlignment(selectedLoc)}
-              location={selectedLoc}
+              locations={getSectorLocations(selectedLoc.sector)}
+              selectedLocation={selectedLoc}
               setSelectedLoc={handleLocClick}
             />
           )}

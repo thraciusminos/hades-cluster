@@ -40,10 +40,49 @@ export const locations = {
     ],
   },
   prospect172: {
-    top: "44.00",
-    left: "05.00",
+    top: "31.70",
+    left: "04.70",
     name: "Prospect-172",
-    description: "",
+    description:
+      "Furthest frontier of Shale Basin refinery operations, the fracking sites here promise lucrative deposits of Prometheum. Industrial expansion collides frequently with Dawner settlements in the region.",
+    sector: "prospect-shore",
+    category: "site",
+    factions: [
+      {
+        name: "Church of Dawn",
+        control: 30,
+      },
+      {
+        name: "Imperium",
+        control: 20,
+      },
+    ],
+  },
+  provingGrounds: {
+    top: "39.50",
+    left: "04.30",
+    name: "Proving Grounds",
+    description:
+      "This region is dotted with sites held holy for the Children of Twilight. Every decade, rites of passage are held here for youth of the Children.",
+    sector: "prospect-shore",
+    category: "site",
+    factions: [
+      {
+        name: "Church of Dawn",
+        control: 30,
+      },
+      {
+        name: "Imperium",
+        control: 20,
+      },
+    ],
+  },
+  sunkenTemples: {
+    top: "47.00",
+    left: "05.60",
+    name: "Sunken Temples",
+    description:
+      "Ruined religious district half sunk into the swampy jungles of the region. Folktales suggest this district predates even the Twilight.",
     sector: "prospect-shore",
     category: "site",
     factions: [

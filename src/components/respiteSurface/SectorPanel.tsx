@@ -16,7 +16,7 @@ const StyledPanelWrapper = styled.div<StyledProps>`
   top: 10%;
   ${(props) => props.align}: 4%;
   width: 30%;
-  min-height: 70%;
+  min-height: 80%;
   background-color: rgba(104, 161, 24, 93%);
   clip-path: polygon(
     5% 0,
@@ -85,13 +85,15 @@ const impsum =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.";
 
 interface Props {
-  location: Location;
+  locations: Location[];
+  selectedLocation: Location;
   setSelectedLoc: (location: Location | null) => void;
   align: "left" | "right";
 }
 
 export const SectorPanel: React.FC<Props> = ({
-  location,
+  locations,
+  selectedLocation,
   setSelectedLoc,
   align,
 }) => {
@@ -99,10 +101,10 @@ export const SectorPanel: React.FC<Props> = ({
     <StyledPanelWrapper align={align}>
       <div className="locationPanel">
         <div className="bannerWrapper">
-          {location.name === "South Haven Rigs" && (
+          {locations[0].name === "South Haven Rigs" && (
             <img
               src={winterHarbor}
-              alt={location.name || "banner"}
+              alt={locations[0].name || "banner"}
               className="bannerImage"
             />
           )}
@@ -113,7 +115,9 @@ export const SectorPanel: React.FC<Props> = ({
           }}
         >
           <Stack>
-            <Typography className="locationTitle">{location?.name}</Typography>
+            <Typography className="locationTitle">
+              {locations[0]?.name}
+            </Typography>
             <Divider
               style={{
                 borderColor: "rgba(104, 161, 24, 93%)",
@@ -127,10 +131,14 @@ export const SectorPanel: React.FC<Props> = ({
             />
             {/* <FactionControlBars factions={location.factions} /> */}
             <SectorPanelLocations
-              locations={[location]}
-              selectedLocation={location}
+              locations={locations}
+              selectedLocation={selectedLocation}
               setSelectedLoc={setSelectedLoc}
             />
+
+            <Typography className="locationDescription">
+              {selectedLocation.description}
+            </Typography>
           </Stack>
         </div>
       </div>

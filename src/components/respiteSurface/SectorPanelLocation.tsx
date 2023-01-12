@@ -1,7 +1,15 @@
-import { Grid } from "@mui/material";
+import { Grid, styled, Typography } from "@mui/material";
 import React from "react";
-import { LocationMarker } from "./LocationMarker";
+import { LocationIcon } from "./LocationIcon";
 import { Location } from "./SurfaceUtils";
+
+const StyledGrid = styled(Grid)`
+  .locationColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+`;
 
 interface Props {
   locations: Location[];
@@ -15,20 +23,32 @@ export const SectorPanelLocations: React.FC<Props> = ({
   setSelectedLoc,
 }) => {
   return (
-    <Grid container xs={12}>
+    <StyledGrid container xs={12}>
       {locations &&
         locations.map((location) => {
           return (
-            <Grid item xs={4}>
-              <LocationMarker
+            <Grid item xs={4} className="locationColumn">
+              <LocationIcon
                 location={location}
                 isSelected={location.name === selectedLocation.name}
                 setSelectedLoc={setSelectedLoc}
-                style={{ position: "static" }}
               />
+              <Typography
+                className="locationDescription"
+                fontWeight="bold"
+                style={{ paddingBottom: "0px" }}
+              >
+                {location.name}
+              </Typography>
+              <Typography
+                className="locationDescription"
+                style={{ paddingTop: "0px" }}
+              >
+                {location.factions[0].name}
+              </Typography>
             </Grid>
           );
         })}
-    </Grid>
+    </StyledGrid>
   );
 };
