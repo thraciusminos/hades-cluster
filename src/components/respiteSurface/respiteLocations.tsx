@@ -96,11 +96,69 @@ export const locations = {
       },
     ],
   },
+  indigoBase: {
+    top: "27.50",
+    left: "7.80",
+    name: "Indigo Base",
+    description:
+      "As the largest fracking station in the frontier, this site has become the de facto Imperial military outpost in this region. Large industrial facility is adjoined by an equally impressive garrison and vehicle depot.",
+    sector: "shale-basin",
+    category: "outpost",
+    factions: [
+      {
+        name: "Imperium",
+        control: 50,
+      },
+      {
+        name: "Church of Dawn",
+        control: 50,
+      },
+    ],
+  },
+  predecessorInstallation: {
+    top: "23.00",
+    left: "10.90",
+    name: "Predecessor Installation",
+    description:
+      "Excavations on this site suggest that the structures of this installation predate the Twilight. Distinctive architecture suggest Predecessor origin, but further studies are required to rule out later imitations.",
+    sector: "shale-basin",
+    category: "site",
+    factions: [
+      {
+        name: "Imperium",
+        control: 50,
+      },
+      {
+        name: "Church of Dawn",
+        control: 50,
+      },
+    ],
+  },
+  ceruleanFalls: {
+    top: "36.00",
+    left: "10.80",
+    name: "Cerulean Falls",
+    description:
+      "Originally found overlooking a pristine waterfall, this settlement now has a front row seat to witness the fallout of Prometheum production efforts in this region. Small settlement situated in the giant Redwood region consists of several hab-stacks, pleasure zone for off-duty fracking crews, fishing docks and a small garrison.",
+    sector: "shale-basin",
+    category: "settlement",
+    factions: [
+      {
+        name: "Imperium",
+        control: 50,
+      },
+      {
+        name: "Church of Dawn",
+        control: 50,
+      },
+    ],
+  },
   shaleBasinRefineries: {
-    top: "30.00",
-    left: "11.00",
+    top: "31.00",
+    left: "14.00",
     name: "Shale Basin Refineries",
-    description: "",
+    description:
+      "As the second largest refinery on the planet, this site represents a significant portion of Prometheum production on Kora's Respite. Large sprawling industrial structures are often half-covered in a chemical haze. Together with the habitation zone for the labour force, this site spans the area of a small city. It is garrisoned accordingly.",
     sector: "shale-basin",
     category: "factory",
     factions: [

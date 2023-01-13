@@ -22,12 +22,14 @@ export const SectorPanelLocations: React.FC<Props> = ({
   selectedLocation,
   setSelectedLoc,
 }) => {
+  const getColumnWidth = () => Math.floor(12 / locations.length);
+
   return (
     <StyledGrid container xs={12}>
       {locations &&
         locations.map((location) => {
           return (
-            <Grid item xs={4} className="locationColumn">
+            <Grid item xs={getColumnWidth()} className="locationColumn">
               <LocationIcon
                 location={location}
                 isSelected={location.name === selectedLocation.name}
@@ -36,13 +38,13 @@ export const SectorPanelLocations: React.FC<Props> = ({
               <Typography
                 className="locationDescription"
                 fontWeight="bold"
-                style={{ paddingBottom: "0px" }}
+                style={{ paddingBottom: "0px", textAlign: "center" }}
               >
                 {location.name}
               </Typography>
               <Typography
                 className="locationDescription"
-                style={{ paddingTop: "0px" }}
+                style={{ paddingTop: "0px", textAlign: "center" }}
               >
                 {location.factions[0].name}
               </Typography>

@@ -36,12 +36,8 @@ const StyledLocContainer = styled.div<StyledProps>`
   }
 
   .markerIconCommon {
-    position: absolute;
-    left: 50%;
-    top: 50%;
     width: 100%;
     height: 100%;
-    margin: -50%;
     border-radius: 50%;
     color: rgba(122, 235, 52, 100%);
     animation: outline-out 0.15s linear;
