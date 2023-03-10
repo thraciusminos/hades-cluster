@@ -1,5 +1,15 @@
-import { Stack, Paper, Typography } from "@mui/material";
+import { Typography, styled, TableRow, TableCell } from "@mui/material";
 import { ScenarioEvent } from "../../../resources/events";
+
+const StyledEventRow = styled(TableRow)`
+  padding: 18px 12px;
+
+  .eventRowLabel {
+    color: rgba(122, 235, 52, 93%);
+    background-color: #081406;
+    border-bottom-color: transparent;
+  }
+`;
 
 interface Props {
   event: ScenarioEvent;
@@ -7,18 +17,20 @@ interface Props {
 
 export const EventRow: React.FC<Props> = ({ event }) => {
   return (
-    <Stack direction="row">
-      <Paper>{event.date.toUTCString()}</Paper>
+    <StyledEventRow>
+      <TableCell className="eventRowLabel">
+        {event.date.toISOString().slice(0, 10)}
+      </TableCell>
       {event.players.map((player) => {
         return (
-          <Paper>
-            <Typography>
-              {player.side} {player.faction}
-            </Typography>
-          </Paper>
+          <TableCell className="eventRowLabel">{player.faction}</TableCell>
         );
       })}
-      <Paper>{event.impact.delta}</Paper>
-    </Stack>
+      <TableCell className="eventRowLabel">{event.impact.location}</TableCell>
+      <TableCell className="eventRowLabel">
+        {event.impact.faction} {event.impact.delta > 0 ? "+" : ""}
+        {event.impact.delta}
+      </TableCell>
+    </StyledEventRow>
   );
 };

@@ -1,5 +1,5 @@
-import React from "react";
-import { Box, Stack, styled } from "@mui/material";
+import React, { useState } from "react";
+import { Box, ClickAwayListener, Stack, styled } from "@mui/material";
 import { EventLogButton } from "./EventLogButton";
 import { EventLogBody } from "./EventLogBody";
 import { events } from "../../../resources/events";
@@ -12,12 +12,15 @@ const StyledRightMenuWrapper = styled(Box)`
 `;
 
 export const RightMenu: React.FC = () => {
+  const [open, setOpen] = useState<boolean>();
   return (
-    <StyledRightMenuWrapper>
-      <Stack direction="row-reverse">
-        <EventLogButton />
-      </Stack>
-      <EventLogBody events={events} />
-    </StyledRightMenuWrapper>
+    <ClickAwayListener onClickAway={() => setOpen(false)}>
+      <StyledRightMenuWrapper>
+        <Stack direction="row-reverse">
+          <EventLogButton setOpen={() => setOpen(!open)} />
+        </Stack>
+        {open && <EventLogBody events={events} />}
+      </StyledRightMenuWrapper>
+    </ClickAwayListener>
   );
 };

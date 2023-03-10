@@ -5,14 +5,14 @@ const StyledEventButton = styled(Button)`
   padding: 2px;
   background-color: rgba(104, 161, 24, 93%);
   clip-path: polygon(
-    20% 0%,
-    80% 0%,
-    100% 20%,
-    100% 80%,
-    80% 100%,
-    20% 100%,
-    0% 80%,
-    0% 20%
+    5% 0,
+    95% 0,
+    100% 5%,
+    100% 95%,
+    95% 100%,
+    5% 100%,
+    0 95%,
+    0 5%
   );
 
   &:hover {
@@ -20,9 +20,13 @@ const StyledEventButton = styled(Button)`
   }
 `;
 
-export const EventLogButton: React.FC = () => {
+interface Props {
+  setOpen: () => void;
+}
+
+export const EventLogButton: React.FC<Props> = ({ setOpen }) => {
   return (
-    <StyledEventButton>
+    <StyledEventButton onClick={setOpen}>
       <Typography
         sx={{
           padding: "12px 16px",
@@ -32,7 +36,7 @@ export const EventLogButton: React.FC = () => {
           fontFamily: "monospace",
           textTransform: "uppercase",
           clipPath:
-            "polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%)",
+            "polygon(5% 0, 95% 0, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0 95%, 0 5%)",
         }}
       >
         Events
