@@ -1,5 +1,6 @@
 import React from "react";
 import { Typography } from "@mui/material";
+import { RightMenu } from "./overlay-components/RightMenu";
 
 export const Overlay: React.FC = () => {
   return (
@@ -21,6 +22,7 @@ export const Overlay: React.FC = () => {
       >
         Respite Surface Command
       </Typography>
+      <RightMenu />
     </>
   );
 };
