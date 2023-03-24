@@ -1,4 +1,6 @@
-export const locations = {
+import { Location } from "../locationUtils";
+
+export const locations: { [x: string]: Location } = {
   novaBorealisObservatory: {
     top: "20.00",
     left: "20.25",

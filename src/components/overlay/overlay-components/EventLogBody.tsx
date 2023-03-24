@@ -9,7 +9,7 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { ScenarioEvent } from "../../../resources/events";
+import { ScenarioEvent } from "../../../resources/eventUtils";
 import { EventRow } from "./EventRow";
 
 const StyledEventLog = styled(Box)`

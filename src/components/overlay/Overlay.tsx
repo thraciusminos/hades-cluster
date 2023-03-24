@@ -1,8 +1,13 @@
 import React from "react";
 import { Typography } from "@mui/material";
 import { RightMenu } from "./overlay-components/RightMenu";
+import { ScenarioEvent } from "../../resources/eventUtils";
 
-export const Overlay: React.FC = () => {
+interface Props {
+  events: ScenarioEvent[];
+}
+
+export const Overlay: React.FC<Props> = ({ events }) => {
   return (
     <>
       <Typography
@@ -22,7 +27,7 @@ export const Overlay: React.FC = () => {
       >
         Respite Surface Command
       </Typography>
-      <RightMenu />
+      <RightMenu events={events} />
     </>
   );
 };

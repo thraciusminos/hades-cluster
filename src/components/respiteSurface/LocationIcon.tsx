@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import locIcon from "../../assets/icons/Maps-Define-Location-icon-green.png";
-import { Location } from "./SurfaceUtils";
+import { Location } from "../../resources/locationUtils";
 import { LocationTooltip } from "./LocationTooltip";
 import {
   Apartment,

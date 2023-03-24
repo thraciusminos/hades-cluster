@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 import winterHarbor from "../../assets/artwork/Koras-winter-harbor.jpg";
 import { Divider, Stack, Typography } from "@mui/material";
-import { Location } from "./SurfaceUtils";
+import { Location } from "../../resources/locationUtils";
 import { FactionControlBars } from "./FactionControlBars";
 import { SectorPanelLocations } from "./SectorPanelLocation";
 

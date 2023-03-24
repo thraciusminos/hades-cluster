@@ -2,8 +2,7 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 import respite from "../../assets/respite-holo-display-sharp.jpg";
-import { locations } from "./respiteLocations";
-import { Location } from "./SurfaceUtils";
+import { Location } from "../../resources/locationUtils";
 import { LocationMarker } from "./LocationMarker";
 import { SectorPanel } from "./SectorPanel";
 import { ClickAwayListener } from "@mui/material";
@@ -19,9 +18,13 @@ const StyledSurfaceContainer = styled.div`
   }
 `;
 
-interface Props {}
+interface Props {
+  currentSituation: { [x: string]: Location };
+}
 
-export const RespiteSurface: React.FC<Props> = (props) => {
+export const RespiteSurface: React.FC<Props> = ({
+  currentSituation: locations,
+}) => {
   const [selectedLoc, setSelectedLoc] = useState<Location | null>(null);
 
   const getPanelAlignment = (selectedLoc: Location) =>
@@ -62,6 +65,7 @@ export const RespiteSurface: React.FC<Props> = (props) => {
           {Object.values(locations).map((location) => {
             return (
               <LocationMarker
+                key={location.name}
                 location={location}
                 isSelected={location.name === selectedLoc?.name}
                 setSelectedLoc={handleLocClick}

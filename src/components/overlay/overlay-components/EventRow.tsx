@@ -1,5 +1,5 @@
 import { Typography, styled, TableRow, TableCell } from "@mui/material";
-import { ScenarioEvent } from "../../../resources/events";
+import { ScenarioEvent } from "../../../resources/eventUtils";
 
 const StyledEventRow = styled(TableRow)`
   padding: 18px 12px;

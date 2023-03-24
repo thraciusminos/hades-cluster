@@ -1,7 +1,7 @@
 import { Grid, styled, Typography } from "@mui/material";
 import React from "react";
 import { LocationIcon } from "./LocationIcon";
-import { Location } from "./SurfaceUtils";
+import { Location } from "../../resources/locationUtils";
 
 const StyledGrid = styled(Grid)`
   .locationColumn {
@@ -25,11 +25,16 @@ export const SectorPanelLocations: React.FC<Props> = ({
   const getColumnWidth = () => Math.floor(12 / locations.length);
 
   return (
-    <StyledGrid container xs={12}>
+    <StyledGrid container>
       {locations &&
         locations.map((location) => {
           return (
-            <Grid item xs={getColumnWidth()} className="locationColumn">
+            <Grid
+              key={location.name}
+              item
+              xs={getColumnWidth()}
+              className="locationColumn"
+            >
               <LocationIcon
                 location={location}
                 isSelected={location.name === selectedLocation.name}

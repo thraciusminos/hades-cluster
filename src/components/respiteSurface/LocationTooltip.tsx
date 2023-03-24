@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { Location } from "./SurfaceUtils";
+import { Location } from "../../resources/locationUtils";
 import { Tooltip, TooltipProps, tooltipClasses } from "@mui/material";
 
 const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
