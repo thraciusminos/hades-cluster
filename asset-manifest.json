@@ -1,17 +1,18 @@
 {
   "files": {
     "main.css": "/hades-cluster/static/css/main.abffb06e.css",
-    "main.js": "/hades-cluster/static/js/main.4c8f9645.js",
+    "main.js": "/hades-cluster/static/js/main.84f06a78.js",
     "static/js/787.a580566c.chunk.js": "/hades-cluster/static/js/787.a580566c.chunk.js",
+    "static/media/respite-system-background.jpg": "/hades-cluster/static/media/respite-system-background.47fc668f056179e3536f.jpg",
     "static/media/respite-holo-display-sharp.jpg": "/hades-cluster/static/media/respite-holo-display-sharp.23f678e9d44a01b9f6be.jpg",
     "static/media/Koras-winter-harbor.jpg": "/hades-cluster/static/media/Koras-winter-harbor.d4ad6777e5ad03490ac2.jpg",
     "index.html": "/hades-cluster/index.html",
     "main.abffb06e.css.map": "/hades-cluster/static/css/main.abffb06e.css.map",
-    "main.4c8f9645.js.map": "/hades-cluster/static/js/main.4c8f9645.js.map",
+    "main.84f06a78.js.map": "/hades-cluster/static/js/main.84f06a78.js.map",
     "787.a580566c.chunk.js.map": "/hades-cluster/static/js/787.a580566c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.abffb06e.css",
-    "static/js/main.4c8f9645.js"
+    "static/js/main.84f06a78.js"
   ]
 }
