@@ -2,12 +2,28 @@ import React from "react";
 import { Typography } from "@mui/material";
 import { RightMenu } from "./overlay-components/RightMenu";
 import { ScenarioEvent } from "../../resources/eventUtils";
+import { Views } from "../hades-cluster/HadesClusterViewer";
+
+const getActiveViewTitle = (activeView: Views) => {
+  if (activeView === "respiteSystem") {
+    return "Kora's Respite System";
+  }
+  if (activeView === "respiteSurface") {
+    return "Respite Surface Command";
+  }
+};
 
 interface Props {
   events: ScenarioEvent[];
+  activeView: Views;
+  setActiveView: (view: Views) => void;
 }
 
-export const Overlay: React.FC<Props> = ({ events }) => {
+export const Overlay: React.FC<Props> = ({
+  events,
+  activeView,
+  setActiveView,
+}) => {
   return (
     <>
       <Typography
@@ -25,7 +41,7 @@ export const Overlay: React.FC<Props> = ({ events }) => {
           zIndex: 10,
         }}
       >
-        Respite Surface Command
+        {getActiveViewTitle(activeView)}
       </Typography>
       <RightMenu events={events} />
     </>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-import respite from "../../assets/respite-holo-display-sharp.jpg";
+import respiteSurface from "../../assets/respite-holo-display-sharp.jpg";
 import { Location } from "../../resources/locationUtils";
 import { LocationMarker } from "./LocationMarker";
 import { SectorPanel } from "./SectorPanel";
@@ -76,7 +76,7 @@ export const RespiteSurface: React.FC<Props> = ({
       </ClickAwayListener>
       <RespiteSectors />
       <img
-        src={respite}
+        src={respiteSurface}
         alt="respite"
         height="100%"
         width="100%"

@@ -38,10 +38,15 @@ export const getCurrentSituation = (
   var currentSituation = initialSituation;
   events.forEach((event) => {
     const loc = initialSituation[event.impact.location];
-    currentSituation[event.impact.location] = {
-      ...loc,
-      factions: updateLocFactions(loc.factions, event.impact),
-    };
+
+    if (loc) {
+      currentSituation[event.impact.location] = {
+        ...loc,
+        factions: updateLocFactions(loc.factions, event.impact),
+      };
+    } else {
+      console.log("Events: Location not found")
+    }
   });
   return currentSituation;
 };
