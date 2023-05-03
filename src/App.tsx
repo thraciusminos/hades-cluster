@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.css";
-import { HadesClusterViewer } from "./components/hades-cluster/HadesClusterViewer";
+import { HadesClusterViewer } from "./components/viewer/HadesClusterViewer";
 
 function App() {
   return (

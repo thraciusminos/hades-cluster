@@ -1,11 +1,17 @@
 import React from "react";
 import styled from "styled-components";
 
-import winterHarbor from "../../assets/artwork/Koras-winter-harbor.jpg";
-import { Divider, Stack, Typography } from "@mui/material";
-import { Location } from "../../resources/locationUtils";
-import { FactionControlBars } from "./FactionControlBars";
-import { SectorPanelLocations } from "./SectorPanelLocation";
+import winterHarbor from "../../../assets/artwork/Koras-winter-harbor.jpg";
+import { Button, Divider, Stack, Typography } from "@mui/material";
+import {
+  Celestial,
+  Location,
+  Sector,
+  Site,
+  View,
+} from "../../../resources/locationUtils";
+import { FactionControlBars } from "../../common/FactionControlBars";
+import { PreviewPanelLocations } from "./PreivewPanelLocation";
 
 interface StyledProps {
   align: "left" | "right";
@@ -85,38 +91,51 @@ const impsum =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.";
 
 interface Props {
-  locations: Location[];
-  selectedLocation: Location;
-  setSelectedLoc: (location: Location | null) => void;
+  activeLocation: Celestial | Sector | Site | Location;
+  setActiveView: (view: View) => void;
+  setActiveLocation: (location: Location | null) => void;
   align: "left" | "right";
 }
 
-export const SectorPanel: React.FC<Props> = ({
-  locations,
-  selectedLocation,
-  setSelectedLoc,
+export const PreviewPanel: React.FC<Props> = ({
+  activeLocation,
+  setActiveView,
+  setActiveLocation,
   align,
 }) => {
   return (
     <StyledPanelWrapper align={align}>
       <div className="locationPanel">
         <div className="bannerWrapper">
-          {locations[0].name === "South Haven Rigs" && (
-            <img
-              src={winterHarbor}
-              alt={locations[0].name || "banner"}
-              className="bannerImage"
-            />
-          )}
+          <img
+            src={winterHarbor}
+            alt={activeLocation.name || "banner"}
+            className="bannerImage"
+          />
         </div>
         <div
           style={{
-            marginTop: "105px",
+            marginTop: "125px",
           }}
         >
           <Stack>
+            {activeLocation.name === "Kora's Respite" ? (
+              <Button
+                variant="contained"
+                color="success"
+                onClick={() => setActiveView("respiteSurface")}
+              >
+                {">>>  GO TO SURFACE  <<<"}
+              </Button>
+            ) : (
+              <Button variant="contained" color="success">
+                {align === "right" && "<<< "}
+                {"EXPAND"}
+                {align === "left" && " >>>"}
+              </Button>
+            )}
             <Typography className="locationTitle">
-              {locations[0]?.name}
+              {activeLocation?.name}
             </Typography>
             <Divider
               style={{
@@ -130,14 +149,15 @@ export const SectorPanel: React.FC<Props> = ({
               }}
             />
             {/* <FactionControlBars factions={location.factions} /> */}
-            <SectorPanelLocations
-              locations={locations}
-              selectedLocation={selectedLocation}
-              setSelectedLoc={setSelectedLoc}
-            />
+            {"sites" in activeLocation && (
+              <PreviewPanelLocations
+                selectedLocation={activeLocation}
+                setSelectedLoc={setActiveLocation}
+              />
+            )}
 
             <Typography className="locationDescription">
-              {selectedLocation.description}
+              {activeLocation.description}
             </Typography>
           </Stack>
         </div>

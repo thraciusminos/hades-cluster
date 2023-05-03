@@ -1,4 +1,4 @@
-import { Location } from "./locationUtils";
+import { Sector } from "./locationUtils";
 
 export interface Participant {
   side: number;
@@ -32,7 +32,7 @@ const updateLocFactions = (
 };
 
 export const getCurrentSituation = (
-  initialSituation: { [x: string]: Location },
+  initialSituation: { [id: string]: Sector },
   events: ScenarioEvent[]
 ) => {
   var currentSituation = initialSituation;
@@ -42,10 +42,10 @@ export const getCurrentSituation = (
     if (loc) {
       currentSituation[event.impact.location] = {
         ...loc,
-        factions: updateLocFactions(loc.factions, event.impact),
+        factions: updateLocFactions(loc.factions || [], event.impact),
       };
     } else {
-      console.log("Events: Location not found")
+      console.log("Events: Location not found");
     }
   });
   return currentSituation;

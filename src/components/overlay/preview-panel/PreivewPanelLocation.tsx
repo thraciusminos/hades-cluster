@@ -1,7 +1,7 @@
 import { Grid, styled, Typography } from "@mui/material";
 import React from "react";
-import { LocationIcon } from "./LocationIcon";
-import { Location } from "../../resources/locationUtils";
+import { LocationIcon } from "../../common/LocationIcon";
+import { Location, Sector } from "../../../resources/locationUtils";
 
 const StyledGrid = styled(Grid)`
   .locationColumn {
@@ -12,16 +12,15 @@ const StyledGrid = styled(Grid)`
 `;
 
 interface Props {
-  locations: Location[];
-  selectedLocation: Location;
+  selectedLocation: Sector;
   setSelectedLoc: (location: Location | null) => void;
 }
 
-export const SectorPanelLocations: React.FC<Props> = ({
-  locations,
+export const PreviewPanelLocations: React.FC<Props> = ({
   selectedLocation,
   setSelectedLoc,
 }) => {
+  const locations = selectedLocation.sites || [];
   const getColumnWidth = () => Math.floor(12 / locations.length);
 
   return (
