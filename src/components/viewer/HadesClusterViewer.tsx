@@ -4,7 +4,7 @@ import { celestialLocations } from "../../resources/control-initial/celestialLoc
 import { getCurrentSituation, getEvents } from "../../resources/eventUtils";
 import { Overlay } from "../overlay/Overlay";
 import { RespiteSurface } from "../respite-surface/RespiteSurface";
-import { RespiteSystem } from "../respite-system/RespiteSystem";
+import { MinosSystem } from "../minos-system/MinosSystem";
 import { Location, View } from "../../resources/locationUtils";
 import styled from "styled-components";
 
@@ -18,21 +18,27 @@ export const HadesClusterViewer: React.FC = () => {
   const [activeLocation, setActiveLocation] = useState<Location | null>(null);
 
   const events = getEvents;
-  const currentSurfaceSituation = useMemo(
-    () => getCurrentSituation(respiteSurfaceLocations, events),
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-    []
-  );
+  const currentSituation = useMemo(() => {
+    if (activeView === "respiteSurface") {
+      return getCurrentSituation(respiteSurfaceLocations, events);
+    }
+    return getCurrentSituation(celestialLocations, events);
+  }, [activeView, events]);
+
+  const handleViewChange = (view: View) => {
+    setActiveLocation(null);
+    setActiveView(view);
+  };
 
   return (
     <StyledViewer>
-      {activeView === "respiteSystem" ? <RespiteSystem /> : <RespiteSurface />}
+      {activeView === "respiteSystem" ? <MinosSystem /> : <RespiteSurface />}
 
       <Overlay
         events={events}
-        situation={currentSurfaceSituation}
+        situation={currentSituation}
         activeView={activeView}
-        setActiveView={setActiveView}
+        setActiveView={handleViewChange}
         activeLocation={activeLocation}
         setActiveLocation={setActiveLocation}
       />

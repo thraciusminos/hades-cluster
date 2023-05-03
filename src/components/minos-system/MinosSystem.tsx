@@ -4,7 +4,7 @@ import respiteSystem from "../../assets/respite-system-background.jpg";
 
 interface Props {}
 
-export const RespiteSystem: React.FC<Props> = () => {
+export const MinosSystem: React.FC<Props> = () => {
   return (
     <img
       src={respiteSystem}

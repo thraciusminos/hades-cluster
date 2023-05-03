@@ -1,11 +1,18 @@
 import React from "react";
-import { ClickAwayListener, Typography } from "@mui/material";
+import { Box, Button, ClickAwayListener, Typography } from "@mui/material";
 import styled from "styled-components";
 import { RightMenu } from "./right-menu/RightMenu";
 import { ScenarioEvent } from "../../resources/eventUtils";
-import { Location, View } from "../../resources/locationUtils";
+import {
+  Celestial,
+  Location,
+  Sector,
+  Site,
+  View,
+} from "../../resources/locationUtils";
 import { PreviewPanel } from "./preview-panel/PreviewPanel";
 import { LocationMarker } from "../common/LocationMarker";
+import { ArrowBackIosNew } from "@mui/icons-material";
 
 const StyledSurfaceContainer = styled.div`
   height: 100%;
@@ -27,7 +34,7 @@ const getActiveViewTitle = (activeView: View) => {
 
 interface Props {
   events: ScenarioEvent[];
-  situation: { [x: string]: Location };
+  situation: { [x: string]: Celestial | Sector | Site | Location };
   activeView: View;
   setActiveView: (view: View) => void;
   activeLocation: Location | null;
@@ -55,23 +62,48 @@ export const Overlay: React.FC<Props> = ({
 
   return (
     <StyledSurfaceContainer>
-      <Typography
+      <Box
         sx={{
           position: "absolute",
           top: "3%",
           left: "2%",
-          padding: "12px 64px 18px 18px",
-          color: "rgba(122, 235, 52, 93%)",
           backgroundColor: "#081406",
-          fontSize: "28px",
-          fontFamily: "monospace",
-          textTransform: "uppercase",
           clipPath: "polygon(0 0, 100% 0, 100% 0%, 90% 100%, 0 100%)",
           zIndex: 10,
         }}
       >
-        {getActiveViewTitle(activeView)}
-      </Typography>
+        {activeView !== "respiteSystem" && (
+          <Button onClick={() => setActiveView("respiteSystem")}>
+            <ArrowBackIosNew
+              sx={{
+                color: "rgba(122, 235, 52, 93%)",
+                padding: "0 6px",
+                fontSize: "16px",
+              }}
+            />
+            <Typography
+              sx={{
+                color: "rgba(122, 235, 52, 93%)",
+                fontSize: "16px",
+                fontFamily: "monospace",
+              }}
+            >
+              Back to System
+            </Typography>
+          </Button>
+        )}
+        <Typography
+          sx={{
+            padding: "0 64px 18px 28px",
+            color: "rgba(122, 235, 52, 93%)",
+            fontSize: "28px",
+            fontFamily: "monospace",
+            textTransform: "uppercase",
+          }}
+        >
+          {getActiveViewTitle(activeView)}
+        </Typography>
+      </Box>
 
       <RightMenu events={events} />
 
@@ -87,6 +119,19 @@ export const Overlay: React.FC<Props> = ({
           )}
 
           {Object.values(situation).map((location) => {
+            if ("sites" in location) {
+              (location.sites as Site[]).map((site) => {
+                return (
+                  <LocationMarker
+                    key={site.name}
+                    location={site}
+                    isSelected={site.name === activeLocation?.name}
+                    setSelectedLoc={handleLocClick}
+                  />
+                );
+              });
+            }
+
             return (
               <LocationMarker
                 key={location.name}

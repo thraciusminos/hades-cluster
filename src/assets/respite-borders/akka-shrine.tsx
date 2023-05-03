@@ -1,6 +1,14 @@
-function AkkaShrineBorder(): JSX.Element {
+const AkkaShrineBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
+  props: React.SVGProps<SVGSVGElement>
+) => {
   return (
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="66.95 113.52 67.45 94.92">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="66.95 113.52 67.45 94.92"
+      preserveAspectRatio="none"
+      className={props.className}
+      style={props.style}
+    >
       <path
         fill="none"
         stroke="#29e51a"
@@ -8,6 +16,6 @@ function AkkaShrineBorder(): JSX.Element {
       ></path>
     </svg>
   );
-}
+};
 
 export default AkkaShrineBorder;

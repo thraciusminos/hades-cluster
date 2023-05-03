@@ -13,9 +13,11 @@ export const respiteSurfaceLocations: { [id: string]: Sector } = {
     category: "settlement",
   },
   prospectShore: {
-    top: "",
-    left: "",
+    top: "40.70",
+    left: "05.70",
     name: "Prospect Shore",
+    category: "settlement",
+    description: "",
     sites: [
       {
         top: "31.70",
@@ -74,9 +76,11 @@ export const respiteSurfaceLocations: { [id: string]: Sector } = {
     ],
   },
   shaleBasin: {
-    top: "",
-    left: "",
+    top: "29.00",
+    left: "11.00",
     name: "Shale Basin",
+    category: "factory",
+    description: "",
     sites: [
       {
         top: "27.50",
