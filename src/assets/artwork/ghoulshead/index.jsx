@@ -1,0 +1,5 @@
+export * from "./ghoulshead-1.png"
+export * from "./ghoulshead-2.png"
+export * from "./ghoulshead-favela.png"
+export * from "./ghoulshead-wetland.png"
+export * from "./ghoulshead-wetland-2.png"

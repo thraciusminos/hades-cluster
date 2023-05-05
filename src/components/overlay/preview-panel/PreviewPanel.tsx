@@ -11,7 +11,9 @@ import {
   View,
 } from "../../../resources/locationUtils";
 import { FactionControlBars } from "../../common/FactionControlBars";
-import { PreviewPanelLocations } from "./PreivewPanelLocation";
+import { PreviewPanelLocations } from "./PreviewPanelLocation";
+import ghoulshead from "../../../assets/artwork/ghoulshead/ghoulshead-favela.png";
+import garrote from "../../../assets/artwork/garrote/garrote-3.png";
 
 interface StyledProps {
   align: "left" | "right";
@@ -19,10 +21,10 @@ interface StyledProps {
 
 const StyledPanelWrapper = styled.div<StyledProps>`
   position: absolute;
-  top: 10%;
-  ${(props) => props.align}: 4%;
+  top: 9%;
+  ${(props) => props.align}: 2%;
   width: 30%;
-  min-height: 80%;
+  min-height: 90%;
   background-color: rgba(104, 161, 24, 93%);
   clip-path: polygon(
     5% 0,
@@ -59,10 +61,10 @@ const StyledPanelWrapper = styled.div<StyledProps>`
 
   .bannerWrapper {
     position: absolute;
-    top: 5px;
-    left: 5px;
-    right: 5px;
-    height: 120px;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 180px;
 
     background-color: rgba(95, 97, 93, 93%);
   }
@@ -90,10 +92,34 @@ const StyledPanelWrapper = styled.div<StyledProps>`
 const impsum =
   "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco.";
 
+const getPanelImages = (location: Location) => {
+  var banner;
+
+  switch (location.name) {
+    case "Ghoulshead":
+      banner = <img src={ghoulshead} alt={"banner"} className="bannerImage" />;
+      break;
+    case "Garrote":
+      banner = <img src={garrote} alt={"banner"} className="bannerImage" />;
+      break;
+    case "South Haven Rigs":
+      banner = (
+        <img src={winterHarbor} alt={"banner"} className="bannerImage" />
+      );
+      break;
+    default:
+      banner = <div className="bannerImage" />;
+  }
+
+  return banner;
+};
+
 interface Props {
   activeLocation: Celestial | Sector | Site | Location;
   setActiveView: (view: View) => void;
   setActiveLocation: (location: Location | null) => void;
+  expand: boolean;
+  setExpand: (newValue: boolean) => void;
   align: "left" | "right";
 }
 
@@ -101,21 +127,17 @@ export const PreviewPanel: React.FC<Props> = ({
   activeLocation,
   setActiveView,
   setActiveLocation,
+  expand,
+  setExpand,
   align,
 }) => {
   return (
     <StyledPanelWrapper align={align}>
       <div className="locationPanel">
-        <div className="bannerWrapper">
-          <img
-            src={winterHarbor}
-            alt={activeLocation.name || "banner"}
-            className="bannerImage"
-          />
-        </div>
+        <div className="bannerWrapper">{getPanelImages(activeLocation)}</div>
         <div
           style={{
-            marginTop: "125px",
+            marginTop: "185px",
           }}
         >
           <Stack>
@@ -127,8 +149,22 @@ export const PreviewPanel: React.FC<Props> = ({
               >
                 {">>>  GO TO SURFACE  <<<"}
               </Button>
+            ) : expand ? (
+              <Button
+                variant="contained"
+                color="success"
+                onClick={() => setExpand(false)}
+              >
+                {align === "left" && "<<< "}
+                {"CLOSE"}
+                {align === "right" && "<<< "}
+              </Button>
             ) : (
-              <Button variant="contained" color="success">
+              <Button
+                variant="contained"
+                color="success"
+                onClick={() => setExpand(true)}
+              >
                 {align === "right" && "<<< "}
                 {"EXPAND"}
                 {align === "left" && " >>>"}

@@ -484,7 +484,7 @@ export const respiteSurfaceLocations: { [id: string]: Sector } = {
     top: "34.00",
     left: "95.00",
     name: "Ghoulshead",
-    category: "site",
+    category: "outpost",
     factions: [
       {
         name: "Heirs of Eternal Sun",
@@ -497,6 +497,80 @@ export const respiteSurfaceLocations: { [id: string]: Sector } = {
       {
         name: "Imperium",
         control: 10,
+      },
+    ],
+    sites: [
+      {
+        top: "51.00",
+        left: "60.00",
+        name: "Walkertown",
+        description:
+          "",
+        category: "site",
+        factions: [
+          {
+            name: "Church of Dawn",
+            control: 30,
+          },
+          {
+            name: "Imperium",
+            control: 20,
+          },
+        ],
+      },
+      {
+        top: "61.00",
+        left: "65.00",
+        name: "St. Charles Parish",
+        description:
+          "",
+        category: "site",
+        factions: [
+          {
+            name: "Church of Dawn",
+            control: 30,
+          },
+          {
+            name: "Imperium",
+            control: 20,
+          },
+        ],
+      },
+      {
+        top: "57.00",
+        left: "77.00",
+        name: "Davis Plantation",
+        description:
+          "",
+        category: "site",
+        factions: [
+          {
+            name: "Church of Dawn",
+            control: 30,
+          },
+          {
+            name: "Imperium",
+            control: 20,
+          },
+        ],
+      },
+      {
+        top: "70.00",
+        left: "63.00",
+        name: "Ponte du Comardelle",
+        description:
+          "",
+        category: "site",
+        factions: [
+          {
+            name: "Church of Dawn",
+            control: 30,
+          },
+          {
+            name: "Imperium",
+            control: 20,
+          },
+        ],
       },
     ],
   },

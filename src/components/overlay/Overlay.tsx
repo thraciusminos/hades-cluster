@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Box, Button, ClickAwayListener, Typography } from "@mui/material";
 import styled from "styled-components";
 import { RightMenu } from "./right-menu/RightMenu";
@@ -13,6 +13,7 @@ import {
 import { PreviewPanel } from "./preview-panel/PreviewPanel";
 import { LocationMarker } from "../common/LocationMarker";
 import { ArrowBackIosNew } from "@mui/icons-material";
+import { Expand } from "./Expand";
 
 const StyledSurfaceContainer = styled.div`
   height: 100%;
@@ -49,6 +50,8 @@ export const Overlay: React.FC<Props> = ({
   activeLocation,
   setActiveLocation,
 }) => {
+  const [expand, setExpand] = useState<boolean>(false);
+
   const getPanelAlignment = (targetLocation: Location) =>
     Number(targetLocation.left) > 50 ? "left" : "right";
 
@@ -114,24 +117,21 @@ export const Overlay: React.FC<Props> = ({
               activeLocation={activeLocation}
               setActiveView={setActiveView}
               setActiveLocation={handleLocClick}
+              expand={expand}
+              setExpand={setExpand}
               align={getPanelAlignment(activeLocation)}
             />
           )}
 
-          {Object.values(situation).map((location) => {
-            if ("sites" in location) {
-              (location.sites as Site[]).map((site) => {
-                return (
-                  <LocationMarker
-                    key={site.name}
-                    location={site}
-                    isSelected={site.name === activeLocation?.name}
-                    setSelectedLoc={handleLocClick}
-                  />
-                );
-              });
-            }
+          {activeLocation && expand && (
+            <Expand
+              activeLocation={activeLocation}
+              setActiveLocation={handleLocClick}
+              previewAlignment={getPanelAlignment(activeLocation)}
+            />
+          )}
 
+          {Object.values(situation).map((location) => {
             return (
               <LocationMarker
                 key={location.name}
