@@ -1,18 +1,26 @@
 {
   "files": {
     "main.css": "/hades-cluster/static/css/main.abffb06e.css",
-    "main.js": "/hades-cluster/static/js/main.ca730690.js",
+    "main.js": "/hades-cluster/static/js/main.926aec24.js",
     "static/js/787.a580566c.chunk.js": "/hades-cluster/static/js/787.a580566c.chunk.js",
+    "static/media/ghoulshead-wetland-2.png": "/hades-cluster/static/media/ghoulshead-wetland-2.86e051455058a6f51de3.png",
     "static/media/respite-system-background.jpg": "/hades-cluster/static/media/respite-system-background.47fc668f056179e3536f.jpg",
     "static/media/respite-holo-display-sharp.jpg": "/hades-cluster/static/media/respite-holo-display-sharp.23f678e9d44a01b9f6be.jpg",
     "static/media/Koras-winter-harbor.jpg": "/hades-cluster/static/media/Koras-winter-harbor.d4ad6777e5ad03490ac2.jpg",
+    "static/media/ghoulshead-favela.png": "/hades-cluster/static/media/ghoulshead-favela.5a7b30f84ea5a8dd25ed.png",
+    "static/media/garrote-trucks.png": "/hades-cluster/static/media/garrote-trucks.ca9462953571d801b712.png",
+    "static/media/garrote-1.png": "/hades-cluster/static/media/garrote-1.40fe1489fc1c6b9bf5c7.png",
+    "static/media/garrote-3.png": "/hades-cluster/static/media/garrote-3.85e20d62018c6a006534.png",
+    "static/media/ghoulshead-wetland.png": "/hades-cluster/static/media/ghoulshead-wetland.e9d4e1d758c5d4bf5594.png",
+    "static/media/garrote-2.png": "/hades-cluster/static/media/garrote-2.e379a458ffe9dad87ff4.png",
+    "static/media/ghoulshead-map.png": "/hades-cluster/static/media/ghoulshead-map.a0d5c28e35a1a0214765.png",
     "index.html": "/hades-cluster/index.html",
     "main.abffb06e.css.map": "/hades-cluster/static/css/main.abffb06e.css.map",
-    "main.ca730690.js.map": "/hades-cluster/static/js/main.ca730690.js.map",
+    "main.926aec24.js.map": "/hades-cluster/static/js/main.926aec24.js.map",
     "787.a580566c.chunk.js.map": "/hades-cluster/static/js/787.a580566c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.abffb06e.css",
-    "static/js/main.ca730690.js"
+    "static/js/main.926aec24.js"
   ]
 }
