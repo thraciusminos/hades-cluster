@@ -9,7 +9,7 @@ import {
   TableRow,
   Typography,
 } from "@mui/material";
-import { ScenarioEvent } from "../../../resources/eventUtils";
+import { LogEvent } from "../../../resources/eventUtils";
 import { EventRow } from "./EventRow";
 
 const StyledEventLog = styled(Box)`
@@ -51,7 +51,7 @@ const StyledEventLog = styled(Box)`
 `;
 
 interface Props {
-  events: ScenarioEvent[];
+  events: LogEvent[];
 }
 
 export const EventLogBody: React.FC<Props> = ({ events }) => {

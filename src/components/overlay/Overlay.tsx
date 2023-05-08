@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Box, Button, ClickAwayListener, Typography } from "@mui/material";
 import styled from "styled-components";
 import { RightMenu } from "./right-menu/RightMenu";
-import { ScenarioEvent } from "../../resources/eventUtils";
+import { LogEvent } from "../../resources/eventUtils";
 import {
   Celestial,
   Location,
@@ -26,7 +26,7 @@ const StyledSurfaceContainer = styled.div`
 
 const getActiveViewTitle = (activeView: View) => {
   if (activeView === "respiteSystem") {
-    return "Kora's Respite System";
+    return "Minos System";
   }
   if (activeView === "respiteSurface") {
     return "Respite Surface Command";
@@ -34,7 +34,7 @@ const getActiveViewTitle = (activeView: View) => {
 };
 
 interface Props {
-  events: ScenarioEvent[];
+  events: LogEvent[];
   situation: { [x: string]: Celestial | Sector | Site | Location };
   activeView: View;
   setActiveView: (view: View) => void;

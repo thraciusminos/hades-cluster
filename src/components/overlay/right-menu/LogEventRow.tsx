@@ -1,5 +1,5 @@
-import { Typography, styled, TableRow, TableCell } from "@mui/material";
-import { ScenarioEvent } from "../../../resources/eventUtils";
+import { styled, TableRow, TableCell } from "@mui/material";
+import { LogEvent } from "../../../resources/eventUtils";
 
 const StyledEventRow = styled(TableRow)`
   padding: 18px 12px;
@@ -12,10 +12,10 @@ const StyledEventRow = styled(TableRow)`
 `;
 
 interface Props {
-  event: ScenarioEvent;
+  event: LogEvent;
 }
 
-export const EventRow: React.FC<Props> = ({ event }) => {
+export const LogEventRow: React.FC<Props> = ({ event }) => {
   return (
     <StyledEventRow>
       <TableCell className="eventRowLabel">

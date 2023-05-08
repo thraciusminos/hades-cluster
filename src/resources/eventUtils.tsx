@@ -11,10 +11,17 @@ export interface EventImpact {
   delta: number;
 }
 
-export interface ScenarioEvent {
+export interface LogEvent {
   date: Date;
   players: Participant[];
   impact: EventImpact;
+}
+
+export interface ScenarioEvent {
+  title: string;
+  bannerImg?: React.ReactNode;
+  description: string;
+  endImages?: React.ReactNode;
 }
 
 const updateLocFactions = (
@@ -33,7 +40,7 @@ const updateLocFactions = (
 
 export const getCurrentSituation = (
   initialSituation: { [id: string]: Sector },
-  events: ScenarioEvent[]
+  events: LogEvent[]
 ) => {
   var currentSituation = initialSituation;
   events.forEach((event) => {
@@ -51,7 +58,23 @@ export const getCurrentSituation = (
   return currentSituation;
 };
 
-export const getEvents: ScenarioEvent[] = [
+export const getLogEvents: LogEvent[] = [
+  {
+    date: new Date("2023-03-10"),
+    players: [
+      { side: 1, faction: "Imperium" },
+      { side: 2, faction: "Eldar Corsairs" },
+    ],
+    impact: { location: "sunkenTemples", faction: "Imperium", delta: 20 },
+  },
+  {
+    date: new Date("2023-03-10"),
+    players: [
+      { side: 1, faction: "Imperium" },
+      { side: 2, faction: "Eldar Corsairs" },
+    ],
+    impact: { location: "sunkenTemples", faction: "Imperium", delta: 20 },
+  },
   {
     date: new Date("2023-03-10"),
     players: [

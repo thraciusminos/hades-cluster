@@ -21,10 +21,11 @@ const StyledEventButton = styled(Button)`
 `;
 
 interface Props {
+  label: string;
   setOpen: () => void;
 }
 
-export const EventLogButton: React.FC<Props> = ({ setOpen }) => {
+export const RightMenuButton: React.FC<Props> = ({ label, setOpen }) => {
   return (
     <StyledEventButton onClick={setOpen}>
       <Typography
@@ -39,7 +40,7 @@ export const EventLogButton: React.FC<Props> = ({ setOpen }) => {
             "polygon(5% 0, 95% 0, 100% 5%, 100% 95%, 95% 100%, 5% 100%, 0 95%, 0 5%)",
         }}
       >
-        Events
+        {label}
       </Typography>
     </StyledEventButton>
   );

@@ -7,6 +7,24 @@
   align-items: center;
 }
 
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #35742f;
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(122, 235, 52, 30%);
+  border-radius: 8px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(122, 235, 52, 60%);
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
