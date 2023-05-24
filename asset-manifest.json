@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hades-cluster/static/css/main.abffb06e.css",
-    "main.js": "/hades-cluster/static/js/main.926aec24.js",
+    "main.css": "/hades-cluster/static/css/main.b33bb44c.css",
+    "main.js": "/hades-cluster/static/js/main.c75a7002.js",
     "static/js/787.a580566c.chunk.js": "/hades-cluster/static/js/787.a580566c.chunk.js",
     "static/media/ghoulshead-wetland-2.png": "/hades-cluster/static/media/ghoulshead-wetland-2.86e051455058a6f51de3.png",
     "static/media/respite-system-background.jpg": "/hades-cluster/static/media/respite-system-background.47fc668f056179e3536f.jpg",
@@ -15,12 +15,12 @@
     "static/media/garrote-2.png": "/hades-cluster/static/media/garrote-2.e379a458ffe9dad87ff4.png",
     "static/media/ghoulshead-map.png": "/hades-cluster/static/media/ghoulshead-map.a0d5c28e35a1a0214765.png",
     "index.html": "/hades-cluster/index.html",
-    "main.abffb06e.css.map": "/hades-cluster/static/css/main.abffb06e.css.map",
-    "main.926aec24.js.map": "/hades-cluster/static/js/main.926aec24.js.map",
+    "main.b33bb44c.css.map": "/hades-cluster/static/css/main.b33bb44c.css.map",
+    "main.c75a7002.js.map": "/hades-cluster/static/js/main.c75a7002.js.map",
     "787.a580566c.chunk.js.map": "/hades-cluster/static/js/787.a580566c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.abffb06e.css",
-    "static/js/main.926aec24.js"
+    "static/css/main.b33bb44c.css",
+    "static/js/main.c75a7002.js"
   ]
 }
