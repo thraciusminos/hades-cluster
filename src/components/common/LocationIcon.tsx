@@ -129,6 +129,8 @@ export const LocationIcon: React.FC<Props> = ({
     }
   };
 
+  
+
   return (
     <StyledLocContainer
       top={location.top}

@@ -23,7 +23,12 @@ export const LogEventRow: React.FC<Props> = ({ event }) => {
       </TableCell>
       {event.players.map((player) => {
         return (
-          <TableCell className="eventRowLabel">{player.faction}</TableCell>
+          <TableCell
+            className="eventRowLabel"
+            key={event.players.indexOf(player)}
+          >
+            {player.faction}
+          </TableCell>
         );
       })}
       <TableCell className="eventRowLabel">{event.impact.location}</TableCell>

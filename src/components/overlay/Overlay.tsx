@@ -25,7 +25,7 @@ const StyledSurfaceContainer = styled.div`
 `;
 
 const getActiveViewTitle = (activeView: View) => {
-  if (activeView === "respiteSystem") {
+  if (activeView === "minosSystem") {
     return "Minos System";
   }
   if (activeView === "respiteSurface") {
@@ -37,7 +37,7 @@ interface Props {
   events: LogEvent[];
   situation: { [x: string]: Celestial | Sector | Site | Location };
   activeView: View;
-  setActiveView: (view: View) => void;
+  setActiveView: (view: View, location?: Location) => void;
   activeLocation: Location | null;
   setActiveLocation: (location: Location | null) => void;
 }
@@ -75,8 +75,8 @@ export const Overlay: React.FC<Props> = ({
           zIndex: 10,
         }}
       >
-        {activeView !== "respiteSystem" && (
-          <Button onClick={() => setActiveView("respiteSystem")}>
+        {activeView !== "minosSystem" && (
+          <Button onClick={() => setActiveView("minosSystem")}>
             <ArrowBackIosNew
               sx={{
                 color: "rgba(122, 235, 52, 93%)",
@@ -108,7 +108,11 @@ export const Overlay: React.FC<Props> = ({
         </Typography>
       </Box>
 
-      <RightMenu events={events} />
+      <RightMenu
+        events={events}
+        setActiveView={setActiveView}
+        setActiveLocation={setActiveLocation}
+      />
 
       <ClickAwayListener onClickAway={() => setActiveLocation(null)}>
         <div className="locationLayer">

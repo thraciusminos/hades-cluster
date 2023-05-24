@@ -47,7 +47,7 @@ export const LogEventTable: React.FC<Props> = ({ events }) => {
           </TableHead>
           <TableBody>
             {events.map((event) => (
-              <LogEventRow event={event} />
+              <LogEventRow event={event} key={events.indexOf(event)} />
             ))}
           </TableBody>
         </Table>

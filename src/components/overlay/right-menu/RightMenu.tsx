@@ -4,8 +4,9 @@ import { LogEvent } from "../../../resources/eventUtils";
 import { RightMenuButton } from "./RightMenuButton";
 import { RightMenuBody } from "./RightMenuBody";
 import { LogEventTable } from "./LogEventTable";
-import { ScenarioEventCard } from "./ScenarioEvent";
+import { ScenarioEventCard } from "./ScenarioEventCard";
 import { useScenarioEvents } from "../../../resources/events/scenarioEvents";
+import { View, Location } from "../../../resources/locationUtils";
 
 const StyledRightMenuWrapper = styled(Box)`
   position: absolute;
@@ -14,13 +15,19 @@ const StyledRightMenuWrapper = styled(Box)`
   z-index: 10;
 `;
 
-type Menus = "events" | "log" | null;
+export type Menus = "events" | "log" | null;
 
 interface Props {
   events: LogEvent[];
+  setActiveView: (view: View, location?: Location) => void;
+  setActiveLocation: (location: Location | null) => void;
 }
 
-export const RightMenu: React.FC<Props> = ({ events }) => {
+export const RightMenu: React.FC<Props> = ({
+  events,
+  setActiveView,
+  setActiveLocation,
+}) => {
   const [open, setOpen] = useState<Menus>();
   const scenarioEvents = useScenarioEvents();
 
@@ -31,7 +38,7 @@ export const RightMenu: React.FC<Props> = ({ events }) => {
   return (
     <ClickAwayListener onClickAway={() => setOpen(null)}>
       <StyledRightMenuWrapper>
-        <Stack direction="row-reverse" gap="12px">
+        <Stack direction="row-reverse" gap="12px" pb="12px">
           <RightMenuButton
             label="Log"
             setOpen={() => handleButtonClick("log")}
@@ -49,7 +56,12 @@ export const RightMenu: React.FC<Props> = ({ events }) => {
         {open === "events" && (
           <RightMenuBody>
             {scenarioEvents.map((event) => (
-              <ScenarioEventCard event={event}></ScenarioEventCard>
+              <ScenarioEventCard
+                key={event.title}
+                event={event}
+                setOpen={setOpen}
+                setActiveView={setActiveView}
+              />
             ))}
           </RightMenuBody>
         )}

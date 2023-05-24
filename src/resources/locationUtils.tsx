@@ -1,4 +1,4 @@
-export type View = "respiteSystem" | "respiteSurface";
+export type View = "minosSystem" | "respiteSurface";
 
 export interface Location {
   top: string;

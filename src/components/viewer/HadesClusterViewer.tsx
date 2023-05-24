@@ -14,7 +14,7 @@ const StyledViewer = styled.div`
 `;
 
 export const HadesClusterViewer: React.FC = () => {
-  const [activeView, setActiveView] = useState<View>("respiteSystem");
+  const [activeView, setActiveView] = useState<View>("minosSystem");
   const [activeLocation, setActiveLocation] = useState<Location | null>(null);
 
   const events = getLogEvents;
@@ -25,14 +25,14 @@ export const HadesClusterViewer: React.FC = () => {
     return getCurrentSituation(celestialLocations, events);
   }, [activeView, events]);
 
-  const handleViewChange = (view: View) => {
-    setActiveLocation(null);
+  const handleViewChange = (view: View, location?: Location) => {
+    setActiveLocation(location || null);
     setActiveView(view);
   };
 
   return (
     <StyledViewer>
-      {activeView === "respiteSystem" ? <MinosSystem /> : <RespiteSurface />}
+      {activeView === "minosSystem" ? <MinosSystem /> : <RespiteSurface />}
 
       <Overlay
         events={events}

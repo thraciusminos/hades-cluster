@@ -1,4 +1,4 @@
-import { Sector } from "./locationUtils";
+import { Sector, View } from "./locationUtils";
 
 export interface Participant {
   side: number;
@@ -21,7 +21,10 @@ export interface ScenarioEvent {
   title: string;
   bannerImg?: React.ReactNode;
   description: string;
+  description2?: string;
   endImages?: React.ReactNode;
+  view?: View;
+  location?: string;
 }
 
 const updateLocFactions = (

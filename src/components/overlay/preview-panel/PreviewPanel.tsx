@@ -157,7 +157,7 @@ export const PreviewPanel: React.FC<Props> = ({
               >
                 {align === "left" && "<<< "}
                 {"CLOSE"}
-                {align === "right" && "<<< "}
+                {align === "right" && " >>>"}
               </Button>
             ) : (
               <Button
