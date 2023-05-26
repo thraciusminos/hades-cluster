@@ -501,47 +501,10 @@ export const respiteSurfaceLocations: { [id: string]: Sector } = {
     ],
     sites: [
       {
-        top: "51.00",
+        top: "45.00",
         left: "60.00",
         name: "Walkertown",
-        description:
-          "",
-        category: "site",
-        factions: [
-          {
-            name: "Church of Dawn",
-            control: 30,
-          },
-          {
-            name: "Imperium",
-            control: 20,
-          },
-        ],
-      },
-      {
-        top: "61.00",
-        left: "65.00",
-        name: "St. Charles Parish",
-        description:
-          "",
-        category: "site",
-        factions: [
-          {
-            name: "Church of Dawn",
-            control: 30,
-          },
-          {
-            name: "Imperium",
-            control: 20,
-          },
-        ],
-      },
-      {
-        top: "57.00",
-        left: "77.00",
-        name: "Davis Plantation",
-        description:
-          "",
+        description: "",
         category: "site",
         factions: [
           {
@@ -556,10 +519,43 @@ export const respiteSurfaceLocations: { [id: string]: Sector } = {
       },
       {
         top: "70.00",
-        left: "63.00",
+        left: "64.00",
         name: "Ponte du Comardelle",
-        description:
-          "",
+        description: "",
+        category: "site",
+        factions: [
+          {
+            name: "Church of Dawn",
+            control: 30,
+          },
+          {
+            name: "Imperium",
+            control: 20,
+          },
+        ],
+      },
+      {
+        top: "57.00",
+        left: "66.00",
+        name: "St. Charles Parish",
+        description: "",
+        category: "site",
+        factions: [
+          {
+            name: "Church of Dawn",
+            control: 30,
+          },
+          {
+            name: "Imperium",
+            control: 20,
+          },
+        ],
+      },
+      {
+        top: "51.00",
+        left: "78.00",
+        name: "Davis Plantation",
+        description: "",
         category: "site",
         factions: [
           {

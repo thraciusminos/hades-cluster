@@ -1,5 +1,14 @@
 export type View = "minosSystem" | "respiteSurface";
 
+export const getActiveViewTitle = (activeView: View) => {
+  if (activeView === "minosSystem") {
+    return "Minos System";
+  }
+  if (activeView === "respiteSurface") {
+    return "Respite Surface Command";
+  }
+};
+
 export interface Location {
   top: string;
   left: string;

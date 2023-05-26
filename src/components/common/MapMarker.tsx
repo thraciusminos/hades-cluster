@@ -113,7 +113,7 @@ interface Props {
   style?: React.CSSProperties;
 }
 
-export const LocationMarker: React.FC<Props> = ({
+export const MapMarker: React.FC<Props> = ({
   location,
   isSelected,
   setSelectedLoc,

@@ -1,19 +1,20 @@
-import React, { useState } from "react";
-import { Box, Button, ClickAwayListener, Typography } from "@mui/material";
+import { useState } from "react";
 import styled from "styled-components";
-import { RightMenu } from "./right-menu/RightMenu";
-import { LogEvent } from "../../resources/eventUtils";
+import { Box, Button, ClickAwayListener, Typography } from "@mui/material";
+import { ArrowBackIosNew } from "@mui/icons-material";
+import { LogEvent } from "@resources/eventUtils";
 import {
   Celestial,
+  getActiveViewTitle,
   Location,
   Sector,
   Site,
   View,
-} from "../../resources/locationUtils";
+} from "@resources/locationUtils";
+import { MapMarker } from "../common/MapMarker";
+import { RightMenu } from "./right-menu/RightMenu";
 import { PreviewPanel } from "./preview-panel/PreviewPanel";
-import { LocationMarker } from "../common/LocationMarker";
-import { ArrowBackIosNew } from "@mui/icons-material";
-import { Expand } from "./Expand";
+import { Expand } from "./preview-panel/Expand";
 
 const StyledSurfaceContainer = styled.div`
   height: 100%;
@@ -23,15 +24,6 @@ const StyledSurfaceContainer = styled.div`
     height: 100%;
   }
 `;
-
-const getActiveViewTitle = (activeView: View) => {
-  if (activeView === "minosSystem") {
-    return "Minos System";
-  }
-  if (activeView === "respiteSurface") {
-    return "Respite Surface Command";
-  }
-};
 
 interface Props {
   events: LogEvent[];
@@ -51,6 +43,7 @@ export const Overlay: React.FC<Props> = ({
   setActiveLocation,
 }) => {
   const [expand, setExpand] = useState<boolean>(false);
+  const [activeSite, setActiveSite] = useState<Sector | Site | null>(null);
 
   const getPanelAlignment = (targetLocation: Location) =>
     Number(targetLocation.left) > 50 ? "left" : "right";
@@ -61,6 +54,19 @@ export const Overlay: React.FC<Props> = ({
     } else {
       setActiveLocation(targetLocation);
     }
+  };
+
+  const handleSiteClick = (targetSite: Sector | Site | null) => {
+    if (targetSite?.name === activeSite?.name) {
+      setActiveSite(null);
+    } else {
+      setActiveSite(targetSite);
+    }
+  };
+
+  const handleAwayClick = () => {
+    setActiveLocation(null);
+    setActiveSite(null);
   };
 
   return (
@@ -114,30 +120,32 @@ export const Overlay: React.FC<Props> = ({
         setActiveLocation={setActiveLocation}
       />
 
-      <ClickAwayListener onClickAway={() => setActiveLocation(null)}>
+      <ClickAwayListener onClickAway={() => handleAwayClick()}>
         <div className="locationLayer">
           {activeLocation && (
             <PreviewPanel
-              activeLocation={activeLocation}
-              setActiveView={setActiveView}
-              setActiveLocation={handleLocClick}
-              expand={expand}
-              setExpand={setExpand}
               align={getPanelAlignment(activeLocation)}
+              expand={expand}
+              activeSite={activeSite}
+              activeLocation={activeLocation}
+              setExpand={setExpand}
+              setActiveView={setActiveView}
+              setActiveSite={handleSiteClick}
             />
           )}
 
           {activeLocation && expand && (
             <Expand
+              activeSite={activeSite}
               activeLocation={activeLocation}
-              setActiveLocation={handleLocClick}
+              setActiveSite={handleSiteClick}
               previewAlignment={getPanelAlignment(activeLocation)}
             />
           )}
 
           {Object.values(situation).map((location) => {
             return (
-              <LocationMarker
+              <MapMarker
                 key={location.name}
                 location={location}
                 isSelected={location.name === activeLocation?.name}
