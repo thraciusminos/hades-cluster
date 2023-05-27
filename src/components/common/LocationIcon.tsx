@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 
 import locIcon from "../../assets/icons/Maps-Define-Location-icon-green.png";
-import { Location } from "../../resources/locationUtils";
+import { Location, Site } from "../../resources/locationUtils";
 import { LocationTooltip } from "./LocationTooltip";
 import {
   Apartment,
@@ -89,9 +89,9 @@ const StyledLocContainer = styled.div<StyledProps>`
 `;
 
 interface Props {
-  location: Location;
+  location: Site;
   isSelected: boolean;
-  setSelectedLoc: (location: Location | null) => void;
+  setSelectedLoc: (location: Site | null) => void;
   style?: React.CSSProperties;
 }
 
@@ -128,8 +128,6 @@ export const LocationIcon: React.FC<Props> = ({
         );
     }
   };
-
-  
 
   return (
     <StyledLocContainer

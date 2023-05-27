@@ -1,7 +1,6 @@
 import { Grid, styled, Typography } from "@mui/material";
-import React from "react";
+import { Site } from "@resources/locationUtils";
 import { LocationIcon } from "../../common/LocationIcon";
-import { Sector, Site } from "@resources/locationUtils";
 
 const StyledGrid = styled(Grid)`
   .locationColumn {
@@ -12,33 +11,32 @@ const StyledGrid = styled(Grid)`
 `;
 
 interface Props {
-  activeSite: Sector | Site | null;
-  activeLocation: Sector;
-  setActiveSite: (target: Sector | Site | null) => void;
+  sites: Site[];
+  activeSite: Site | null;
+  setActiveSite: (target: Site | null) => void;
 }
 
-export const PreviewPanelLocations: React.FC<Props> = ({
+export const PreviewPanelSites: React.FC<Props> = ({
+  sites,
   activeSite,
-  activeLocation,
   setActiveSite,
 }) => {
-  const locations = activeLocation.sites || [];
-  const getColumnWidth = () => Math.floor(12 / locations.length);
+  const getColumnWidth = () => Math.floor(12 / sites.length);
 
   return (
     <StyledGrid container>
-      {locations &&
-        locations.map((location) => {
+      {sites &&
+        sites.map((site) => {
           return (
             <Grid
-              key={location.name}
+              key={site.name}
               item
               xs={getColumnWidth()}
               className="locationColumn"
             >
               <LocationIcon
-                location={location}
-                isSelected={location.name === activeSite?.name}
+                location={site}
+                isSelected={site.name === activeSite?.name}
                 setSelectedLoc={setActiveSite}
               />
               <Typography
@@ -46,10 +44,10 @@ export const PreviewPanelLocations: React.FC<Props> = ({
                 fontWeight="bold"
                 textAlign="center"
               >
-                {location.name}
+                {site.name}
               </Typography>
               <Typography className="locationDescription" textAlign="center">
-                {location.factions[0].name}
+                {site.controllingFaction || "Contested"}
               </Typography>
             </Grid>
           );

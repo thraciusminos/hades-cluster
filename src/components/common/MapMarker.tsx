@@ -2,7 +2,12 @@ import React from "react";
 import styled from "styled-components";
 
 import locIcon from "../../assets/icons/Maps-Define-Location-icon-green.png";
-import { Location } from "../../resources/locationUtils";
+import {
+  Celestial,
+  Location,
+  Sector,
+  Site,
+} from "../../resources/locationUtils";
 import { LocationTooltip } from "./LocationTooltip";
 import {
   Apartment,
@@ -107,16 +112,16 @@ const StyledLocContainer = styled.div<StyledProps>`
 `;
 
 interface Props {
-  location: Location;
-  isSelected: boolean;
-  setSelectedLoc: (location: Location | null) => void;
+  location: Celestial | Sector | Site;
+  isSelected?: boolean;
+  onClick: () => void;
   style?: React.CSSProperties;
 }
 
 export const MapMarker: React.FC<Props> = ({
   location,
   isSelected,
-  setSelectedLoc,
+  onClick,
   style,
 }) => {
   const getMarkerIcon = (location: Location) => {
@@ -151,8 +156,8 @@ export const MapMarker: React.FC<Props> = ({
     <StyledLocContainer
       top={location.top}
       left={location.left}
-      isSelected={isSelected}
-      onClick={() => setSelectedLoc(location)}
+      isSelected={isSelected || false}
+      onClick={() => onClick()}
       style={style}
     >
       <LocationTooltip location={location}>

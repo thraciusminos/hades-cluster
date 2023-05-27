@@ -1,5 +1,3 @@
-import React from "react";
-
 import respiteSystem from "../../assets/respite-system-background.jpg";
 
 interface Props {}

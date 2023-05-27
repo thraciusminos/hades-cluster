@@ -8,8 +8,9 @@ import {
   View,
 } from "@resources/locationUtils";
 import { Image } from "@app/components/common/Image";
-import { PreviewPanelLocations } from "./PreviewPanelLocations";
+import { PreviewPanelSites } from "./PreviewPanelSites";
 import { PreviewExpandButton } from "./PreviewExpandButton";
+import { respiteSites } from "@app/resources/control-initial/respiteSites";
 
 interface StyledProps {
   align: "left" | "right";
@@ -99,16 +100,18 @@ const getPanelImages = (location: Location) => {
 
 interface Props {
   align: "left" | "right";
+  sites: Site[];
   expand: boolean;
-  activeSite: Sector | Site | null;
-  activeLocation: Celestial | Sector | Site | Location;
+  activeSite: Site | null;
+  activeLocation: Celestial | Sector;
   setExpand: (newValue: boolean) => void;
-  setActiveSite: (site: Sector | Site | null) => void;
+  setActiveSite: (site: Site | null) => void;
   setActiveView: (view: View) => void;
 }
 
 export const PreviewPanel: React.FC<Props> = ({
   align,
+  sites,
   expand,
   activeSite,
   activeLocation,
@@ -153,9 +156,9 @@ export const PreviewPanel: React.FC<Props> = ({
             {/* <FactionControlBars factions={location.factions} /> */}
 
             {"sites" in activeLocation && (
-              <PreviewPanelLocations
+              <PreviewPanelSites
+                sites={sites}
                 activeSite={activeSite}
-                activeLocation={activeLocation}
                 setActiveSite={setActiveSite}
               />
             )}

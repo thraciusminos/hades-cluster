@@ -1,7 +1,11 @@
 import { Box, styled } from "@mui/material";
+import { Celestial, ControlZone, Sector, Site } from "@resources/locationUtils";
+import { factions } from "@resources/factions/factions";
 import { Image } from "@app/components/common/Image";
-import { Celestial, Location, Sector, Site } from "@resources/locationUtils";
 import { MapMarker } from "../../common/MapMarker";
+import { getExpandImages } from "./ExpandUtils";
+import { ExpandFactionsPanel } from "./ExpandFactionsPanel";
+import { DavisZones } from "./davis-plantation/DavisZones";
 
 interface StyledProps {
   align: "left" | "right";
@@ -74,9 +78,36 @@ const StyledExpandWrapper = styled(Box)<StyledProps>`
       bottom: ${props.theme.spacing(5)};
     }
 
-    .mapContainer {
+    .expandContent {
       width: 100%;
       height: 100%;
+    }
+
+    .siteContent {
+      width: 100%;
+      height: 100%;
+    }
+
+    .siteBgContainer {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 30%;
+      bottom: 0;
+    }
+
+    .siteDescription {
+      position: absolute;
+      top: 0;
+      left: 70%;
+      right: 0;
+      bottom: 0;
+      overflow-Y: auto;
+      margin-left: ${props.theme.spacing(2)};
+      padding: ${props.theme.spacing(2)} ${props.theme.spacing(1)};
+      border-radius: ${props.theme.spacing(0.5)};
+      background-color: ${props.theme.palette.grey[900]};
+      color: ${props.theme.palette.primary.dark};
     }
 
     .mapImage {
@@ -85,69 +116,64 @@ const StyledExpandWrapper = styled(Box)<StyledProps>`
   }`}
 `;
 
-const getExpandImages = (location: Location) => {
-  var map;
-  var banner1;
-  var banner2;
-  var banner3;
-
-  switch (location.name) {
-    case "Ghoulshead":
-      map = <Image src="ghoulsheadMap" className="mapImage" />;
-      banner1 = <Image src="ghoulsheadFavela" className="bannerImage" />;
-      banner2 = <Image src="ghoulsheadWetland1" className="bannerImage" />;
-      banner3 = <Image src="ghoulsheadWetland2" className="bannerImage" />;
-      break;
-    case "Garrote":
-      map = <Image src="ghoulsheadMap" className="mapImage" />;
-      banner1 = <Image src="garrote1" className="bannerImage" />;
-      banner2 = <Image src="garrote2" className="bannerImage" />;
-      banner3 = <Image src="garroteTrucks" className="bannerImage" />;
-      break;
-    default:
-      map = <div className="mapImage" />;
-      banner1 = <div className="bannerImage" />;
-      banner2 = <div className="bannerImage" />;
-      banner3 = <div className="bannerImage" />;
-  }
-
-  return { map: map, banners: [banner1, banner2, banner3] };
-};
-
 interface Props {
-  activeSite: Sector | Site | null;
-  activeLocation: Celestial | Sector | Site | Location;
-  setActiveSite: (site: Sector | Site | null) => void;
+  sites: Site[];
+  controlZones: { [x: string]: ControlZone } | undefined;
+  activeSite: Site | null;
+  activeLocation: Celestial | Sector;
+  setActiveSite: (site: Site | null) => void;
   previewAlignment: "left" | "right";
 }
 
 export const Expand: React.FC<Props> = ({
+  sites,
+  controlZones,
   activeSite,
   activeLocation,
   setActiveSite,
   previewAlignment,
 }) => {
   const expandImages = getExpandImages(activeLocation);
+  const siteFactions = activeSite?.factions.map(
+    (factionId) => factions[factionId]
+  );
+
+  const siteZones: Record<string, ControlZone> = {};
+  if (controlZones) {
+    activeSite?.controlZones?.forEach(
+      (zoneId) => (siteZones[zoneId] = controlZones[zoneId])
+    );
+  }
+
   return (
     <StyledExpandWrapper align={previewAlignment}>
       <Box className="locationPanel">
         <Box className="bannersContainer">{expandImages?.banners}</Box>
 
         <Box className="expandBody">
-          <Box className="mapContainer">
-            {expandImages.map}
-            {"sites" in activeLocation &&
-              activeLocation?.sites?.map((location) => {
-                return (
-                  <MapMarker
-                    key={location.name}
-                    location={location}
-                    isSelected={location.name === activeSite?.name}
-                    setSelectedLoc={setActiveSite}
-                  />
-                );
-              })}
-          </Box>
+          {activeSite ? (
+            <Box className="siteContent">
+              <Box className="siteBgContainer">
+                <DavisZones zones={siteZones} />
+                <Image src="davisSite" className="mapImage" />
+              </Box>
+              <ExpandFactionsPanel factions={siteFactions} />
+            </Box>
+          ) : (
+            <Box className="expandContent">
+              {expandImages.map}
+              {sites &&
+                sites?.map((site) => {
+                  return (
+                    <MapMarker
+                      key={site.name}
+                      location={site}
+                      onClick={() => setActiveSite(site)}
+                    />
+                  );
+                })}
+            </Box>
+          )}
         </Box>
       </Box>
     </StyledExpandWrapper>

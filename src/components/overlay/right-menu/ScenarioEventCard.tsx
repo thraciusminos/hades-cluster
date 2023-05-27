@@ -1,7 +1,7 @@
 import { styled, Paper, Typography, Box, Button } from "@mui/material";
 import { ScenarioEvent } from "../../../resources/eventUtils";
 import { View, Location } from "../../../resources/locationUtils";
-import { respiteSurfaceLocations } from "../../../resources/control-initial/respiteSurfaceLocations";
+import { respiteSectors } from "../../../resources/control-initial/respiteSectors";
 import { Menus } from "./RightMenu";
 
 const StyledEvent = styled(Paper)`
@@ -47,7 +47,7 @@ export const ScenarioEventCard: React.FC<Props> = ({
 }) => {
   const handleOpenEventLocationClick = () => {
     if (event.view && event.location) {
-      setActiveView(event.view, respiteSurfaceLocations[event.location]);
+      setActiveView(event.view, respiteSectors[event.location]);
       setOpen(null);
     }
   };

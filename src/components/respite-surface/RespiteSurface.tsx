@@ -1,6 +1,3 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-
 import respiteSurface from "../../assets/respite-holo-display-sharp.jpg";
 import { RespiteSectors } from "./respite-sectors/RespiteSectors";
 

@@ -1,4 +1,4 @@
-import { Sector, View } from "./locationUtils";
+import { ControlZone, Site, View } from "./locationUtils";
 
 export interface Participant {
   side: number;
@@ -27,7 +27,7 @@ export interface ScenarioEvent {
   location?: string;
 }
 
-const updateLocFactions = (
+const getUpdatedZoneFactions = (
   factions: { name: string; control: number }[],
   impact: EventImpact
 ) => {
@@ -42,7 +42,7 @@ const updateLocFactions = (
 };
 
 export const getCurrentSituation = (
-  initialSituation: { [id: string]: Sector },
+  initialSituation: { [id: string]: ControlZone },
   events: LogEvent[]
 ) => {
   var currentSituation = initialSituation;
@@ -52,13 +52,68 @@ export const getCurrentSituation = (
     if (loc) {
       currentSituation[event.impact.location] = {
         ...loc,
-        factions: updateLocFactions(loc.factions || [], event.impact),
+        factions: getUpdatedZoneFactions(loc.factions || [], event.impact),
       };
     } else {
       console.log("Events: Location not found");
     }
   });
   return currentSituation;
+};
+
+export const getUpdatedSiteStatus = (
+  sites: { [id: string]: Site },
+  updatedControlZones: {
+    [id: string]: ControlZone;
+  }
+): { [id: string]: Site } => {
+  var updatedSites = sites;
+
+  // for each site,
+  // find all unique factions
+  // add under factions
+
+  // count instances of faction having 3 control in a zone
+  // zone control 0-3
+  // only one faction should have control level 3
+  // who has most is controllingFaction
+  // add under controllingFaction
+
+  Object.keys(sites).forEach((siteId) => {
+    var newFactions = new Set<string>();
+    const controlCounts: Record<string, number> = {};
+
+    const controlZoneIds = sites[siteId].controlZones;
+    controlZoneIds?.forEach((zoneId) => {
+      const zone = updatedControlZones[zoneId];
+      zone.factions.forEach((faction) => {
+        // find all unique factions
+        newFactions.add(faction.name);
+        // count instances of faction having 3 control in a zone
+        if (faction.control === 3) {
+          controlCounts[faction.name] = controlCounts[faction.name]
+            ? controlCounts[faction.name] + 1
+            : 1;
+        }
+      });
+    });
+
+    // who has most is controllingFaction
+    const highestCount = Math.max(...Object.values(controlCounts));
+    const controllingFaction = Object.keys(controlCounts).find(
+      (factionId) => controlCounts[factionId] === highestCount
+    );
+
+    // add under factions
+    // add under controllingFaction
+    updatedSites[siteId] = {
+      ...sites[siteId],
+      factions: Array.from(newFactions),
+      controllingFaction: controllingFaction,
+    };
+  });
+
+  return updatedSites;
 };
 
 export const getLogEvents: LogEvent[] = [

@@ -1,20 +1,22 @@
-import { useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import { Box, Button, ClickAwayListener, Typography } from "@mui/material";
 import { ArrowBackIosNew } from "@mui/icons-material";
 import { LogEvent } from "@resources/eventUtils";
 import {
-  Celestial,
   getActiveViewTitle,
+  useSectors,
   Location,
   Sector,
   Site,
   View,
+  ControlZone,
+  Celestial,
 } from "@resources/locationUtils";
 import { MapMarker } from "../common/MapMarker";
 import { RightMenu } from "./right-menu/RightMenu";
 import { PreviewPanel } from "./preview-panel/PreviewPanel";
-import { Expand } from "./preview-panel/Expand";
+import { Expand } from "./expand/Expand";
 
 const StyledSurfaceContainer = styled.div`
   height: 100%;
@@ -27,23 +29,33 @@ const StyledSurfaceContainer = styled.div`
 
 interface Props {
   events: LogEvent[];
-  situation: { [x: string]: Celestial | Sector | Site | Location };
+  sites: { [x: string]: Site } | undefined;
+  controlZones: { [x: string]: ControlZone } | undefined;
   activeView: View;
   setActiveView: (view: View, location?: Location) => void;
-  activeLocation: Location | null;
-  setActiveLocation: (location: Location | null) => void;
+  activeLocation: Celestial | Sector | null;
+  setActiveLocation: (location: Celestial | Sector | null) => void;
 }
 
 export const Overlay: React.FC<Props> = ({
   events,
-  situation,
+  sites,
+  controlZones,
   activeView,
   setActiveView,
   activeLocation,
   setActiveLocation,
 }) => {
   const [expand, setExpand] = useState<boolean>(false);
-  const [activeSite, setActiveSite] = useState<Sector | Site | null>(null);
+  const [activeSite, setActiveSite] = useState<Site | null>(null);
+  const sectors = useSectors(activeView);
+
+  const localSites =
+    activeLocation && sites
+      ? Object.values(sites).filter((site) =>
+          activeLocation.sites?.includes(site.name)
+        )
+      : [];
 
   const getPanelAlignment = (targetLocation: Location) =>
     Number(targetLocation.left) > 50 ? "left" : "right";
@@ -56,7 +68,7 @@ export const Overlay: React.FC<Props> = ({
     }
   };
 
-  const handleSiteClick = (targetSite: Sector | Site | null) => {
+  const handleSiteClick = (targetSite: Site | null) => {
     if (targetSite?.name === activeSite?.name) {
       setActiveSite(null);
     } else {
@@ -125,6 +137,7 @@ export const Overlay: React.FC<Props> = ({
           {activeLocation && (
             <PreviewPanel
               align={getPanelAlignment(activeLocation)}
+              sites={localSites}
               expand={expand}
               activeSite={activeSite}
               activeLocation={activeLocation}
@@ -136,6 +149,8 @@ export const Overlay: React.FC<Props> = ({
 
           {activeLocation && expand && (
             <Expand
+              sites={localSites}
+              controlZones={controlZones}
               activeSite={activeSite}
               activeLocation={activeLocation}
               setActiveSite={handleSiteClick}
@@ -143,13 +158,13 @@ export const Overlay: React.FC<Props> = ({
             />
           )}
 
-          {Object.values(situation).map((location) => {
+          {Object.values(sectors).map((location) => {
             return (
               <MapMarker
                 key={location.name}
                 location={location}
                 isSelected={location.name === activeLocation?.name}
-                setSelectedLoc={handleLocClick}
+                onClick={() => handleLocClick(location)}
               />
             );
           })}

@@ -5,6 +5,7 @@ export const theme = createTheme({
     primary: {
       light: "rgba(122, 235, 52, 100%)",
       main: "rgba(122, 235, 52, 93%)",
+      dark: "rgba(110,201,18,93%)",
     },
     background: {
       paper: "rgba(34,38,35,93%)",
