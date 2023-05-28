@@ -1,7 +1,7 @@
 import { styled, Paper, Typography, Box, Button } from "@mui/material";
-import { ScenarioEvent } from "../../../resources/eventUtils";
-import { View, Location } from "../../../resources/locationUtils";
-import { respiteSectors } from "../../../resources/control-initial/respiteSectors";
+import { ScenarioEvent } from "@resources/eventUtils";
+import { View, Celestial, Sector } from "@resources/locationUtils";
+import { respiteSectors } from "@resources/control-initial/respiteSectors";
 import { Menus } from "./RightMenu";
 
 const StyledEvent = styled(Paper)`
@@ -37,7 +37,7 @@ const getReadableTitle = (title?: string) => {
 interface Props {
   event: ScenarioEvent;
   setOpen: (value: Menus) => void;
-  setActiveView: (view: View, location?: Location) => void;
+  setActiveView: (view: View, location?: Celestial | Sector | null) => void;
 }
 
 export const ScenarioEventCard: React.FC<Props> = ({

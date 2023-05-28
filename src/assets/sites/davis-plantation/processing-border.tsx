@@ -1,9 +1,9 @@
-const DavisDigsiteBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
+const DavisProcessingBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
   props: React.SVGProps<SVGSVGElement>
 ) => {
   return (
     <svg
-      viewBox="107.451 154.343 129.252 166.15"
+      viewBox="102.71 78.671 194.929 364.51"
       preserveAspectRatio="none"
       className={props.className}
       style={props.style}
@@ -24,11 +24,11 @@ const DavisDigsiteBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
       <path
         fill={props.fill || "url(#diagonaldown)"}
         stroke={props.stroke || "rgba(255, 145, 15, 90%)"}
-        strokeWidth={props.strokeWidth || "4"}
-        d="M 165.21 157.343 L 183.566 168.269 L 189.248 215.472 L 216.346 231.643 L 234.703 234.266 L 230.332 266.608 L 189.685 288.899 L 161.713 319.493 L 125.874 306.381 L 111.451 218.531 L 124.563 173.514 L 165.21 157.343 Z"
+        strokeWidth={props.strokeWidth || "10"}
+        d="M 125.437 90.909 L 192.745 78.671 L 259.615 116.258 L 297.639 223.776 L 296.329 326.923 L 256.118 400.35 L 175.699 443.181 L 106.206 368.443 L 102.71 192.307 L 125.437 90.909 Z"
       ></path>
     </svg>
   );
 };
 
-export default DavisDigsiteBorder;
+export default DavisProcessingBorder;

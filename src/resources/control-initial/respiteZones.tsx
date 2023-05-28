@@ -7,8 +7,8 @@ export const respiteZones: { [id: string]: ControlZone } = {
     name: "Logging Camp",
     factions: [
       {
-        name: "Nightsong",
-        control: 3,
+        name: "The Davis Boys",
+        control: 2,
       },
     ],
   },
@@ -19,11 +19,100 @@ export const respiteZones: { [id: string]: ControlZone } = {
     factions: [
       {
         name: "The Davis Boys",
+        control: 3,
+      },
+    ],
+  },
+  "davis.processing": {
+    top: "31.70",
+    left: "04.70",
+    name: "Processing Plants",
+    factions: [
+      {
+        name: "The Davis Boys",
+        control: 3,
+      },
+    ],
+  },
+  "davis.habs-north": {
+    top: "31.70",
+    left: "04.70",
+    name: "Northern Habs",
+    factions: [
+      {
+        name: "The Davis Boys",
+        control: 3,
+      },
+      {
+        name: "Parishians",
+        control: 2,
+      },
+    ],
+  },
+  "davis.habs-east": {
+    top: "31.70",
+    left: "04.70",
+    name: "Eastern Habs",
+    factions: [
+      {
+        name: "The Davis Boys",
+        control: 2,
+      },
+      {
+        name: "Parishians",
+        control: 3,
+      },
+    ],
+  },
+  "davis.estate": {
+    top: "31.70",
+    left: "04.70",
+    name: "Davis Estate",
+    factions: [
+      {
+        name: "The Davis Boys",
+        control: 3,
+      },
+    ],
+  },
+  "davis.aquacology": {
+    top: "31.70",
+    left: "04.70",
+    name: "Aquacological Plant",
+    factions: [
+      {
+        name: "The Davis Boys",
+        control: 3,
+      },
+      {
+        name: "Parishians",
+        control: 1,
+      },
+    ],
+  },
+  "davis.salt-harvest": {
+    top: "31.70",
+    left: "04.70",
+    name: "Salt Harvest Plains",
+    factions: [
+      {
+        name: "The Davis Boys",
         control: 1,
       },
       {
-        name: "Nightsong",
-        control: 1,
+        name: "Parishians",
+        control: 3,
+      },
+    ],
+  },
+  "davis.checkpoint": {
+    top: "31.70",
+    left: "04.70",
+    name: "Dead Mans Ditch Checkpoint",
+    factions: [
+      {
+        name: "The Davis Boys",
+        control: 3,
       },
     ],
   },

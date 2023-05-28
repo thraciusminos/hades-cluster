@@ -6,6 +6,7 @@ import { MapMarker } from "../../common/MapMarker";
 import { getExpandImages } from "./ExpandUtils";
 import { ExpandFactionsPanel } from "./ExpandFactionsPanel";
 import { DavisZones } from "./davis-plantation/DavisZones";
+import { Construction } from "@mui/icons-material";
 
 interface StyledProps {
   align: "left" | "right";
@@ -152,13 +153,30 @@ export const Expand: React.FC<Props> = ({
 
         <Box className="expandBody">
           {activeSite ? (
-            <Box className="siteContent">
-              <Box className="siteBgContainer">
-                <DavisZones zones={siteZones} />
-                <Image src="davisSite" className="mapImage" />
+            activeSite.name === "Davis Plantation" ? (
+              <Box className="siteContent">
+                <Box className="siteBgContainer">
+                  <DavisZones zones={siteZones} />
+                  <Image src="davisSite" className="mapImage" />
+                </Box>
+                <ExpandFactionsPanel factions={siteFactions} />
               </Box>
-              <ExpandFactionsPanel factions={siteFactions} />
-            </Box>
+            ) : (
+              <Box
+                height="100%"
+                width="100%"
+                display="flex"
+                flexDirection="column"
+                justifyContent="center"
+                alignItems="center"
+                fontSize="36px"
+              >
+                <Construction
+                  sx={{ fontSize: "96px", paddingBottom: "16px" }}
+                />
+                Under construction!
+              </Box>
+            )
           ) : (
             <Box className="expandContent">
               {expandImages.map}

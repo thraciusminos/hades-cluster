@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { Box, ClickAwayListener, Stack, styled } from "@mui/material";
-import { LogEvent } from "../../../resources/eventUtils";
+import { LogEvent } from "@resources/eventUtils";
 import { RightMenuButton } from "./RightMenuButton";
 import { RightMenuBody } from "./RightMenuBody";
 import { LogEventTable } from "./LogEventTable";
 import { ScenarioEventCard } from "./ScenarioEventCard";
-import { useScenarioEvents } from "../../../resources/events/scenarioEvents";
-import { View, Location } from "../../../resources/locationUtils";
+import { useScenarioEvents } from "@resources/events/scenarioEvents";
+import { View, Location, Celestial, Sector } from "@resources/locationUtils";
 
 const StyledRightMenuWrapper = styled(Box)`
   position: absolute;
@@ -19,7 +19,7 @@ export type Menus = "events" | "log" | null;
 
 interface Props {
   events: LogEvent[];
-  setActiveView: (view: View, location?: Location) => void;
+  setActiveView: (view: View, location?: Celestial | Sector | null) => void;
   setActiveLocation: (location: Location | null) => void;
 }
 

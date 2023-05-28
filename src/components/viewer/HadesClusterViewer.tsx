@@ -1,13 +1,13 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import styled from "styled-components";
 import {
-  getCurrentSituation,
+  getZoneStates,
   getLogEvents,
   getUpdatedSiteStatus,
 } from "@resources/eventUtils";
 import { respiteZones } from "@resources/control-initial/respiteZones";
 import { respiteSites } from "@resources/control-initial/respiteSites";
-import { Celestial, Location, Sector, View } from "@resources/locationUtils";
+import { Celestial, Sector, View } from "@resources/locationUtils";
 import { RespiteSurface } from "../respite-surface/RespiteSurface";
 import { MinosSystem } from "../minos-system/MinosSystem";
 import { Overlay } from "../overlay/Overlay";
@@ -26,18 +26,24 @@ export const HadesClusterViewer: React.FC = () => {
   const events = getLogEvents;
   const updatedLocations = useMemo(() => {
     if (activeView === "respiteSurface") {
-      const updatedZones = getCurrentSituation(respiteZones, events);
+      const updatedZones = getZoneStates(respiteZones, events);
       const updatedSites = getUpdatedSiteStatus(respiteSites, updatedZones);
-      console.log("Viewer: updatedData:", updatedZones, updatedSites);
       return { updatedZones, updatedSites };
     }
     return { respiteZones, respiteSites };
   }, [activeView, events]);
 
-  const handleViewChange = (view: View, location?: Location) => {
+  const handleViewChange = (
+    view: View,
+    location?: Celestial | Sector | null
+  ) => {
     setActiveLocation(location || null);
     setActiveView(view);
   };
+
+  useEffect(() => {
+    console.log("activeLoc", activeLocation);
+  }, [activeLocation]);
 
   return (
     <StyledViewer>

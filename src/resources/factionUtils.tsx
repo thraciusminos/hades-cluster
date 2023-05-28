@@ -1,5 +1,6 @@
 import {
   AlignHorizontalCenter,
+  Flare,
   LocalPolice,
   QuestionMark,
 } from "@mui/icons-material";
@@ -12,7 +13,8 @@ export type FactionIcons =
   | "militia"
   | "renegade"
   | "tribal"
-  | "cult";
+  | "cult"
+  | "civilian";
 
 export interface Faction {
   name: string;
@@ -29,6 +31,8 @@ export const getFactionIcon = (icon: FactionIcons | undefined) => {
       return <LocalPolice />;
     case "tribal":
       return <AlignHorizontalCenter />;
+    case "cult":
+      return <Flare />;
     default:
       return <QuestionMark />;
   }

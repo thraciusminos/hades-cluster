@@ -95,6 +95,16 @@ export const respiteSites: { [id: string]: Site } = {
     description: "",
     category: "site",
     factions: [],
-    controlZones: ["davis.logging", "davis.digsite"],
+    controlZones: [
+      "davis.logging",
+      "davis.digsite",
+      "davis.processing",
+      "davis.habs-north",
+      "davis.habs-east",
+      "davis.estate",
+      "davis.aquacology",
+      "davis.salt-harvest",
+      "davis.checkpoint",
+    ],
   },
 };

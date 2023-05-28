@@ -16,7 +16,7 @@ export const ExpandFactionsPanel: React.FC<Props> = ({ factions }) => {
       {factions ? (
         Object.values(factions).map((faction) => (
           <Stack key={faction.name} spacing={1}>
-            <Box display="flex" flexDirection="row">
+            <Box display="flex" flexDirection="row" color={faction.color}>
               {getFactionIcon(faction.icon)}
               <Typography fontWeight="bold">{faction.name}</Typography>
             </Box>

@@ -22,15 +22,15 @@ export const getExpandImages = (location: Location) => {
       break;
     case "Garrote":
       map = <Image src="ghoulsheadMap" className="mapImage" />;
-      banner1 = <Image src="garrote1" className="bannerImage" />;
-      banner2 = <Image src="garrote2" className="bannerImage" />;
-      banner3 = <Image src="garroteTrucks" className="bannerImage" />;
+      banner1 = <Image src="garrote1" className="bannerImage" key="1" />;
+      banner2 = <Image src="garrote2" className="bannerImage" key="2" />;
+      banner3 = <Image src="garroteTrucks" className="bannerImage" key="3"/>;
       break;
     default:
       map = <div className="mapImage" />;
-      banner1 = <div className="bannerImage" />;
-      banner2 = <div className="bannerImage" />;
-      banner3 = <div className="bannerImage" />;
+      banner1 = <div className="bannerImage" key="1"/>;
+      banner2 = <div className="bannerImage" key="2"/>;
+      banner3 = <div className="bannerImage" key="3"/>;
   }
 
   return { map: map, banners: [banner1, banner2, banner3] };

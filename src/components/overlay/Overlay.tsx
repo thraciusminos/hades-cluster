@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useState } from "react";
 import styled from "styled-components";
 import { Box, Button, ClickAwayListener, Typography } from "@mui/material";
 import { ArrowBackIosNew } from "@mui/icons-material";
@@ -32,7 +32,7 @@ interface Props {
   sites: { [x: string]: Site } | undefined;
   controlZones: { [x: string]: ControlZone } | undefined;
   activeView: View;
-  setActiveView: (view: View, location?: Location) => void;
+  setActiveView: (view: View, location?: Celestial | Sector | null) => void;
   activeLocation: Celestial | Sector | null;
   setActiveLocation: (location: Celestial | Sector | null) => void;
 }
@@ -60,7 +60,7 @@ export const Overlay: React.FC<Props> = ({
   const getPanelAlignment = (targetLocation: Location) =>
     Number(targetLocation.left) > 50 ? "left" : "right";
 
-  const handleLocClick = (targetLocation: Location | null) => {
+  const handleLocClick = (targetLocation: Celestial | Sector | null) => {
     if (targetLocation?.name === activeLocation?.name) {
       setActiveLocation(null);
     } else {
@@ -72,6 +72,7 @@ export const Overlay: React.FC<Props> = ({
     if (targetSite?.name === activeSite?.name) {
       setActiveSite(null);
     } else {
+      setExpand(true);
       setActiveSite(targetSite);
     }
   };

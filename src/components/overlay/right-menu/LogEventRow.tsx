@@ -31,11 +31,13 @@ export const LogEventRow: React.FC<Props> = ({ event }) => {
           </TableCell>
         );
       })}
-      <TableCell className="eventRowLabel">{event.impact.location}</TableCell>
-      <TableCell className="eventRowLabel">
-        {event.impact.faction} {event.impact.delta > 0 ? "+" : ""}
-        {event.impact.delta}
-      </TableCell>
+      <TableCell className="eventRowLabel">{event.location}</TableCell>
+      {event.impacts.map((impact) => (
+        <TableCell className="eventRowLabel">
+          {impact.faction} {impact.delta > 0 ? "+" : ""}
+          {impact.delta}
+        </TableCell>
+      ))}
     </StyledEventRow>
   );
 };
