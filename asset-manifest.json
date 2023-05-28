@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/hades-cluster/static/css/main.b33bb44c.css",
-    "main.js": "/hades-cluster/static/js/main.9e5063fa.js",
+    "main.css": "/hades-cluster/static/css/main.0d861b9a.css",
+    "main.js": "/hades-cluster/static/js/main.049f557f.js",
     "static/js/787.a580566c.chunk.js": "/hades-cluster/static/js/787.a580566c.chunk.js",
     "static/media/ghoulshead-wetland-2.png": "/hades-cluster/static/media/ghoulshead-wetland-2.86e051455058a6f51de3.png",
     "static/media/ghoulshead-2.png": "/hades-cluster/static/media/ghoulshead-2.66d0684072f5bc77c9ea.png",
@@ -17,12 +17,12 @@
     "static/media/davis-plantation.jpeg": "/hades-cluster/static/media/davis-plantation.6daa44ed047f76aab7ab.jpeg",
     "static/media/ghoulshead-map.png": "/hades-cluster/static/media/ghoulshead-map.a0d5c28e35a1a0214765.png",
     "index.html": "/hades-cluster/index.html",
-    "main.b33bb44c.css.map": "/hades-cluster/static/css/main.b33bb44c.css.map",
-    "main.9e5063fa.js.map": "/hades-cluster/static/js/main.9e5063fa.js.map",
+    "main.0d861b9a.css.map": "/hades-cluster/static/css/main.0d861b9a.css.map",
+    "main.049f557f.js.map": "/hades-cluster/static/js/main.049f557f.js.map",
     "787.a580566c.chunk.js.map": "/hades-cluster/static/js/787.a580566c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.b33bb44c.css",
-    "static/js/main.9e5063fa.js"
+    "static/css/main.0d861b9a.css",
+    "static/js/main.049f557f.js"
   ]
 }
