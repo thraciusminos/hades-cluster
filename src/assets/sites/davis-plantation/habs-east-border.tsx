@@ -3,7 +3,7 @@ const DavisHabsEastBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
 ) => {
   return (
     <svg
-      viewBox="114.219 87.941 217.03 196.061"
+      viewBox="114.219 84.941 217.03 199.061"
       preserveAspectRatio="none"
       className={props.className}
       style={props.style}

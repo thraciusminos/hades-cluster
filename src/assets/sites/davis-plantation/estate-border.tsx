@@ -3,7 +3,7 @@ const DavisEstateBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
 ) => {
   return (
     <svg
-      viewBox="147.245 96.328 156.744 197.634"
+      viewBox="142.245 93.328 163.744 202.634"
       preserveAspectRatio="none"
       className={props.className}
       style={props.style}

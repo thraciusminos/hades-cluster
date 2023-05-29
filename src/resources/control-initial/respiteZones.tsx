@@ -26,7 +26,7 @@ export const respiteZones: { [id: string]: ControlZone } = {
   "davis.processing": {
     top: "31.70",
     left: "04.70",
-    name: "Processing Plants",
+    name: "Processing Plant",
     factions: [
       {
         name: "The Davis Boys",
@@ -37,7 +37,7 @@ export const respiteZones: { [id: string]: ControlZone } = {
   "davis.habs-north": {
     top: "31.70",
     left: "04.70",
-    name: "Northern Habs",
+    name: "North Habs",
     factions: [
       {
         name: "The Davis Boys",
@@ -52,7 +52,7 @@ export const respiteZones: { [id: string]: ControlZone } = {
   "davis.habs-east": {
     top: "31.70",
     left: "04.70",
-    name: "Eastern Habs",
+    name: "East Habs",
     factions: [
       {
         name: "The Davis Boys",

@@ -8,7 +8,7 @@ export const theme = createTheme({
       dark: "rgba(110,201,18,93%)",
     },
     background: {
-      paper: "rgba(34,38,35,93%)",
+      paper: "rgba(34, 38, 35, 93%)",
       default: "rgba(83, 200, 60, 1)",
     },
   },

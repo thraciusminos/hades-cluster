@@ -6,8 +6,8 @@ export const factions: { [id: string]: Faction } = {
     description:
       "Thugs and outcasts working as enforcers at the Davis Plantations. They make sure Davis brothers' word is the law in the area.",
     icon: "militia",
-    color: "rgba(15, 84, 20, 90%)",
-    bgColor: "rgba(15, 84, 20, 50%)",
+    color: "rgba(35, 75, 0, 90%)",
+    bgColor: "rgba(35, 75, 0, 50%)",
     meta: "Ghoulshead, Davis plantation, militia",
   },
   Nightsong: {
@@ -15,17 +15,33 @@ export const factions: { [id: string]: Faction } = {
     description:
       "The Marooned embraced their exile after Imperial authorities settled these areas. But Nightsong haven't forgotten what was once theirs, and want back what they are owed.",
     icon: "tribal",
-    color: "rgba(84, 62, 11, 90%)",
-    bgColor: "rgba(84, 62, 11, 50%)",
+    color: "rgba(91, 55, 10, 90%)",
+    bgColor: "rgba(91, 55, 10, 50%)",
     meta: "Ghoulshead, Davis plantation, Marooned, tribal",
   },
   Parishians: {
     name: "Parishians",
     description:
       "Father Ibrahim Dayn bestows many with a glimmer of light in Ghoulshead, where little hope can be normally be found. Thus, they are ubiquitous in the communities of the Bayou.",
-    icon: "tribal",
+    icon: "cult",
     color: "rgba(212, 201, 51, 90%)",
     bgColor: "rgba(212, 201, 51, 50%)",
     meta: "Ghoulshead, Davis plantation, Ibrahims Flock, tribal",
+  },
+  Imperium: {
+    name: "Imperium",
+    description: "",
+    icon: "imperial",
+    color: "rgba(91, 10, 87, 90%)",
+    bgColor: "rgba(91, 10, 87, 50%)",
+    meta: "Imperium",
+  },
+  "RDF": {
+    name: "Respitean Defence Forces",
+    description: "",
+    icon: "imperial",
+    color: "rgba(10, 46, 91, 90%)",
+    bgColor: "rgba(10, 46, 91, 50%)",
+    meta: "Imperium",
   },
 };

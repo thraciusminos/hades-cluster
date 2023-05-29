@@ -3,7 +3,7 @@ const DavisAquacologyBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
 ) => {
   return (
     <svg
-      viewBox="182.893 94.232 154.647 194.488"
+      viewBox="179.893 90.232 159.647 200.488"
       preserveAspectRatio="none"
       className={props.className}
       style={props.style}

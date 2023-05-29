@@ -1,6 +1,7 @@
 import { Box, styled, Tooltip } from "@mui/material";
 import { ControlZone } from "@resources/locationUtils";
 import { factions } from "@resources/factions/factions";
+import { ZoneTooltip } from "@app/components/common/ZoneTooltip";
 import DavisDigsiteBorder from "@assets/sites/davis-plantation/digsite-border";
 import DavisLoggingBorder from "@assets/sites/davis-plantation/logging-border";
 import DavisProcessingBorder from "@app/assets/sites/davis-plantation/processing-border";
@@ -48,7 +49,7 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
 
   return (
     <StyledSectorsContainer>
-      <Tooltip title={"Logging"} placement="left-start" arrow open>
+      <ZoneTooltip zone={zones["davis.logging"]} placement="left-start">
         <Box
           sx={{
             top: "0.2%",
@@ -64,9 +65,9 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
             fill={loggingController?.bgColor}
           />
         </Box>
-      </Tooltip>
+      </ZoneTooltip>
 
-      <Tooltip title={"Digsite"} placement="bottom-end" arrow open>
+      <ZoneTooltip zone={zones["davis.digsite"]} placement="bottom-end">
         <Box
           sx={{
             top: "9%",
@@ -82,9 +83,9 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
             fill={digsiteController?.bgColor}
           />
         </Box>
-      </Tooltip>
+      </ZoneTooltip>
 
-      <Tooltip title={"Processing Plants"} placement="right-end" arrow open>
+      <ZoneTooltip zone={zones["davis.processing"]} placement="bottom-start">
         <Box
           sx={{
             top: "28%",
@@ -100,9 +101,14 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
             fill={processingController?.bgColor}
           />
         </Box>
-      </Tooltip>
+      </ZoneTooltip>
 
-      <Tooltip title={"Northern Habs"} placement="top-start" arrow open>
+      <ZoneTooltip
+        zone={zones["davis.habs-north"]}
+        placement="top-start"
+        arrow
+        open
+      >
         <Box
           sx={{
             top: "16.5%",
@@ -118,9 +124,14 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
             fill={habsNorthController?.bgColor}
           />
         </Box>
-      </Tooltip>
+      </ZoneTooltip>
 
-      <Tooltip title={"Eastern Habs"} placement="bottom" arrow open>
+      <ZoneTooltip
+        zone={zones["davis.habs-east"]}
+        placement="bottom"
+        arrow
+        open
+      >
         <Box
           sx={{
             top: "52.5%",
@@ -136,12 +147,12 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
             fill={habsEastController?.bgColor}
           />
         </Box>
-      </Tooltip>
+      </ZoneTooltip>
 
-      <Tooltip title={"Aquacological Plant"} placement="top-end" arrow open>
+      <ZoneTooltip zone={zones["davis.aquacology"]} placement="left" arrow open>
         <Box
           sx={{
-            top: "44%",
+            top: "43%",
             left: "21%",
             height: "21%",
             width: "15%",
@@ -154,9 +165,9 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
             fill={aquacologyController?.bgColor}
           />
         </Box>
-      </Tooltip>
+      </ZoneTooltip>
 
-      <Tooltip title={"Davis Estate"} placement="bottom" arrow open>
+      <ZoneTooltip zone={zones["davis.estate"]} placement="bottom" arrow open>
         <Box
           sx={{
             top: "54%",
@@ -172,9 +183,9 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
             fill={estateController?.bgColor}
           />
         </Box>
-      </Tooltip>
+      </ZoneTooltip>
 
-      <Tooltip title={"Dead Mans Ditch Checkpoint"} placement="left" arrow open>
+      <ZoneTooltip zone={zones["davis.checkpoint"]} placement="left" arrow open>
         <Box
           sx={{
             top: "84%",
@@ -190,7 +201,7 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
             fill={checkpointController?.bgColor}
           />
         </Box>
-      </Tooltip>
+      </ZoneTooltip>
     </StyledSectorsContainer>
   );
 };

@@ -33,7 +33,10 @@ export const LogEventRow: React.FC<Props> = ({ event }) => {
       })}
       <TableCell className="eventRowLabel">{event.location}</TableCell>
       {event.impacts.map((impact) => (
-        <TableCell className="eventRowLabel">
+        <TableCell
+          className="eventRowLabel"
+          key={event.impacts.indexOf(impact)}
+        >
           {impact.faction} {impact.delta > 0 ? "+" : ""}
           {impact.delta}
         </TableCell>

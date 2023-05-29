@@ -41,9 +41,9 @@ export const HadesClusterViewer: React.FC = () => {
     setActiveView(view);
   };
 
-  useEffect(() => {
-    console.log("activeLoc", activeLocation);
-  }, [activeLocation]);
+  // useEffect(() => {
+  //   console.log("activeLoc", activeLocation);
+  // }, [activeLocation]);
 
   return (
     <StyledViewer>

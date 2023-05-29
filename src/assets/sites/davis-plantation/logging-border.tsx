@@ -5,7 +5,7 @@ const DavisLoggingBorder: React.FC<React.SVGProps<SVGSVGElement>> = (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       version="1.1"
-      viewBox="172.64 73.864 105.332 112.325"
+      viewBox="169.64 70.864 110.332 118.325"
       preserveAspectRatio="none"
       className={props.className}
       style={props.style}

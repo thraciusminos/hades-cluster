@@ -4,6 +4,7 @@ import {
   LocalPolice,
   QuestionMark,
 } from "@mui/icons-material";
+import { SxProps, Theme } from "@mui/material";
 
 export type FactionIcons =
   | "imperial"
@@ -25,15 +26,18 @@ export interface Faction {
   meta?: string;
 }
 
-export const getFactionIcon = (icon: FactionIcons | undefined) => {
+export const getFactionIcon = (
+  icon: FactionIcons | undefined,
+  sx?: SxProps<Theme>
+) => {
   switch (icon) {
     case "militia":
-      return <LocalPolice />;
+      return <LocalPolice sx={sx} />;
     case "tribal":
-      return <AlignHorizontalCenter />;
+      return <AlignHorizontalCenter sx={sx} />;
     case "cult":
-      return <Flare />;
+      return <Flare sx={sx} />;
     default:
-      return <QuestionMark />;
+      return <QuestionMark sx={sx} />;
   }
 };
