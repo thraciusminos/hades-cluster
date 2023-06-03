@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hades-cluster/static/css/main.0d861b9a.css",
-    "main.js": "/hades-cluster/static/js/main.4f3d550a.js",
+    "main.js": "/hades-cluster/static/js/main.6947a3e4.js",
     "static/js/787.a580566c.chunk.js": "/hades-cluster/static/js/787.a580566c.chunk.js",
     "static/media/ghoulshead-wetland-2.png": "/hades-cluster/static/media/ghoulshead-wetland-2.86e051455058a6f51de3.png",
     "static/media/ghoulshead-2.png": "/hades-cluster/static/media/ghoulshead-2.66d0684072f5bc77c9ea.png",
@@ -10,19 +10,27 @@
     "static/media/ghoulshead-favela.png": "/hades-cluster/static/media/ghoulshead-favela.5a7b30f84ea5a8dd25ed.png",
     "static/media/garrote-trucks.png": "/hades-cluster/static/media/garrote-trucks.ca9462953571d801b712.png",
     "static/media/garrote-1.png": "/hades-cluster/static/media/garrote-1.40fe1489fc1c6b9bf5c7.png",
+    "static/media/ghoulshead-wetland-3-up.jpeg": "/hades-cluster/static/media/ghoulshead-wetland-3-up.28a53697ffbd487001f9.jpeg",
     "static/media/garrote-3.png": "/hades-cluster/static/media/garrote-3.85e20d62018c6a006534.png",
     "static/media/ghoulshead-wetland.png": "/hades-cluster/static/media/ghoulshead-wetland.e9d4e1d758c5d4bf5594.png",
     "static/media/ghoulshead-1.png": "/hades-cluster/static/media/ghoulshead-1.b4c3ebbc3c3c7ebbbf85.png",
     "static/media/garrote-2.png": "/hades-cluster/static/media/garrote-2.e379a458ffe9dad87ff4.png",
     "static/media/davis-plantation.jpeg": "/hades-cluster/static/media/davis-plantation.6daa44ed047f76aab7ab.jpeg",
+    "static/media/minos-prime.jpg": "/hades-cluster/static/media/minos-prime.920fd577a7bd6627b33f.jpg",
+    "static/media/koras-respite.jpeg": "/hades-cluster/static/media/koras-respite.607e37b257c5b646d7f9.jpeg",
+    "static/media/primaris-hive-1.jpeg": "/hades-cluster/static/media/primaris-hive-1.938ed31b6441db511ebd.jpeg",
     "static/media/ghoulshead-map.png": "/hades-cluster/static/media/ghoulshead-map.a0d5c28e35a1a0214765.png",
+    "static/media/ghoulshead-walkertown.jpeg": "/hades-cluster/static/media/ghoulshead-walkertown.480b52c2f8ecf9dceeda.jpeg",
+    "static/media/garrote-overview.jpeg": "/hades-cluster/static/media/garrote-overview.75c29a2d659375bbb3a7.jpeg",
+    "static/media/space-hulk.jpeg": "/hades-cluster/static/media/space-hulk.e3201580e17516523dda.jpeg",
+    "static/media/scrapyard.jpeg": "/hades-cluster/static/media/scrapyard.7862a88d9a11e0ad49b9.jpeg",
     "index.html": "/hades-cluster/index.html",
     "main.0d861b9a.css.map": "/hades-cluster/static/css/main.0d861b9a.css.map",
-    "main.4f3d550a.js.map": "/hades-cluster/static/js/main.4f3d550a.js.map",
+    "main.6947a3e4.js.map": "/hades-cluster/static/js/main.6947a3e4.js.map",
     "787.a580566c.chunk.js.map": "/hades-cluster/static/js/787.a580566c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.0d861b9a.css",
-    "static/js/main.4f3d550a.js"
+    "static/js/main.6947a3e4.js"
   ]
 }
