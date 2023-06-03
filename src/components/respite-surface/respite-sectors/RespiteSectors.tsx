@@ -1,18 +1,17 @@
-import React from "react";
 import styled from "styled-components";
 // import AkkaShrineBorder from "../../../assets/respite-borders/akka-shrine";
-import AsharWetlandsBorder from "../../../assets/respite-borders/ashar-wetlands";
+// import AsharWetlandsBorder from "../../../assets/respite-borders/ashar-wetlands";
 // import ChilledGulfBorder from "../../../assets/respite-borders/chilled-gulf";
 // import CrashSiteBorder from "../../../assets/respite-borders/crash-site";
 // import GarroteBorder from "../../../assets/respite-borders/garrote";
 import GhoulsheadBorder from "../../../assets/respite-borders/ghoulshead";
-import HolySpringsBorder from "../../../assets/respite-borders/holy-springs";
-import IcyWatersBorder from "../../../assets/respite-borders/icy-waters";
+// import HolySpringsBorder from "../../../assets/respite-borders/holy-springs";
+// import IcyWatersBorder from "../../../assets/respite-borders/icy-waters";
 // import MosharradBorder from "../../../assets/respite-borders/mosharrad";
-import NovaBolearisBorder from "../../../assets/respite-borders/nova-bolearis";
-import ProspectCoastBorder from "../../../assets/respite-borders/prospect-shore";
-import SamaritanBorder from "../../../assets/respite-borders/samaritan";
-import ShaleBasinBorder from "../../../assets/respite-borders/shale-basin";
+// import NovaBolearisBorder from "../../../assets/respite-borders/nova-bolearis";
+// import ProspectCoastBorder from "../../../assets/respite-borders/prospect-shore";
+// import SamaritanBorder from "../../../assets/respite-borders/samaritan";
+// import ShaleBasinBorder from "../../../assets/respite-borders/shale-basin";
 
 const StyledSectorsContainer = styled.div`
   position: absolute;
@@ -31,7 +30,7 @@ interface Props {}
 export const RespiteSectors: React.FC<Props> = (props) => {
   return (
     <StyledSectorsContainer>
-      <HolySpringsBorder
+      {/* <HolySpringsBorder
         className="sectorBorder"
         style={{
           marginLeft: "-0.2%",
@@ -40,8 +39,8 @@ export const RespiteSectors: React.FC<Props> = (props) => {
           height: "22%",
           width: "11.1%",
         }}
-      />
-      <ProspectCoastBorder
+      /> */}
+      {/* <ProspectCoastBorder
         className="sectorBorder"
         style={{
           marginLeft: "-0.3%",
@@ -50,8 +49,8 @@ export const RespiteSectors: React.FC<Props> = (props) => {
           height: "40%",
           width: "12%",
         }}
-      />
-      <NovaBolearisBorder
+      /> */}
+      {/* <NovaBolearisBorder
         className="sectorBorder"
         style={{
           top: "3.6%",
@@ -59,8 +58,8 @@ export const RespiteSectors: React.FC<Props> = (props) => {
           height: "29.5%",
           width: "17.8%",
         }}
-      />
-      <ShaleBasinBorder
+      /> */}
+      {/* <ShaleBasinBorder
         className="sectorBorder"
         style={{
           top: "17%",
@@ -68,8 +67,8 @@ export const RespiteSectors: React.FC<Props> = (props) => {
           height: "24%",
           width: "12%",
         }}
-      />
-      <SamaritanBorder
+      /> */}
+      {/* <SamaritanBorder
         className="sectorBorder"
         style={{
           top: "27.8%",
@@ -77,7 +76,7 @@ export const RespiteSectors: React.FC<Props> = (props) => {
           height: "34%",
           width: "13.9%",
         }}
-      />
+      /> */}
 
       {/* <MosharradBorder
         className="sectorBorder"
@@ -89,7 +88,7 @@ export const RespiteSectors: React.FC<Props> = (props) => {
         }}
       /> */}
 
-      <IcyWatersBorder
+      {/* <IcyWatersBorder
         className="sectorBorder"
         style={{
           top: "0.3%",
@@ -97,7 +96,7 @@ export const RespiteSectors: React.FC<Props> = (props) => {
           height: "30%",
           width: "15.2%",
         }}
-      />
+      /> */}
       <GhoulsheadBorder
         className="sectorBorder"
         style={{
@@ -134,7 +133,7 @@ export const RespiteSectors: React.FC<Props> = (props) => {
           width: "11.0%",
         }}
       /> */}
-      <AsharWetlandsBorder
+      {/* <AsharWetlandsBorder
         className="sectorBorder"
         style={{
           top: "64.6%",
@@ -142,7 +141,7 @@ export const RespiteSectors: React.FC<Props> = (props) => {
           height: "29%",
           width: "11.0%",
         }}
-      />
+      /> */}
     </StyledSectorsContainer>
   );
 };

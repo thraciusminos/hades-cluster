@@ -72,14 +72,6 @@ export const respiteSites: { [id: string]: Site } = {
     category: "site",
     factions: [],
   },
-  "Ponte du Comardelle": {
-    top: "70.00",
-    left: "64.00",
-    name: "Ponte du Comardelle",
-    description: "",
-    category: "site",
-    factions: [],
-  },
   "St. Charles Parish": {
     top: "57.00",
     left: "66.00",

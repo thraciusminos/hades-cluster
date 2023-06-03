@@ -140,18 +140,17 @@ export const respiteSectors: { [id: string]: Sector } = {
     left: "88.00",
     name: "Garrote",
     category: "settlement",
+    active: true,
+    hasExpand: true,
   },
   ghoulshead: {
     top: "34.00",
     left: "95.00",
     name: "Ghoulshead",
     category: "outpost",
-    sites: [
-      "Walkertown",
-      "Ponte du Comardelle",
-      "St. Charles Parish",
-      "Davis Plantation",
-    ],
+    active: true,
+    hasExpand: true,
+    sites: ["Walkertown", "St. Charles Parish", "Davis Plantation"],
   },
   tariff: {
     top: "56.50",
@@ -188,6 +187,7 @@ export const respiteSectors: { [id: string]: Sector } = {
     left: "48.00",
     name: "Primaris Hive",
     category: "hive",
+    active: true,
   },
   ashport: {
     top: "51.50",

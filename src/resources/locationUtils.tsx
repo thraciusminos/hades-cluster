@@ -26,17 +26,21 @@ export interface Location {
   top: string;
   left: string;
   name: string;
+  short?: string;
   description?: string;
   category?: string;
+  active?: boolean;
 }
 
 export interface Celestial extends Location {
   view?: View;
   sites?: string[];
+  hasExpand?: boolean;
 }
 
 export interface Sector extends Location {
   sites?: string[];
+  hasExpand?: boolean;
 }
 
 export interface Site extends Location {

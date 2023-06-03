@@ -1,5 +1,5 @@
 import { styled, TableRow, TableCell } from "@mui/material";
-import { LogEvent } from "../../../resources/eventUtils";
+import { LogEvent } from "@resources/eventUtils";
 
 const StyledEventRow = styled(TableRow)`
   padding: 18px 12px;

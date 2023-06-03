@@ -24,6 +24,7 @@ interface StyledProps {
   top: string;
   left: string;
   isSelected: boolean;
+  isActive: boolean;
 }
 
 const StyledLocContainer = styled.div<StyledProps>`
@@ -52,7 +53,10 @@ const StyledLocContainer = styled.div<StyledProps>`
     height: 100%;
     margin: -50%;
     border-radius: 50%;
-    color: rgba(122, 235, 52, 100%);
+    color: ${(props) =>
+      props.isActive
+        ? "rgba(122, 235, 52, 100%)"
+        : "rgba(140, 140, 140, 100%)"};
     animation: outline-out 0.15s linear;
   }
 
@@ -157,6 +161,7 @@ export const MapMarker: React.FC<Props> = ({
       top={location.top}
       left={location.left}
       isSelected={isSelected || false}
+      isActive={location.active || false}
       onClick={() => onClick()}
       style={style}
     >

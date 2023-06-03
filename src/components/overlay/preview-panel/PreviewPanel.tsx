@@ -10,7 +10,6 @@ import {
 import { Image } from "@app/components/common/Image";
 import { PreviewPanelSites } from "./PreviewPanelSites";
 import { PreviewExpandButton } from "./PreviewExpandButton";
-import { respiteSites } from "@app/resources/control-initial/respiteSites";
 
 interface StyledProps {
   align: "left" | "right";
@@ -89,10 +88,20 @@ const impsum =
 
 const getPanelImages = (location: Location) => {
   switch (location.name) {
+    case "Minos Prime":
+      return "minosPrime";
+    case "Kora's Respite":
+      return "respite";
+    case "Gallows End":
+      return "spacehulk";
+    case "Scrapyard":
+      return "scrapyard";
+    case "Primaris Hive":
+      return "primarisHive";
     case "Ghoulshead":
       return "ghoulsheadFavela";
     case "Garrote":
-      return "garrote3";
+      return "garrote1";
     default:
       return "";
   }
@@ -129,24 +138,33 @@ export const PreviewPanel: React.FC<Props> = ({
         </Box>
         <Box mt="185px">
           <Stack spacing={2}>
-            <PreviewExpandButton
-              align={align}
-              expand={expand}
-              location={activeLocation}
-              setActiveView={setActiveView}
-              setExpand={setExpand}
-            />
+            {activeLocation.hasExpand && (
+              <PreviewExpandButton
+                align={align}
+                expand={expand}
+                location={activeLocation}
+                setActiveView={setActiveView}
+                setExpand={setExpand}
+              />
+            )}
 
-            <Typography className="locationTitle">
-              {activeLocation?.name}
-            </Typography>
+            <Box>
+              <Typography className="locationTitle">
+                {activeLocation?.name}
+              </Typography>
+              <Typography className="locationDescription">
+                {activeLocation?.short}
+              </Typography>
+            </Box>
             <Divider
               style={{
                 borderColor: theme.palette.primary.main,
               }}
             />
 
-            <Typography className="locationDescription">{impsum}</Typography>
+            <Typography className="locationDescription">
+              {activeLocation.description || impsum}
+            </Typography>
             <Divider
               style={{
                 borderColor: theme.palette.primary.main,
@@ -162,10 +180,6 @@ export const PreviewPanel: React.FC<Props> = ({
                 setActiveSite={setActiveSite}
               />
             )}
-
-            <Typography className="locationDescription">
-              {activeLocation.description}
-            </Typography>
           </Stack>
         </Box>
       </Box>
