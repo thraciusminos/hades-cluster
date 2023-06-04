@@ -1,4 +1,4 @@
-import { Box, styled, Tooltip } from "@mui/material";
+import { Box, styled } from "@mui/material";
 import { ControlZone } from "@resources/locationUtils";
 import { factions } from "@resources/factions/factions";
 import { ZoneTooltip } from "@app/components/common/ZoneTooltip";

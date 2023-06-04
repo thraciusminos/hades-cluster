@@ -6,7 +6,7 @@ import { RightMenuBody } from "./RightMenuBody";
 import { LogEventTable } from "./LogEventTable";
 import { ScenarioEventCard } from "./ScenarioEventCard";
 import { useScenarioEvents } from "@resources/events/scenarioEvents";
-import { View, Location, Celestial, Sector } from "@resources/locationUtils";
+import { View, Celestial, Sector } from "@resources/locationUtils";
 
 const StyledRightMenuWrapper = styled(Box)`
   position: absolute;
@@ -19,12 +19,14 @@ export type Menus = "events" | "log" | null;
 
 interface Props {
   events: LogEvent[];
-  setActiveView: (view: View, location?: Celestial | Sector | null) => void;
-  setActiveLocation: (location: Location | null) => void;
+  activeView: View;
+  setActiveView: (view: View) => void;
+  setActiveLocation: (location: Celestial | Sector | null) => void;
 }
 
 export const RightMenu: React.FC<Props> = ({
   events,
+  activeView,
   setActiveView,
   setActiveLocation,
 }) => {
@@ -59,8 +61,10 @@ export const RightMenu: React.FC<Props> = ({
               <ScenarioEventCard
                 key={event.title}
                 event={event}
+                activeView={activeView}
                 setOpen={setOpen}
                 setActiveView={setActiveView}
+                setActiveLocation={setActiveLocation}
               />
             ))}
           </RightMenuBody>

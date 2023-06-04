@@ -1,19 +1,14 @@
-import React from "react";
 import styled from "styled-components";
-
-import locIcon from "../../assets/icons/Maps-Define-Location-icon-green.png";
-import {
-  Celestial,
-  Location,
-  Sector,
-  Site,
-} from "../../resources/locationUtils";
+import locIcon from "@assets/icons/Maps-Define-Location-icon-green.png";
+import { Celestial, Location, Sector, Site } from "@resources/locationUtils";
 import { LocationTooltip } from "./LocationTooltip";
 import {
   Apartment,
   Factory,
+  FilterHdr,
   Gite,
   LocationCity,
+  LocationSearching,
   MapsHomeWork,
   SelectAll,
   Style,
@@ -63,8 +58,9 @@ const StyledLocContainer = styled.div<StyledProps>`
   .markerIconCommon:hover {
     width: 42px;
     height: 42px;
-    animation: outline-in 0.3s ease-in-out;
-    outline: 3px solid rgba(122, 235, 52, 70%);
+    ${(props) =>
+      props.isActive &&
+      "animation: outline-in 0.3s ease-in-out;outline: 3px solid rgba(122, 235, 52, 70%);"};
   }
 
   .markerIcon {
@@ -144,15 +140,11 @@ export const MapMarker: React.FC<Props> = ({
         return <Factory className="markerIconCommon" />;
       case "outpost":
         return <SelectAll className="markerIconCommon" />;
+      case "mountain":
+        return <FilterHdr className="markerIconCommon" />;
       case "site":
       default:
-        return (
-          <img
-            src={locIcon}
-            alt={location.name || "location"}
-            className="markerIcon"
-          />
-        );
+        return <LocationSearching className="markerIconCommon" />;
     }
   };
 

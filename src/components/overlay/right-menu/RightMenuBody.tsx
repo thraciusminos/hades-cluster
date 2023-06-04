@@ -1,4 +1,3 @@
-import React from "react";
 import { styled, Box } from "@mui/material";
 
 const StyledMenuBody = styled(Box)`
@@ -16,6 +15,8 @@ const StyledMenuBody = styled(Box)`
   );
 
   .menuBody {
+    max-height: 80vh;
+    overflow: auto;
     padding: 8px 16px 24px;
     background-color: #081406;
     clip-path: polygon(
@@ -29,6 +30,10 @@ const StyledMenuBody = styled(Box)`
       0 5%
     );
   }
+
+  .menuItemsContainer {
+    overflow: auto;
+  }
 `;
 
 interface Props {
@@ -38,7 +43,9 @@ interface Props {
 export const RightMenuBody: React.FC<Props> = ({ children }) => {
   return (
     <StyledMenuBody>
-      <div className="menuBody">{children}</div>
+      <div className="menuBody">
+        <div className="menuItemsContainer">{children}</div>
+      </div>
     </StyledMenuBody>
   );
 };

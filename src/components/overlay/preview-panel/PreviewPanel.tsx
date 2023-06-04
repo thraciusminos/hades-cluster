@@ -96,12 +96,22 @@ const getPanelImages = (location: Location) => {
       return "spacehulk";
     case "Scrapyard":
       return "scrapyard";
+    case "Water Extraction Site Omega Epsilon":
+      return "waterExtraction";
+    case "Topological Excavation Zeta":
+      return "frozenRuins";
+    case "Shear Peaks":
+      return "shearPeaks";
     case "Primaris Hive":
       return "primarisHive";
+    case "Mosharrad":
+      return "mosharrad";
     case "Ghoulshead":
       return "ghoulsheadFavela";
     case "Garrote":
       return "garrote1";
+    case "Antipolar Observation Station":
+      return "antipolarStation";
     default:
       return "";
   }
@@ -114,8 +124,9 @@ interface Props {
   activeSite: Site | null;
   activeLocation: Celestial | Sector;
   setExpand: (newValue: boolean) => void;
-  setActiveSite: (site: Site | null) => void;
   setActiveView: (view: View) => void;
+  setActiveLocation: (location: Celestial | Sector | null) => void;
+  setActiveSite: (site: Site | null) => void;
 }
 
 export const PreviewPanel: React.FC<Props> = ({
@@ -125,8 +136,9 @@ export const PreviewPanel: React.FC<Props> = ({
   activeSite,
   activeLocation,
   setExpand,
-  setActiveSite,
   setActiveView,
+  setActiveLocation,
+  setActiveSite,
 }) => {
   const theme = useTheme();
 
@@ -138,12 +150,13 @@ export const PreviewPanel: React.FC<Props> = ({
         </Box>
         <Box mt="185px">
           <Stack spacing={2}>
-            {activeLocation.hasExpand && (
+            {(activeLocation.hasExpand || "hasSurface" in activeLocation) && (
               <PreviewExpandButton
                 align={align}
                 expand={expand}
                 location={activeLocation}
                 setActiveView={setActiveView}
+                setActiveLocation={setActiveLocation}
                 setExpand={setExpand}
               />
             )}
@@ -170,8 +183,6 @@ export const PreviewPanel: React.FC<Props> = ({
                 borderColor: theme.palette.primary.main,
               }}
             />
-
-            {/* <FactionControlBars factions={location.factions} /> */}
 
             {"sites" in activeLocation && (
               <PreviewPanelSites

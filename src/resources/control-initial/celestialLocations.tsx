@@ -15,7 +15,7 @@ export const celestialLocations: { [id: string]: Celestial } = {
     name: "Gallows End",
     short: "Space hulk",
     description:
-      "Massive unidentified object detected. Energy signature considerable, suggests multiple primary power cores. Designation: Gallows End",
+      "Massive amalgamation of dozens of voidships from different origins and eras that occasionally translate to realspace seemingly without reason or rhyme. These ominous leviathans hold countless possibilities for existential threats, as well as treasure and opportunity. ",
     active: true,
   },
   korasRespite: {
@@ -26,7 +26,7 @@ export const celestialLocations: { [id: string]: Celestial } = {
     description:
       "Planet named after a legend of ancient Terra, where a beleagued princess found refuge in a secluded paradise. Primary inhabited planet and the seat of Imperial governance in the system. Exports a large majority of agricultural products of the sector, and has a significant water and fossil fuel production.",
     active: true,
-    hasExpand: true,
+    hasSurface: true,
   },
   minos: {
     top: "62.00",

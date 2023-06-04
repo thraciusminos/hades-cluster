@@ -28,6 +28,7 @@ export interface Location {
   name: string;
   short?: string;
   description?: string;
+  description2?: string;
   category?: string;
   active?: boolean;
 }
@@ -36,6 +37,7 @@ export interface Celestial extends Location {
   view?: View;
   sites?: string[];
   hasExpand?: boolean;
+  hasSurface?: boolean;
 }
 
 export interface Sector extends Location {

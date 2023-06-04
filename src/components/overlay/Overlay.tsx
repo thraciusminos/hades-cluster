@@ -32,7 +32,7 @@ interface Props {
   sites: { [x: string]: Site } | undefined;
   controlZones: { [x: string]: ControlZone } | undefined;
   activeView: View;
-  setActiveView: (view: View, location?: Celestial | Sector | null) => void;
+  setActiveView: (view: View) => void;
   activeLocation: Celestial | Sector | null;
   setActiveLocation: (location: Celestial | Sector | null) => void;
 }
@@ -63,7 +63,7 @@ export const Overlay: React.FC<Props> = ({
   const handleLocClick = (targetLocation: Celestial | Sector | null) => {
     if (targetLocation?.name === activeLocation?.name) {
       setActiveLocation(null);
-    } else {
+    } else if (targetLocation?.active) {
       setActiveLocation(targetLocation);
     }
   };
@@ -77,9 +77,12 @@ export const Overlay: React.FC<Props> = ({
     }
   };
 
-  const handleAwayClick = () => {
-    setActiveLocation(null);
-    setActiveSite(null);
+  const handleAwayClick = (event: MouseEvent | TouchEvent) => {
+    event.stopPropagation();
+    if ((event.target as HTMLElement).id !== "event-location-button") {
+      setActiveLocation(null);
+      setActiveSite(null);
+    }
   };
 
   return (
@@ -129,11 +132,12 @@ export const Overlay: React.FC<Props> = ({
 
       <RightMenu
         events={events}
+        activeView={activeView}
         setActiveView={setActiveView}
         setActiveLocation={setActiveLocation}
       />
 
-      <ClickAwayListener onClickAway={() => handleAwayClick()}>
+      <ClickAwayListener onClickAway={(e) => handleAwayClick(e)}>
         <div className="locationLayer">
           {activeLocation && (
             <PreviewPanel
@@ -144,11 +148,12 @@ export const Overlay: React.FC<Props> = ({
               activeLocation={activeLocation}
               setExpand={setExpand}
               setActiveView={setActiveView}
+              setActiveLocation={setActiveLocation}
               setActiveSite={handleSiteClick}
             />
           )}
 
-          {activeLocation && expand && (
+          {activeLocation && expand && activeLocation.hasExpand && (
             <Expand
               sites={localSites}
               controlZones={controlZones}

@@ -1,12 +1,23 @@
 import { ScenarioEvent } from "../eventUtils";
-import ghoulshead from "../../assets/artwork/ghoulshead/ghoulshead-wetland.png";
+import gallowsEnd from "@assets/artwork/banners/space-hulk-banner.jpeg";
+import ghoulshead from "@assets/artwork/ghoulshead/ghoulshead-wetland.png";
 
 export const useScenarioEvents = (): ScenarioEvent[] => {
   return [
     {
+      title: "Massive anomaly detected",
+      bannerImg: (
+        <img src={gallowsEnd} alt={"banner"} width={"100%"} height={"180px"} />
+      ),
+      description:
+        "Massive unidentified object detected in system. Energy signature considerable, suggests multiple primary power cores. Initial reconnaissance suggests an amalgam of various voidships. Emergency beacon transmissions broadcast the identifier: 'Gallows End'.",
+      view: "minosSystem",
+      location: "gallowsEnd",
+    },
+    {
       title: "Bayou Bievenue!",
       bannerImg: (
-        <img src={ghoulshead} alt={"banner"} width={"460px"} height={"460px"} />
+        <img src={ghoulshead} alt={"banner"} width={"100%"} height={"320px"} />
       ),
       description:
         "Rumours claim that new deposits of Bloodshards have been discovered deep in the marshlands of Ghoulshead. Region has slowly fallen to delapitation and rot since the original rush for the Shards died down some century ago.",

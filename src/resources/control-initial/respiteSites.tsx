@@ -70,6 +70,7 @@ export const respiteSites: { [id: string]: Site } = {
     name: "Walkertown",
     description: "",
     category: "site",
+    active: true,
     factions: [],
   },
   "St. Charles Parish": {
@@ -78,6 +79,7 @@ export const respiteSites: { [id: string]: Site } = {
     name: "St. Charles Parish",
     description: "",
     category: "site",
+    active: true,
     factions: [],
   },
   "Davis Plantation": {
@@ -86,6 +88,7 @@ export const respiteSites: { [id: string]: Site } = {
     name: "Davis Plantation",
     description: "",
     category: "site",
+    active: true,
     factions: [],
     controlZones: [
       "davis.logging",

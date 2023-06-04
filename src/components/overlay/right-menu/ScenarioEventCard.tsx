@@ -1,30 +1,26 @@
-import { styled, Paper, Typography, Box, Button } from "@mui/material";
+import { styled, Typography, Box, Button, Stack } from "@mui/material";
 import { ScenarioEvent } from "@resources/eventUtils";
 import { View, Celestial, Sector } from "@resources/locationUtils";
 import { respiteSectors } from "@resources/control-initial/respiteSectors";
 import { Menus } from "./RightMenu";
+import { celestialLocations } from "@app/resources/control-initial/celestialLocations";
 
-const StyledEvent = styled(Paper)`
+const StyledEvent = styled(Box)`
   margin: 24px 0;
   width: 48vw;
   padding: 24px 16px;
+  color: rgba(122, 235, 52, 93%);
   background-color: #081406;
   border: 1px solid rgba(122, 235, 52, 93%);
   border-radius: 8px;
-
-  .eventTitle {
-    color: rgba(122, 235, 52, 93%);
-    padding-bottom: 16px;
-  }
-
-  .eventDescription {
-    color: rgba(122, 235, 52, 93%);
-    padding-bottom: 12px;
-  }
 `;
 
 const getReadableTitle = (title?: string) => {
   switch (title) {
+    case "minosSystem":
+      return "Minos";
+    case "gallowsEnd":
+      return "Gallows End";
     case "respiteSurface":
       return "Kora's Respite";
     case "ghoulshead":
@@ -36,56 +32,58 @@ const getReadableTitle = (title?: string) => {
 
 interface Props {
   event: ScenarioEvent;
+  activeView: View;
   setOpen: (value: Menus) => void;
-  setActiveView: (view: View, location?: Celestial | Sector | null) => void;
+  setActiveView: (view: View) => void;
+  setActiveLocation: (location: Celestial | Sector | null) => void;
 }
 
 export const ScenarioEventCard: React.FC<Props> = ({
   event,
+  activeView,
   setOpen,
   setActiveView,
+  setActiveLocation,
 }) => {
   const handleOpenEventLocationClick = () => {
-    if (event.view && event.location) {
-      setActiveView(event.view, respiteSectors[event.location]);
-      setOpen(null);
+    if (event.view && event.view !== activeView) {
+      setActiveView(event.view);
     }
+    if (event.view === "minosSystem" && event.location) {
+      setActiveLocation(celestialLocations[event.location]);
+    }
+    if (event.view === "respiteSurface" && event.location) {
+      setActiveLocation(respiteSectors[event.location]);
+    }
+    setOpen(null);
   };
 
   return (
     <StyledEvent>
-      <Box display="flex" flexDirection="row">
-        {event.bannerImg}
-        <Box px="16px">
-          <Typography variant="h5" className="eventTitle">
-            {event.title}
-          </Typography>
+      <Stack px={2} spacing={1}>
+        <Box width="100%">{event.bannerImg}</Box>
+        <Typography variant="h5">{event.title}</Typography>
 
-          <Typography className="eventDescription">
-            {getReadableTitle(event.view)} {" - "}
-            {getReadableTitle(event.location)}
-          </Typography>
-          <Typography className="eventDescription">
-            {event.description}
-          </Typography>
-          <Typography className="eventDescription">
-            {event.description2}
-          </Typography>
+        <Typography>
+          {getReadableTitle(event.view)} {event.view && event.location && " - "}
+          {getReadableTitle(event.location)}
+        </Typography>
+        <Typography>{event.description}</Typography>
+        {event.description2 && <Typography>{event.description2}</Typography>}
 
-          {event.view && event.location && (
-            <Box py="24px">
-              <Button
-                variant="contained"
-                color="success"
-                sx={{ alignSelf: "center" }}
-                onClick={() => handleOpenEventLocationClick()}
-              >
-                Go to View
-              </Button>
-            </Box>
-          )}
-        </Box>
-      </Box>
+        {event.location && (
+          <Box py={1}>
+            <Button
+              id="event-location-button"
+              variant="contained"
+              color="success"
+              onClick={() => handleOpenEventLocationClick()}
+            >
+              Go to Location
+            </Button>
+          </Box>
+        )}
+      </Stack>
     </StyledEvent>
   );
 };

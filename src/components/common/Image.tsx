@@ -1,15 +1,16 @@
 import celestials from "@assets/artwork/celestials";
+import respiteImages from "@app/assets/artwork";
 import garrote from "@assets/artwork/garrote";
 import ghoulshead from "@assets/artwork/ghoulshead";
-import primarisHive from "@assets/artwork/primaris-hive-1.jpeg";
+
 import davisSite from "@assets/sites/davis-plantation/davis-plantation.jpeg";
 
 const images: { [x: string]: string } = {
+  ...respiteImages,
   ...celestials,
   ...garrote,
   ...ghoulshead,
   davisSite,
-  primarisHive,
 };
 
 const getImgSrc = (target: string | undefined) => {

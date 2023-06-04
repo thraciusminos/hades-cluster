@@ -5,6 +5,7 @@ export const respiteSectors: { [id: string]: Sector } = {
     top: "20.00",
     left: "20.25",
     name: "Nova Borealis Observatory",
+    category: "mountain",
   },
   holySprings: {
     top: "16.00",
@@ -110,12 +111,14 @@ export const respiteSectors: { [id: string]: Sector } = {
     left: "64.00",
     name: "Topological Excavation Zeta",
     category: "site",
+    active: true,
   },
   waterExtractionOE: {
     top: "4.00",
     left: "82.50",
     name: "Water Extraction Site Omega Epsilon",
     category: "factory",
+    active: true,
   },
   bulwark: {
     top: "19.00",
@@ -133,7 +136,8 @@ export const respiteSectors: { [id: string]: Sector } = {
     top: "41.00",
     left: "77.00",
     name: "Shear Peaks",
-    category: "site",
+    category: "mountain",
+    active: true,
   },
   garrote: {
     top: "39.50",
@@ -163,6 +167,7 @@ export const respiteSectors: { [id: string]: Sector } = {
     left: "83.00",
     name: "Mosharrad",
     category: "hive",
+    active: true,
   },
   shrineAkka: {
     top: "67.50",
@@ -211,6 +216,7 @@ export const respiteSectors: { [id: string]: Sector } = {
     top: "90.00",
     left: "51.50",
     name: "Antipolar Observation Station",
-    category: "site",
+    category: "mountain",
+    active: true,
   },
 };

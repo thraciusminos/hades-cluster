@@ -11,25 +11,29 @@ interface Props {
   align: "left" | "right";
   expand: boolean;
   location: Celestial | Sector | Site | Location;
-  setActiveView: (view: View) => void;
   setExpand: (newValue: boolean) => void;
+  setActiveView: (view: View) => void;
+  setActiveLocation: (location: Celestial | Sector | null) => void;
 }
 
 export const PreviewExpandButton: React.FC<Props> = ({
   align,
   expand,
   location,
-  setActiveView,
   setExpand,
+  setActiveView,
+  setActiveLocation,
 }) => {
+  const handleViewChange = () => {
+    setActiveView("respiteSurface");
+    setActiveLocation(null);
+    setExpand(false);
+  };
+
   return (
     <>
       {location.name === "Kora's Respite" ? (
-        <Button
-          variant="contained"
-          color="success"
-          onClick={() => setActiveView("respiteSurface")}
-        >
+        <Button variant="contained" color="success" onClick={handleViewChange}>
           {">>>  GO TO SURFACE  <<<"}
         </Button>
       ) : expand ? (

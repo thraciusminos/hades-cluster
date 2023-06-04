@@ -33,18 +33,6 @@ export const HadesClusterViewer: React.FC = () => {
     return { respiteZones, respiteSites };
   }, [activeView, events]);
 
-  const handleViewChange = (
-    view: View,
-    location?: Celestial | Sector | null
-  ) => {
-    setActiveLocation(location || null);
-    setActiveView(view);
-  };
-
-  // useEffect(() => {
-  //   console.log("activeLoc", activeLocation);
-  // }, [activeLocation]);
-
   return (
     <StyledViewer>
       {activeView === "minosSystem" ? <MinosSystem /> : <RespiteSurface />}
@@ -54,7 +42,7 @@ export const HadesClusterViewer: React.FC = () => {
         sites={updatedLocations.updatedSites}
         controlZones={updatedLocations.updatedZones}
         activeView={activeView}
-        setActiveView={handleViewChange}
+        setActiveView={setActiveView}
         activeLocation={activeLocation}
         setActiveLocation={setActiveLocation}
       />
