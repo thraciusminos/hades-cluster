@@ -7,7 +7,7 @@ import { LogEventTable } from "./LogEventTable";
 import { ScenarioEventCard } from "./ScenarioEventCard";
 import { useScenarioEvents } from "@resources/events/scenarioEvents";
 import { View, Celestial, Sector } from "@resources/locationUtils";
-import BloodstoneHuntEvent from "@resources/events/BloodstoneHunt";
+import BloodshardHuntEvent from "@resources/events/BloodshardHunt";
 
 const StyledRightMenuWrapper = styled(Box)`
   position: absolute;
@@ -76,7 +76,7 @@ export const RightMenu: React.FC<Props> = ({
         )}
         {open === "rules" && (
           <RightMenuBody>
-            <BloodstoneHuntEvent />
+            <BloodshardHuntEvent />
           </RightMenuBody>
         )}
       </StyledRightMenuWrapper>

@@ -1,13 +1,13 @@
 import { Grass } from "@mui/icons-material";
 import { Box, Grid, Stack, Typography, useTheme } from "@mui/material";
 
-export const BloodstoneHuntEvent: React.FC = () => {
+export const BloodshardHuntEvent: React.FC = () => {
   const theme = useTheme();
 
   return (
     <Stack pt={2} spacing={2} color={theme.palette.primary.main}>
       <Box display="flex" justifyContent="space-between">
-        <Typography variant="h5">Bloodstone Hunt</Typography>
+        <Typography variant="h5">Bloodshard Hunt</Typography>
         <Box pr={3} display="flex" alignItems="center">
           <Grass color="error" />
           <Grass color="error" />
@@ -18,7 +18,7 @@ export const BloodstoneHuntEvent: React.FC = () => {
         Duration: Now, until August 31st or caches remain. (3 months)
       </Typography>
       <Typography>
-        Gain control of zones in Davis Plantation that have Bloodstone icons to
+        Gain control of zones in Davis Plantation that have Bloodshard icons to
         recover a cache.
       </Typography>
       <Box width="80%" alignSelf="center">
@@ -48,11 +48,11 @@ export const BloodstoneHuntEvent: React.FC = () => {
         participants and the results.
       </Typography>
       <Typography py={1}>
-        Rewards: Everyone with a cache receives a physical print of a Bloodstone
+        Rewards: Everyone with a cache receives a physical print of a Bloodshard
         cache!
       </Typography>
     </Stack>
   );
 };
 
-export default BloodstoneHuntEvent;
+export default BloodshardHuntEvent;
