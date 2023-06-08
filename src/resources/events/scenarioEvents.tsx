@@ -5,7 +5,21 @@ import ghoulshead from "@assets/artwork/ghoulshead/ghoulshead-wetland.png";
 export const useScenarioEvents = (): ScenarioEvent[] => {
   return [
     {
+      title: "Bloodstone Hunt!",
+      date: new Date("2023-06-08"),
+      bannerImg: (
+        <img src={ghoulshead} alt={"banner"} width={"100%"} height={"320px"} />
+      ),
+      description:
+        "Our agents have confirmed the discovery of Bloodstone caches on Davis Plantation in Ghoulshead! These arcane crystals are invaluable for study of the recent anomalies in the system.",
+      description2:
+        "We have already dispatched forward troops to the region from the Garrote garrison. But this discovery is sure to attract the criminal and the subversive. It is going to get nasty..",
+      view: "respiteSurface",
+      location: "ghoulshead",
+    },
+    {
       title: "Massive anomaly detected",
+      date: new Date("2023-06-02"),
       bannerImg: (
         <img src={gallowsEnd} alt={"banner"} width={"100%"} height={"180px"} />
       ),
@@ -16,6 +30,7 @@ export const useScenarioEvents = (): ScenarioEvent[] => {
     },
     {
       title: "Bayou Bievenue!",
+      date: new Date("2023-05-28"),
       bannerImg: (
         <img src={ghoulshead} alt={"banner"} width={"100%"} height={"320px"} />
       ),

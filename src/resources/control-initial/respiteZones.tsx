@@ -11,6 +11,7 @@ export const respiteZones: { [id: string]: ControlZone } = {
         control: 2,
       },
     ],
+    eventItems: 1,
   },
   "davis.digsite": {
     top: "31.70",
@@ -22,6 +23,7 @@ export const respiteZones: { [id: string]: ControlZone } = {
         control: 3,
       },
     ],
+    eventItems: 2,
   },
   "davis.processing": {
     top: "31.70",
@@ -33,6 +35,7 @@ export const respiteZones: { [id: string]: ControlZone } = {
         control: 3,
       },
     ],
+    eventItems: 2,
   },
   "davis.habs-north": {
     top: "31.70",
@@ -48,6 +51,7 @@ export const respiteZones: { [id: string]: ControlZone } = {
         control: 2,
       },
     ],
+    eventItems: 2,
   },
   "davis.habs-east": {
     top: "31.70",
@@ -63,6 +67,7 @@ export const respiteZones: { [id: string]: ControlZone } = {
         control: 3,
       },
     ],
+    eventItems: 1,
   },
   "davis.estate": {
     top: "31.70",
@@ -74,6 +79,7 @@ export const respiteZones: { [id: string]: ControlZone } = {
         control: 3,
       },
     ],
+    eventItems: 3,
   },
   "davis.aquacology": {
     top: "31.70",
@@ -89,6 +95,7 @@ export const respiteZones: { [id: string]: ControlZone } = {
         control: 1,
       },
     ],
+    eventItems: 1,
   },
   "davis.salt-harvest": {
     top: "31.70",
@@ -115,5 +122,6 @@ export const respiteZones: { [id: string]: ControlZone } = {
         control: 3,
       },
     ],
+    eventItems: 1,
   },
 };

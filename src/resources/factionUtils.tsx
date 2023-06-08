@@ -19,6 +19,7 @@ export type FactionIcons =
 
 export interface Faction {
   name: string;
+  short?: string;
   description?: string;
   icon?: FactionIcons;
   color?: string;

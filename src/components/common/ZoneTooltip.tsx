@@ -8,6 +8,7 @@ import {
 } from "@mui/material";
 import { ControlZone } from "@resources/locationUtils";
 import { FactionControlBars } from "./FactionControlBars";
+import { EventIconsRow } from "./EventIconsRow";
 
 const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -53,6 +54,7 @@ export const ZoneTooltip: React.FC<Props & Omit<TooltipProps, "title">> = ({
             {zone.name}
           </Typography>
           <FactionControlBars factions={zone.factions} />
+          <EventIconsRow eventItems={zone.eventItems || 0} />
         </Box>
       }
     >

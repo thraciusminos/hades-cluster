@@ -7,6 +7,7 @@ import { LogEventTable } from "./LogEventTable";
 import { ScenarioEventCard } from "./ScenarioEventCard";
 import { useScenarioEvents } from "@resources/events/scenarioEvents";
 import { View, Celestial, Sector } from "@resources/locationUtils";
+import BloodstoneHuntEvent from "@resources/events/BloodstoneHunt";
 
 const StyledRightMenuWrapper = styled(Box)`
   position: absolute;
@@ -15,7 +16,7 @@ const StyledRightMenuWrapper = styled(Box)`
   z-index: 10;
 `;
 
-export type Menus = "events" | "log" | null;
+export type Menus = "rules" | "events" | "log" | null;
 
 interface Props {
   events: LogEvent[];
@@ -49,6 +50,10 @@ export const RightMenu: React.FC<Props> = ({
             label="Events"
             setOpen={() => handleButtonClick("events")}
           />
+          <RightMenuButton
+            label="Event Rules"
+            setOpen={() => handleButtonClick("rules")}
+          />
         </Stack>
         {open === "log" && (
           <RightMenuBody>
@@ -67,6 +72,11 @@ export const RightMenu: React.FC<Props> = ({
                 setActiveLocation={setActiveLocation}
               />
             ))}
+          </RightMenuBody>
+        )}
+        {open === "rules" && (
+          <RightMenuBody>
+            <BloodstoneHuntEvent />
           </RightMenuBody>
         )}
       </StyledRightMenuWrapper>

@@ -63,6 +63,7 @@ export const ScenarioEventCard: React.FC<Props> = ({
       <Stack px={2} spacing={1}>
         <Box width="100%">{event.bannerImg}</Box>
         <Typography variant="h5">{event.title}</Typography>
+        <Typography>{event.date.toISOString().slice(0, 10)}</Typography>
 
         <Typography>
           {getReadableTitle(event.view)} {event.view && event.location && " - "}

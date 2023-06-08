@@ -3,6 +3,7 @@ import { Faction } from "../factionUtils";
 export const factions: { [id: string]: Faction } = {
   "The Davis Boys": {
     name: "The Davis Boys",
+    short: "The Enforcers",
     description:
       "Thugs and outcasts working as enforcers at the Davis Plantations. They make sure Davis brothers' word is the law in the area.",
     icon: "militia",
@@ -12,6 +13,7 @@ export const factions: { [id: string]: Faction } = {
   },
   Nightsong: {
     name: "Nightsong",
+    short: "The Marooned",
     description:
       "The Marooned embraced their exile after Imperial authorities settled these areas. But Nightsong haven't forgotten what was once theirs, and want back what they are owed.",
     icon: "tribal",
@@ -20,7 +22,8 @@ export const factions: { [id: string]: Faction } = {
     meta: "Ghoulshead, Davis plantation, Marooned, tribal",
   },
   Parishians: {
-    name: "Parishians",
+    name: "Dayns Children",
+    short: "The Parishians",
     description:
       "Father Ibrahim Dayn bestows many with a glimmer of light in Ghoulshead, where little hope can be normally be found. Thus, they are ubiquitous in the communities of the Bayou.",
     icon: "cult",
@@ -36,7 +39,7 @@ export const factions: { [id: string]: Faction } = {
     bgColor: "rgba(91, 10, 87, 50%)",
     meta: "Imperium",
   },
-  "RDF": {
+  RDF: {
     name: "Respitean Defence Forces",
     description: "",
     icon: "imperial",

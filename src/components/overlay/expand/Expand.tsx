@@ -6,7 +6,7 @@ import { MapMarker } from "../../common/MapMarker";
 import { getExpandImages } from "./ExpandUtils";
 import { ExpandFactionsPanel } from "./ExpandFactionsPanel";
 import { DavisZones } from "./davis-plantation/DavisZones";
-import { Construction, WarningAmber } from "@mui/icons-material";
+import { Construction, Grass, WarningAmber } from "@mui/icons-material";
 
 interface StyledProps {
   align: "left" | "right";
@@ -181,18 +181,24 @@ export const Expand: React.FC<Props> = ({
             <Box className="expandContent">
               {expandImages.map}
               {activeLocation.name === "Ghoulshead" && (
-                <WarningAmber
+                <Box
                   sx={{
                     position: "absolute",
                     top: "44%",
                     left: "80%",
                     fontSize: "2rem",
-                    color: "rgba(255, 197, 10, 100%)",
-                    backgroundColor: "black",
-                    clipPath: "polygon(50% 0%, 0 91%, 100% 91%);",
                     zIndex: 4,
                   }}
-                />
+                >
+                  <WarningAmber
+                    sx={{
+                      color: "rgba(255, 197, 10, 100%)",
+                      backgroundColor: "black",
+                      clipPath: "polygon(50% 0%, 0 91%, 100% 91%);",
+                    }}
+                  />
+                  <Grass color="error" />
+                </Box>
               )}
               {sites &&
                 sites?.map((site) => {

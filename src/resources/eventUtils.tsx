@@ -19,6 +19,7 @@ export interface LogEvent {
 
 export interface ScenarioEvent {
   title: string;
+  date: Date;
   bannerImg?: React.ReactNode;
   description: string;
   description2?: string;

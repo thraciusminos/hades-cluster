@@ -53,4 +53,5 @@ export interface Site extends Location {
 
 export interface ControlZone extends Location {
   factions: { name: string; control: number }[];
+  eventItems?: number;
 }

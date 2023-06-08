@@ -19,11 +19,20 @@ export const ExpandFactionsPanel: React.FC<Props> = ({ factions }) => {
             <Box
               display="flex"
               flexDirection="row"
+              alignItems="center"
               color={faction.color}
               gap={1}
             >
               {getFactionIcon(faction.icon)}
-              <Typography fontWeight="bold">{faction.name}</Typography>
+              <Stack>
+                <Typography fontWeight="bold">{faction.name}</Typography>
+                <Typography
+                  variant="subtitle2"
+                  color={theme.palette.primary.dark}
+                >
+                  {faction.short}
+                </Typography>
+              </Stack>
             </Box>
             <Typography>{faction.description}</Typography>
           </Stack>
