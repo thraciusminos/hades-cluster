@@ -1,4 +1,12 @@
-import { styled, TableRow, TableCell } from "@mui/material";
+import { respiteZones } from "@app/resources/control-initial/respiteZones";
+import {
+  styled,
+  TableRow,
+  TableCell,
+  Box,
+  Stack,
+  Typography,
+} from "@mui/material";
 import { LogEvent } from "@resources/eventUtils";
 
 const StyledEventRow = styled(TableRow)`
@@ -16,31 +24,38 @@ interface Props {
 }
 
 export const LogEventRow: React.FC<Props> = ({ event }) => {
+  const evenFactions = event.players.filter((player) => player.side % 2 === 0);
+  const oddFactions = event.players.filter((player) => player.side % 2 === 1);
+
   return (
     <StyledEventRow>
       <TableCell className="eventRowLabel">
         {event.date.toISOString().slice(0, 10)}
       </TableCell>
-      {event.players.map((player) => {
-        return (
-          <TableCell
-            className="eventRowLabel"
-            key={event.players.indexOf(player)}
-          >
-            {player.faction}
-          </TableCell>
-        );
-      })}
-      <TableCell className="eventRowLabel">{event.location}</TableCell>
-      {event.impacts.map((impact) => (
-        <TableCell
-          className="eventRowLabel"
-          key={event.impacts.indexOf(impact)}
-        >
-          {impact.faction} {impact.delta > 0 ? "+" : ""}
-          {impact.delta}
-        </TableCell>
-      ))}
+      <TableCell className="eventRowLabel">
+        {oddFactions.map((player) => (
+          <Box>{player.faction}</Box>
+        ))}
+      </TableCell>
+      <TableCell className="eventRowLabel">
+        {evenFactions.map((player) => (
+          <Box>{player.faction}</Box>
+        ))}
+      </TableCell>
+      <TableCell className="eventRowLabel">
+        <Stack>
+          {respiteZones[event.location].name}
+          <Box>Davis Plantation</Box>
+        </Stack>
+      </TableCell>
+      <TableCell className="eventRowLabel">
+        {event.impacts.map((impact) => (
+          <Box>
+            {impact.faction} {impact.delta > 0 ? "+" : ""}
+            {impact.delta}
+          </Box>
+        ))}
+      </TableCell>
     </StyledEventRow>
   );
 };

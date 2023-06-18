@@ -159,6 +159,16 @@ export const getUpdatedSiteStatus = (
 
 export const getLogEvents: LogEvent[] = [
   {
+    date: new Date("2023-06-18"),
+    location: "davis.habs-north",
+    players: [
+      { side: 1, faction: "Imperium" },
+      { side: 2, faction: "Kroot Mercenaries" },
+      { side: 3, faction: "Eldar Corsairs" },
+    ],
+    impacts: [{ faction: "Imperium", delta: 1 }],
+  },
+  {
     date: new Date("2023-05-28"),
     location: "davis.digsite",
     players: [

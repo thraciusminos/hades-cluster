@@ -32,11 +32,11 @@ export const factions: { [id: string]: Faction } = {
     meta: "Ghoulshead, Davis plantation, Ibrahims Flock, tribal",
   },
   Imperium: {
-    name: "Imperium",
+    name: "The Imperium",
     description: "",
     icon: "imperial",
-    color: "rgba(91, 10, 87, 90%)",
-    bgColor: "rgba(91, 10, 87, 50%)",
+    color: "rgba(184, 20, 175, 90%)",
+    bgColor: "rgba(184, 20, 175, 50%)",
     meta: "Imperium",
   },
   RDF: {
