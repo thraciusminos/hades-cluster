@@ -21,6 +21,7 @@ const getReadableTitle = (title?: string) => {
       return "Minos";
     case "gallowsEnd":
       return "Gallows End";
+    case "korasRespite":
     case "respiteSurface":
       return "Kora's Respite";
     case "ghoulshead":

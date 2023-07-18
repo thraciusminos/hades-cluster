@@ -6,6 +6,7 @@ import {
   LocalPolice,
   QuestionMark,
   Token,
+  Webhook,
 } from "@mui/icons-material";
 import { SxProps, Theme } from "@mui/material";
 
@@ -49,6 +50,8 @@ export const getFactionIcon = (
       return <Flare sx={sx} />;
     case "unity-cult":
       return <Diversity2 sx={sx} />;
+    case "xenos":
+      return <Webhook sx={sx} />;
     default:
       return <QuestionMark sx={sx} />;
   }

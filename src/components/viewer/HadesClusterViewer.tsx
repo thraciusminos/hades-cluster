@@ -2,7 +2,6 @@ import { useMemo, useState } from "react";
 import styled from "styled-components";
 import {
   getZoneStates,
-  getLogEvents,
   getUpdatedSiteStatus,
 } from "@resources/eventUtils";
 import { respiteZones } from "@resources/control-initial/respiteZones";
@@ -11,6 +10,7 @@ import { Celestial, Sector, View } from "@resources/locationUtils";
 import { RespiteSurface } from "../respite-surface/RespiteSurface";
 import { MinosSystem } from "../minos-system/MinosSystem";
 import { Overlay } from "../overlay/Overlay";
+import { getLogEvents } from "@app/resources/events/logEvents";
 
 const StyledViewer = styled.div`
   height: 90%;

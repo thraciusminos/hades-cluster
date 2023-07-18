@@ -24,30 +24,44 @@ export const FactionControlBars: React.FC<Props> = ({ factions }) => {
   return (
     <StyledStack>
       {factions ? (
-        factions.map((faction) => {
-          const factionObj = allFactions[faction.name];
-          return (
-            <Box className="progressBarContainer" key={`${faction.name}-bars`}>
-              <Box>
-                {getFactionIcon(factionObj.icon, {
-                  color: factionObj.color,
-                  height: "16px",
-                })}
+        factions
+          .sort((a, b) => b.control - a.control)
+          .map((faction) => {
+            const factionObj = allFactions[faction.name];
+            return (
+              <Box
+                className="progressBarContainer"
+                key={`${faction.name}-bars`}
+              >
+                <Box>
+                  {getFactionIcon(factionObj.icon, {
+                    color: factionObj.color,
+                    height: "16px",
+                  })}
+                </Box>
+                <Box className="progressBarContainer">
+                  {faction.control > 0 && (
+                    <div
+                      className="progressBar"
+                      key={`${faction.name}-bar-1`}
+                    />
+                  )}
+                  {faction.control > 1 && (
+                    <div
+                      className="progressBar"
+                      key={`${faction.name}-bar-2`}
+                    />
+                  )}
+                  {faction.control > 2 && (
+                    <div
+                      className="progressBar"
+                      key={`${faction.name}-bar-3`}
+                    />
+                  )}
+                </Box>
               </Box>
-              <Box className="progressBarContainer">
-                {faction.control > 0 && (
-                  <div className="progressBar" key={`${faction.name}-bar-1`} />
-                )}
-                {faction.control > 1 && (
-                  <div className="progressBar" key={`${faction.name}-bar-2`} />
-                )}
-                {faction.control > 2 && (
-                  <div className="progressBar" key={`${faction.name}-bar-3`} />
-                )}
-              </Box>
-            </Box>
-          );
-        })
+            );
+          })
       ) : (
         <Typography>Neutral</Typography>
       )}

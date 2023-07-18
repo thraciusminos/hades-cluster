@@ -23,7 +23,7 @@ export const respiteZones: { [id: string]: ControlZone } = {
         control: 3,
       },
     ],
-    eventItems: 2,
+    eventItems: 1,
   },
   "davis.processing": {
     top: "31.70",

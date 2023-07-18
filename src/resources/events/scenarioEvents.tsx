@@ -1,9 +1,23 @@
 import { ScenarioEvent } from "../eventUtils";
 import gallowsEnd from "@assets/artwork/banners/space-hulk-banner.jpeg";
 import ghoulshead from "@assets/artwork/ghoulshead/ghoulshead-wetland.png";
+import koras from "@assets/artwork/celestials/koras-respite-banner.jpeg";
 
 export const useScenarioEvents = (): ScenarioEvent[] => {
   return [
+    {
+      title: "Surge in Renegade Activity",
+      date: new Date("2023-06-12"),
+      bannerImg: (
+        <img src={koras} alt={"banner"} width={"100%"} height={"180px"} />
+      ),
+      description:
+        "Several Imperial sectors report a considerable increase in separatist and renegade activity.",
+      description2:
+        "Pacification detachments have already neutralized those involved with these disgraceful events. We will keep vigil for any further incidents.",
+      view: "minosSystem",
+      location: "korasRespite",
+    },
     {
       title: "Bloodshard Hunt!",
       date: new Date("2023-06-08"),

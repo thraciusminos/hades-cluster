@@ -5,9 +5,11 @@ export const BloodshardHuntEvent: React.FC = () => {
   const theme = useTheme();
 
   return (
-    <Stack pt={2} spacing={2} color={theme.palette.primary.main}>
+    <Stack pt={2} pl={2} spacing={2} color={theme.palette.primary.main}>
       <Box display="flex" justifyContent="space-between">
-        <Typography variant="h5">Bloodshard Hunt</Typography>
+        <Typography variant="h5" sx={{ textDecoration: "underline" }}>
+          Bloodshard Hunt
+        </Typography>
         <Box pr={3} display="flex" alignItems="center">
           <Grass color="error" />
           <Grass color="error" />
@@ -30,13 +32,13 @@ export const BloodshardHuntEvent: React.FC = () => {
             <Typography>+/-1 control</Typography>
           </Grid>
           <Grid item xs={6}>
-            <Typography>40k 500pts games:</Typography>
+            <Typography>40k 500-1000 pts games:</Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography>+/-2 control</Typography>
           </Grid>
           <Grid item xs={6}>
-            <Typography>40k 1000+pts games:</Typography>
+            <Typography>40k 1000+ pts games:</Typography>
           </Grid>
           <Grid item xs={6}>
             <Typography>+/-3 control</Typography>
@@ -44,13 +46,22 @@ export const BloodshardHuntEvent: React.FC = () => {
         </Grid>
       </Box>
       <Typography>
-        Report games on WH40k channel with the prefix "hades:" with date,
-        participants and the results.
+        Report games on WH40k channel titled "Hades" with date, participants and
+        the results.
       </Typography>
       <Typography py={1}>
         Rewards: Everyone with a cache receives a physical print of a Bloodshard
         cache!
       </Typography>
+      <Stack py={1}>
+        <Typography sx={{ textDecoration: "underline" }}>
+          Caches discovered
+        </Typography>
+        <Box display="flex" flexDirection="row" pl={2} pt={1}>
+          <Typography>Templars Detachment: </Typography>
+          <Grass sx={{ paddingLeft: "12px" }} color="error" />
+        </Box>
+      </Stack>
     </Stack>
   );
 };
