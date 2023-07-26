@@ -2,6 +2,34 @@ import { LogEvent } from "../eventUtils";
 
 export const getLogEvents: LogEvent[] = [
   {
+    date: new Date("2023-07-26"),
+    location: "davis.habs-north",
+    players: [
+      { side: 1, faction: "Respitean Defence Forces" },
+      { side: 1, faction: "Ultramarines Detachment" },
+      { side: 2, faction: "Ork Warband" },
+      { side: 2, faction: "Templars Detachment" },
+    ],
+    impacts: [
+      { faction: "Respitean Defence Forces", delta: 2 },
+      { faction: "Ultramarines Detachment", delta: 2 },
+      { faction: "Ork Warband", delta: -2 },
+      { faction: "Templars Detachment", delta: -2 },
+    ],
+  },
+  {
+    date: new Date("2023-07-20"),
+    location: "davis.aquacology",
+    players: [
+      { side: 1, faction: "Respitean Defence Forces" },
+      { side: 2, faction: "Heretic Astartes Warband" },
+    ],
+    impacts: [
+      { faction: "Respitean Defence Forces", delta: 2 },
+      { faction: "Heretic Astartes Warband", delta: -2 },
+    ],
+  },
+  {
     date: new Date("2023-07-16"),
     location: "davis.digsite",
     players: [
@@ -35,11 +63,11 @@ export const getLogEvents: LogEvent[] = [
     date: new Date("2023-06-18"),
     location: "davis.habs-north",
     players: [
-      { side: 1, faction: "Imperium" },
+      { side: 1, faction: "Templars Detachment" },
       { side: 2, faction: "Kroot Mercenaries" },
       { side: 3, faction: "Eldar Corsairs" },
     ],
-    impacts: [{ faction: "Imperium", delta: 1 }],
+    impacts: [{ faction: "Templars Detachment", delta: 1 }],
   },
   {
     date: new Date("2023-05-28"),

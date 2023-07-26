@@ -39,7 +39,7 @@ export const factions: { [id: string]: Faction } = {
     bgColor: "rgba(184, 20, 175, 50%)",
     meta: "Imperium",
   },
-  RDF: {
+  "Respitean Defence Forces": {
     name: "Respitean Defence Forces",
     description: "",
     icon: "imperial",
@@ -63,13 +63,21 @@ export const factions: { [id: string]: Faction } = {
     bgColor: "rgba(51, 51, 255, 50%)",
     meta: "Mikko",
   },
-  "Astartes Warband": {
-    name: "Astartes Warband",
+  "Renegade Astartes Warband": {
+    name: "Renegade Astartes Warband",
     description: "",
     icon: "renegade",
     color: "rgba(255, 102, 102, 90%)",
     bgColor: "rgba(255, 102, 102, 50%)",
     meta: "Pete",
+  },
+  "Heretic Astartes Warband": {
+    name: "Heretic Astartes Warband",
+    description: "",
+    icon: "renegade",
+    color: "rgba(255, 102, 102, 90%)",
+    bgColor: "rgba(255, 102, 102, 50%)",
+    meta: "OP",
   },
   "Ork Warband": {
     name: "Ork Warband",

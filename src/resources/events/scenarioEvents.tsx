@@ -1,10 +1,51 @@
 import { ScenarioEvent } from "../eventUtils";
 import gallowsEnd from "@assets/artwork/banners/space-hulk-banner.jpeg";
+import dropPods from "@assets/artwork/banners/drop-pods.jpeg";
+import chaosSymbol from "@assets/artwork/banners/chaos-symbol.jpeg";
 import ghoulshead from "@assets/artwork/ghoulshead/ghoulshead-wetland.png";
 import koras from "@assets/artwork/celestials/koras-respite-banner.jpeg";
 
 export const useScenarioEvents = (): ScenarioEvent[] => {
   return [
+    {
+      title: "Heretic Astartes Infiltrators",
+      date: new Date("2023-07-20"),
+      bannerImg: (
+        <img src={chaosSymbol} alt={"banner"} width={"100%"} height={"180px"} />
+      ),
+      description:
+        "Respitean Defence Force survivors report being assaulted by heretical astartes warriors. Traumatized soldiers describe frothing lunatics charging through a firestorm seemingly unfazed.",
+      description2:
+        "Imperial Astartes have been tasked to seek and destroy any heretic forces.",
+      view: "respiteSurface",
+      location: "ghoulshead",
+    },
+    {
+      title: "Astartes strike teams deployed to Ghoulshead",
+      date: new Date("2023-07-08"),
+      bannerImg: (
+        <img src={dropPods} alt={"banner"} width={"100%"} height={"180px"} />
+      ),
+      description:
+        "System Command has authorized the deployment of Astartes investigation teams to Ghoulshead Incident Site.",
+      description2:
+        "Strike teams have already been deployed via rapid insertion procedures. They should report in shortly.",
+      view: "respiteSurface",
+      location: "ghoulshead",
+    },
+    {
+      title: "Escalating engagements in Ghoulshead",
+      date: new Date("2023-06-18"),
+      bannerImg: (
+        <img src={ghoulshead} alt={"banner"} width={"100%"} height={"180px"} />
+      ),
+      description:
+        "Ground combat engagements have intensified in Ghoulshead with several Xeno factions identified.",
+      description2:
+        "Respitean Defence Forces have dispatched forward elements to establish a base of operations in the sector.",
+      view: "respiteSurface",
+      location: "ghoulshead",
+    },
     {
       title: "Surge in Renegade Activity",
       date: new Date("2023-06-12"),
