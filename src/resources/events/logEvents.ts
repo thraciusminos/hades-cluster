@@ -2,7 +2,7 @@ import { LogEvent } from "../eventUtils";
 
 export const getLogEvents: LogEvent[] = [
   {
-    date: new Date("2023-07-26"),
+    date: new Date("2023-08-11"),
     location: "davis.processing",
     players: [
       { side: 1, faction: "Heretic Astartes Warband" },
