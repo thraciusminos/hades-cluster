@@ -3,6 +3,18 @@ import { LogEvent } from "../eventUtils";
 export const getLogEvents: LogEvent[] = [
   {
     date: new Date("2023-07-26"),
+    location: "davis.processing",
+    players: [
+      { side: 1, faction: "Heretic Astartes Warband" },
+      { side: 2, faction: "Tau Infiltration Force" },
+    ],
+    impacts: [
+      { faction: "Heretic Astartes Warband", delta: 2 },
+      { faction: "Tau Infiltration Force", delta: -2 },
+    ],
+  },
+  {
+    date: new Date("2023-07-26"),
     location: "davis.habs-north",
     players: [
       { side: 1, faction: "Respitean Defence Forces" },

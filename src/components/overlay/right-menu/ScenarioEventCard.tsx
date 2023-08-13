@@ -26,6 +26,8 @@ const getReadableTitle = (title?: string) => {
       return "Kora's Respite";
     case "ghoulshead":
       return "Ghoulshead";
+    case "scrapyard":
+      return "Scrapyard";
     default:
       return "";
   }

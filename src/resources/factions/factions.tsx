@@ -74,7 +74,7 @@ export const factions: { [id: string]: Faction } = {
   "Heretic Astartes Warband": {
     name: "Heretic Astartes Warband",
     description: "",
-    icon: "renegade",
+    icon: "chaos",
     color: "rgba(255, 102, 102, 90%)",
     bgColor: "rgba(255, 102, 102, 50%)",
     meta: "OP",
@@ -86,5 +86,13 @@ export const factions: { [id: string]: Faction } = {
     color: "rgba(51, 204, 51, 90%)",
     bgColor: "rgba(51, 204, 51, 50%)",
     meta: "Matias",
+  },
+  "Tau Infiltration Force": {
+    name: "Tau Infiltration Force",
+    description: "",
+    icon: "unity-cult",
+    color: "rgba(91, 10, 87, 90%)",
+    bgColor: "rgba(91, 10, 87, 50%)",
+    meta: "Peetu",
   },
 };

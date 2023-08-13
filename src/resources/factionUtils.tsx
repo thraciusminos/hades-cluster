@@ -1,5 +1,6 @@
 import {
   AlignHorizontalCenter,
+  BrightnessLow,
   Diversity2,
   Flare,
   LocalActivity,
@@ -42,6 +43,7 @@ export const getFactionIcon = (
       return <Token sx={sx} />;
     case "rdf":
       return <LocalPolice sx={sx} />;
+    case "renegade":
     case "militia":
       return <LocalActivity sx={sx} />;
     case "tribal":
@@ -50,6 +52,8 @@ export const getFactionIcon = (
       return <Flare sx={sx} />;
     case "unity-cult":
       return <Diversity2 sx={sx} />;
+    case "chaos":
+      return <BrightnessLow sx={sx} />;
     case "xenos":
       return <Webhook sx={sx} />;
     default:

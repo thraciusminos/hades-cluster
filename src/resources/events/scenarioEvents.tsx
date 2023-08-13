@@ -1,5 +1,7 @@
 import { ScenarioEvent } from "../eventUtils";
+import celestials from "@assets/artwork/celestials";
 import gallowsEnd from "@assets/artwork/banners/space-hulk-banner.jpeg";
+import chaosFleet from "@assets/artwork/banners/chaos-fleet.jpg";
 import dropPods from "@assets/artwork/banners/drop-pods.jpeg";
 import chaosSymbol from "@assets/artwork/banners/chaos-symbol.jpeg";
 import ghoulshead from "@assets/artwork/ghoulshead/ghoulshead-wetland.png";
@@ -7,6 +9,37 @@ import koras from "@assets/artwork/celestials/koras-respite-banner.jpeg";
 
 export const useScenarioEvents = (): ScenarioEvent[] => {
   return [
+    {
+      title: "Xenos Raiders",
+      date: new Date("2023-08-05"),
+      bannerImg: (
+        <img
+          src={celestials.scrapyard}
+          alt={"banner"}
+          width={"100%"}
+          height={"180px"}
+        />
+      ),
+      description:
+        "Several traces of Xenos void ships have been identified entering the system.",
+      description2:
+        "They must be using the Rifts interference to avoid detection. System Command has directed the Imperial Navy to increase patrols to avoid further deterioration of the situation.",
+      view: "minosSystem",
+      location: "scrapyard",
+    },
+    {
+      title: "Space Hulk plundered",
+      date: new Date("2023-07-28"),
+      bannerImg: (
+        <img src={gallowsEnd} alt={"banner"} width={"100%"} height={"180px"} />
+      ),
+      description:
+        "While our initial probes into the space hulk designated as 'Gallow's End' are in progress, it has become apparent that we are not the only ones interested in its secrets.",
+      description2:
+        "Several unidentified vessels have slipped our cordon and inserted teams into the Hulk. Only the Emperor knows what damage they might have inflicted.",
+      view: "minosSystem",
+      location: "gallowsEnd",
+    },
     {
       title: "Heretic Astartes Infiltrators",
       date: new Date("2023-07-20"),
@@ -19,6 +52,19 @@ export const useScenarioEvents = (): ScenarioEvent[] => {
         "Imperial Astartes have been tasked to seek and destroy any heretic forces.",
       view: "respiteSurface",
       location: "ghoulshead",
+    },
+    {
+      title: "Heretic Warbands marauding in Minos System",
+      date: new Date("2023-07-14"),
+      bannerImg: (
+        <img src={chaosFleet} alt={"banner"} width={"100%"} height={"180px"} />
+      ),
+      description:
+        "Several minig vessels and system monitor ships have been ambushed and destroyed by marauding Chaos raiders.",
+      description2:
+        "Imperial Navy is tracking down the raiders, but interference from the Rift makes surveillance difficult.",
+      view: "minosSystem",
+      location: "",
     },
     {
       title: "Astartes strike teams deployed to Ghoulshead",
