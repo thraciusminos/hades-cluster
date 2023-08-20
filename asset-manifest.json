@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/hades-cluster/static/css/main.750cd3a7.css",
-    "main.js": "/hades-cluster/static/js/main.5c5faa55.js",
+    "main.js": "/hades-cluster/static/js/main.dcf9e6cb.js",
     "static/js/787.a580566c.chunk.js": "/hades-cluster/static/js/787.a580566c.chunk.js",
     "static/media/ghoulshead-wetland-2.png": "/hades-cluster/static/media/ghoulshead-wetland-2.86e051455058a6f51de3.png",
     "static/media/ghoulshead-2.png": "/hades-cluster/static/media/ghoulshead-2.66d0684072f5bc77c9ea.png",
@@ -36,11 +36,11 @@
     "static/media/chaos-symbol.jpeg": "/hades-cluster/static/media/chaos-symbol.f0f3855316c96cfc2dc3.jpeg",
     "index.html": "/hades-cluster/index.html",
     "main.750cd3a7.css.map": "/hades-cluster/static/css/main.750cd3a7.css.map",
-    "main.5c5faa55.js.map": "/hades-cluster/static/js/main.5c5faa55.js.map",
+    "main.dcf9e6cb.js.map": "/hades-cluster/static/js/main.dcf9e6cb.js.map",
     "787.a580566c.chunk.js.map": "/hades-cluster/static/js/787.a580566c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.750cd3a7.css",
-    "static/js/main.5c5faa55.js"
+    "static/js/main.dcf9e6cb.js"
   ]
 }
