@@ -79,6 +79,14 @@ export const factions: { [id: string]: Faction } = {
     bgColor: "rgba(255, 102, 102, 50%)",
     meta: "OP",
   },
+  "Bubonic Astartes Warband": {
+    name: "Bubonic Astartes Warband",
+    description: "",
+    icon: "chaos",
+    color: "rgba(51, 204, 51, 90%)",
+    bgColor: "rgba(51, 204, 51, 50%)",
+    meta: "Toni",
+  },
   "Ork Warband": {
     name: "Ork Warband",
     description: "",
@@ -94,5 +102,13 @@ export const factions: { [id: string]: Faction } = {
     color: "rgba(91, 10, 87, 90%)",
     bgColor: "rgba(91, 10, 87, 50%)",
     meta: "Peetu",
+  },
+  "Sisters of Battle": {
+    name: "Sisters of Battle",
+    description: "",
+    icon: "imperial",
+    color: "rgba(255, 0, 102, 90%)",
+    bgColor: "rgba(255, 0, 102, 50%)",
+    meta: "Joonas",
   },
 };

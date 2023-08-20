@@ -2,6 +2,22 @@ import { LogEvent } from "../eventUtils";
 
 export const getLogEvents: LogEvent[] = [
   {
+    date: new Date("2023-08-13"),
+    location: "davis.habs-north",
+    players: [
+      { side: 1, faction: "Templars Detachment" },
+      { side: 1, faction: "Sisters of Battle" },
+      { side: 2, faction: "Bubonic Astartes Warband" },
+      { side: 2, faction: "Tau Infiltration Force" },
+    ],
+    impacts: [
+      { faction: "Sisters of Battle", delta: 2 },
+      { faction: "Templars Detachment", delta: 2 },
+      { faction: "Bubonic Astartes Warband", delta: -2 },
+      { faction: "Tau Infiltration Force", delta: -2 },
+    ],
+  },
+  {
     date: new Date("2023-08-11"),
     location: "davis.processing",
     players: [
