@@ -60,6 +60,7 @@ export const BloodshardHuntEvent: React.FC = () => {
         <Box display="flex" flexDirection="row" pl={2} pt={1}>
           <Typography>Templars Detachment: </Typography>
           <Grass sx={{ paddingLeft: "12px" }} color="error" />
+          <Grass sx={{ paddingLeft: "12px" }} color="error" />
         </Box>
       </Stack>
     </Stack>
