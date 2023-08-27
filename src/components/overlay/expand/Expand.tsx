@@ -1,12 +1,6 @@
 import { Box, styled } from "@mui/material";
 import { Celestial, ControlZone, Sector, Site } from "@resources/locationUtils";
-import { factions } from "@resources/factions/factions";
-import { Image } from "@app/components/common/Image";
-import { MapMarker } from "../../common/MapMarker";
-import { getExpandImages } from "./ExpandUtils";
-import { ExpandFactionsPanel } from "./ExpandFactionsPanel";
-import { DavisZones } from "./davis-plantation/DavisZones";
-import { Construction, Grass, WarningAmber } from "@mui/icons-material";
+import { GhoulsheadExpand } from "./ghoulshead/GhoulsheadExpand";
 
 interface StyledProps {
   align: "left" | "right";
@@ -134,85 +128,16 @@ export const Expand: React.FC<Props> = ({
   setActiveSite,
   previewAlignment,
 }) => {
-  const expandImages = getExpandImages(activeLocation);
-  const siteFactions = activeSite?.factions.map(
-    (factionId) => factions[factionId]
-  );
-
-  const siteZones: Record<string, ControlZone> = {};
-  if (controlZones) {
-    activeSite?.controlZones?.forEach(
-      (zoneId) => (siteZones[zoneId] = controlZones[zoneId])
-    );
-  }
-
   return (
     <StyledExpandWrapper align={previewAlignment}>
       <Box className="locationPanel">
-        <Box className="bannersContainer">{expandImages?.banners}</Box>
-
-        <Box className="expandBody">
-          {activeSite ? (
-            activeSite.name === "Davis Plantation" ? (
-              <Box className="siteContent">
-                <Box className="siteBgContainer">
-                  <DavisZones zones={siteZones} />
-                  <Image src="davisSite" className="mapImage" />
-                </Box>
-                <ExpandFactionsPanel factions={siteFactions} />
-              </Box>
-            ) : (
-              <Box
-                height="100%"
-                width="100%"
-                display="flex"
-                flexDirection="column"
-                justifyContent="center"
-                alignItems="center"
-                fontSize="36px"
-              >
-                <Construction
-                  sx={{ fontSize: "96px", paddingBottom: "16px" }}
-                />
-                Under construction!
-              </Box>
-            )
-          ) : (
-            <Box className="expandContent">
-              {expandImages.map}
-              {activeLocation.name === "Ghoulshead" && (
-                <Box
-                  sx={{
-                    position: "absolute",
-                    top: "44%",
-                    left: "80%",
-                    fontSize: "2rem",
-                    zIndex: 4,
-                  }}
-                >
-                  <WarningAmber
-                    sx={{
-                      color: "rgba(255, 197, 10, 100%)",
-                      backgroundColor: "black",
-                      clipPath: "polygon(50% 0%, 0 91%, 100% 91%);",
-                    }}
-                  />
-                  <Grass color="error" />
-                </Box>
-              )}
-              {sites &&
-                sites?.map((site) => {
-                  return (
-                    <MapMarker
-                      key={site.name}
-                      location={site}
-                      onClick={() => setActiveSite(site)}
-                    />
-                  );
-                })}
-            </Box>
-          )}
-        </Box>
+        <GhoulsheadExpand
+          sites={sites}
+          controlZones={controlZones}
+          activeSite={activeSite}
+          activeLocation={activeLocation}
+          setActiveSite={setActiveSite}
+        />
       </Box>
     </StyledExpandWrapper>
   );

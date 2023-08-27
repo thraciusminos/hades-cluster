@@ -1,17 +1,19 @@
 import styled from "styled-components";
 import locIcon from "@assets/icons/Maps-Define-Location-icon-green.png";
-import { Celestial, Location, Sector, Site } from "@resources/locationUtils";
+import {
+  Celestial,
+  ControlZone,
+  Location,
+  Sector,
+  Site,
+} from "@resources/locationUtils";
 import { LocationTooltip } from "./LocationTooltip";
 import {
   Apartment,
   Factory,
   FilterHdr,
   Gite,
-  LocationCity,
-  LocationSearching,
-  MapsHomeWork,
   SelectAll,
-  Style,
   TempleHindu,
 } from "@mui/icons-material";
 
@@ -112,7 +114,7 @@ const StyledLocContainer = styled.div<StyledProps>`
 `;
 
 interface Props {
-  location: Celestial | Sector | Site;
+  location: Celestial | Sector | Site | ControlZone;
   isSelected?: boolean;
   onClick: () => void;
   style?: React.CSSProperties;
@@ -144,7 +146,13 @@ export const MapMarker: React.FC<Props> = ({
         return <FilterHdr className="markerIconCommon" />;
       case "site":
       default:
-        return <LocationSearching className="markerIconCommon" />;
+        return (
+          <img
+            src={locIcon}
+            alt={location.name || "location"}
+            className="markerIcon"
+          />
+        );
     }
   };
 
@@ -157,7 +165,7 @@ export const MapMarker: React.FC<Props> = ({
       onClick={() => onClick()}
       style={style}
     >
-      <LocationTooltip location={location}>
+      <LocationTooltip title={location.name}>
         {getMarkerIcon(location)}
       </LocationTooltip>
     </StyledLocContainer>

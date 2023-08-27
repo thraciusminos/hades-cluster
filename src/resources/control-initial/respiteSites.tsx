@@ -72,6 +72,18 @@ export const respiteSites: { [id: string]: Site } = {
     category: "site",
     active: true,
     factions: [],
+    controlZones: [
+      "walkertown.chemical",
+      "walkertown.refinery",
+      "walkertown.docks",
+      "walkertown.chapel",
+      "walkertown.wulang",
+      "walkertown.cargoport",
+      "walkertown.transport",
+      "walkertown.comms",
+      "walkertown.mines",
+      "walkertown.processing",
+    ],
   },
   "St. Charles Parish": {
     top: "57.00",

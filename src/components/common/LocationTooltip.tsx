@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import { Location } from "../../resources/locationUtils";
 import { Tooltip, TooltipProps, tooltipClasses } from "@mui/material";
 
 const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
@@ -24,13 +23,13 @@ const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
 }));
 
 interface Props {
-  location: Location | null;
+  title: string;
   children: JSX.Element;
 }
 
-export const LocationTooltip: React.FC<Props> = ({ location, children }) => {
+export const LocationTooltip: React.FC<Props> = ({ title, children }) => {
   return (
-    <HtmlTooltip title={location?.name} arrow>
+    <HtmlTooltip title={title} arrow>
       {children}
     </HtmlTooltip>
   );

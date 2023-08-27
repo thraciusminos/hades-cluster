@@ -3,15 +3,11 @@ import styled from "styled-components";
 
 import locIcon from "../../assets/icons/Maps-Define-Location-icon-green.png";
 import { Location, Site } from "../../resources/locationUtils";
-import { LocationTooltip } from "./LocationTooltip";
 import {
   Apartment,
   Factory,
   Gite,
-  LocationCity,
-  MapsHomeWork,
   SelectAll,
-  Style,
   TempleHindu,
 } from "@mui/icons-material";
 import { Box } from "@mui/material";

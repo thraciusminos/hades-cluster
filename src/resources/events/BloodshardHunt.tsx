@@ -62,6 +62,14 @@ export const BloodshardHuntEvent: React.FC = () => {
           <Grass sx={{ paddingLeft: "12px" }} color="error" />
           <Grass sx={{ paddingLeft: "12px" }} color="error" />
         </Box>
+        <Box display="flex" flexDirection="row" pl={2} pt={1}>
+          <Typography>Eyes of the Emperor: </Typography>
+          <Grass sx={{ paddingLeft: "12px" }} color="error" />
+        </Box>
+        <Box display="flex" flexDirection="row" pl={2} pt={1}>
+          <Typography>Respitean Defence Forces: </Typography>
+          <Grass sx={{ paddingLeft: "12px" }} color="error" />
+        </Box>
       </Stack>
     </Stack>
   );

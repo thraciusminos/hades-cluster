@@ -9,6 +9,7 @@ import {
 import { ControlZone } from "@resources/locationUtils";
 import { FactionControlBars } from "./FactionControlBars";
 import { EventIconsRow } from "./EventIconsRow";
+import { ReactNode } from "react";
 
 const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
   <Tooltip {...props} classes={{ popper: className }} />
@@ -31,13 +32,18 @@ const HtmlTooltip = styled(({ className, ...props }: TooltipProps) => (
 
 interface Props {
   zone: ControlZone;
+  eventIcon?: ReactNode;
 }
 
 export const ZoneTooltip: React.FC<Props & Omit<TooltipProps, "title">> = ({
   zone,
+  eventIcon,
   children,
   ...props
 }) => {
+  const shouldDisplayEventIcons =
+    (zone.eventItems || zone.depletedItems) && eventIcon;
+
   return (
     <HtmlTooltip
       {...props}
@@ -54,7 +60,13 @@ export const ZoneTooltip: React.FC<Props & Omit<TooltipProps, "title">> = ({
             {zone.name}
           </Typography>
           <FactionControlBars factions={zone.factions} />
-          <EventIconsRow eventItems={zone.eventItems || 0} />
+          {shouldDisplayEventIcons && (
+            <EventIconsRow
+              eventItems={zone.eventItems || 0}
+              depletedItems={zone.depletedItems || 0}
+              icon={eventIcon}
+            />
+          )}
         </Box>
       }
     >

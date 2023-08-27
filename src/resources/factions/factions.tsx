@@ -31,7 +31,27 @@ export const factions: { [id: string]: Faction } = {
     bgColor: "rgba(212, 201, 51, 50%)",
     meta: "Ghoulshead, Davis plantation, Ibrahims Flock, tribal",
   },
-  Imperium: {
+  "The Oilers": {
+    name: "The Oilers",
+    short: "Carbonium Refiner's Association",
+    description:
+      "Small refinery of swamp hydrocarbons provides enough resources for exports, as well as local use as flammable liquids and volatile explosives, which are the source of much of their influence.",
+    icon: "renegade",
+    color: "rgba(201, 51, 212, 90%)",
+    bgColor: "rgba(201, 51, 212, 50%)",
+    meta: "Ghoulshead, Walkertown",
+  },
+  Glints: {
+    name: "Glints",
+    short: "Walkertown Miner's Guild",
+    description:
+      "Exposure to low grade radium in the mines has led to members of the Miner's Guild gaining the accolade Glinters or Glints. Their equipment is said to sparkle off glimmers of dim light in the dark.",
+    icon: "renegade",
+    color: "rgba(10, 212, 201, 90%)",
+    bgColor: "rgba(51, 212, 201, 50%)",
+    meta: "Ghoulshead, Walkertown",
+  },
+  "The Imperium": {
     name: "The Imperium",
     description: "",
     icon: "imperial",

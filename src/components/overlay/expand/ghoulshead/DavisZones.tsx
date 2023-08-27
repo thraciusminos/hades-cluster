@@ -10,6 +10,7 @@ import DavisHabsEastBorder from "@app/assets/sites/davis-plantation/habs-east-bo
 import DavisAquacologyBorder from "@app/assets/sites/davis-plantation/aquacology-border";
 import DavisEstateBorder from "@app/assets/sites/davis-plantation/estate-border";
 import DavisCheckpointBorder from "@app/assets/sites/davis-plantation/checkpoint-border";
+import { Grass } from "@mui/icons-material";
 
 const StyledSectorsContainer = styled(Box)`
   .borderContainer {
@@ -33,6 +34,8 @@ const getControllingFaction = (zone: ControlZone) => {
   return controllerId ? factions[controllerId] : undefined;
 };
 
+const eventIcon = <Grass color="error" fontSize="small" />;
+
 interface Props {
   zones: Record<string, ControlZone>;
 }
@@ -49,7 +52,11 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
 
   return (
     <StyledSectorsContainer>
-      <ZoneTooltip zone={zones["davis.logging"]} placement="left-start">
+      <ZoneTooltip
+        zone={zones["davis.logging"]}
+        eventIcon={eventIcon}
+        placement="left-start"
+      >
         <Box
           sx={{
             top: "0.2%",
@@ -67,7 +74,11 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
         </Box>
       </ZoneTooltip>
 
-      <ZoneTooltip zone={zones["davis.digsite"]} placement="bottom-end">
+      <ZoneTooltip
+        zone={zones["davis.digsite"]}
+        eventIcon={eventIcon}
+        placement="bottom-end"
+      >
         <Box
           sx={{
             top: "9%",
@@ -85,7 +96,11 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
         </Box>
       </ZoneTooltip>
 
-      <ZoneTooltip zone={zones["davis.processing"]} placement="bottom-start">
+      <ZoneTooltip
+        zone={zones["davis.processing"]}
+        eventIcon={eventIcon}
+        placement="bottom-start"
+      >
         <Box
           sx={{
             top: "28%",
@@ -105,6 +120,7 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
 
       <ZoneTooltip
         zone={zones["davis.habs-north"]}
+        eventIcon={eventIcon}
         placement="top-start"
         arrow
         open
@@ -128,6 +144,7 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
 
       <ZoneTooltip
         zone={zones["davis.habs-east"]}
+        eventIcon={eventIcon}
         placement="bottom"
         arrow
         open
@@ -149,7 +166,13 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
         </Box>
       </ZoneTooltip>
 
-      <ZoneTooltip zone={zones["davis.aquacology"]} placement="left" arrow open>
+      <ZoneTooltip
+        zone={zones["davis.aquacology"]}
+        eventIcon={eventIcon}
+        placement="left"
+        arrow
+        open
+      >
         <Box
           sx={{
             top: "43%",
@@ -167,7 +190,13 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
         </Box>
       </ZoneTooltip>
 
-      <ZoneTooltip zone={zones["davis.estate"]} placement="bottom" arrow open>
+      <ZoneTooltip
+        zone={zones["davis.estate"]}
+        eventIcon={eventIcon}
+        placement="bottom"
+        arrow
+        open
+      >
         <Box
           sx={{
             top: "54%",
@@ -185,7 +214,13 @@ export const DavisZones: React.FC<Props> = ({ zones }) => {
         </Box>
       </ZoneTooltip>
 
-      <ZoneTooltip zone={zones["davis.checkpoint"]} placement="left" arrow open>
+      <ZoneTooltip
+        zone={zones["davis.checkpoint"]}
+        eventIcon={eventIcon}
+        placement="left"
+        arrow
+        open
+      >
         <Box
           sx={{
             top: "84%",
