@@ -1,41 +1,39 @@
-import { Box } from "@mui/material";
+import { Box, BoxProps } from "@mui/material";
 import { ReactNode } from "react";
 
 interface Props {
-  eventItems: number;
+  openItems: number;
   depletedItems?: number;
   successsfulItems?: number;
-  icon: ReactNode;
+  eventIcon: ReactNode;
+  eventIconDepleted?: ReactNode;
+  eventIconSuccessful?: ReactNode;
+  boxProps?: BoxProps;
 }
 
 export const EventIconsRow: React.FC<Props> = ({
-  eventItems,
+  openItems,
   depletedItems,
   successsfulItems,
-  icon,
+  eventIcon,
+  eventIconDepleted,
+  eventIconSuccessful,
+  boxProps,
 }) => {
+  let itemRow = [];
+
+  for (let i = 0; i < (depletedItems || 0); i++) {
+    itemRow.push(eventIconDepleted);
+  }
+  for (let i = 0; i < openItems; i++) {
+    itemRow.push(eventIcon);
+  }
+  for (let i = 0; i < (successsfulItems || 0); i++) {
+    itemRow.push(eventIconSuccessful);
+  }
   return (
-    <Box display="flex" justifyContent="center" gap={0.5}>
-      {!!depletedItems && (
-        <>
-          {depletedItems >= 1 && icon}
-          {depletedItems >= 2 && icon}
-          {depletedItems >= 3 && icon}
-          {depletedItems === 4 && icon}
-        </>
-      )}
-      {eventItems >= 1 && icon}
-      {eventItems >= 2 && icon}
-      {eventItems >= 3 && icon}
-      {eventItems === 4 && icon}
-      {!!successsfulItems && (
-        <>
-          {successsfulItems >= 1 && icon}
-          {successsfulItems >= 2 && icon}
-          {successsfulItems >= 3 && icon}
-          {successsfulItems === 4 && icon}
-        </>
-      )}
+    <Box display="flex" {...boxProps}>
+      {itemRow}
     </Box>
   );
 };

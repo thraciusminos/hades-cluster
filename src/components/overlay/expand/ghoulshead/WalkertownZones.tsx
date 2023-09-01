@@ -1,26 +1,18 @@
 import { Box, styled } from "@mui/material";
 import { ControlZone } from "@resources/locationUtils";
-// import { factions } from "@resources/factions/factions";
 import { ZoneTooltip } from "@app/components/common/ZoneTooltip";
 import { MapMarker } from "@app/components/common/MapMarker";
-import { Search } from "@mui/icons-material";
-import { theme } from "@app/theme/theme";
+import {
+  EventIcon,
+  EventIconDepleted,
+  EventIconSuccessful,
+} from "./GhoulsheadExpand";
 
 const StyledSectorsContainer = styled(Box)`
   .borderContainer {
     position: absolute;
   }
 `;
-
-const eventIcon = (
-  <Box borderRadius={"50%"} bgcolor={"GrayText"}>
-    <Search
-      htmlColor={theme.palette.grey[900]}
-      fontSize="small"
-      sx={{ verticalAlign: "middle" }}
-    />
-  </Box>
-);
 
 interface Props {
   zones: Record<string, ControlZone>;
@@ -35,13 +27,15 @@ export const WalkertownZones: React.FC<Props> = ({ zones }) => {
     <StyledSectorsContainer>
       <ZoneTooltip
         zone={zones["walkertown.chemical"]}
-        eventIcon={eventIcon}
-        placement="top-end"
+        eventIcon={EventIcon}
+        eventIconDepleted={EventIconDepleted}
+        eventIconSuccessful={EventIconSuccessful}
+        placement="left"
       >
         <Box
           sx={{
-            top: "7%",
-            left: "24%",
+            top: "8%",
+            left: "20%",
           }}
           className="borderContainer"
         >
@@ -55,7 +49,9 @@ export const WalkertownZones: React.FC<Props> = ({ zones }) => {
 
       <ZoneTooltip
         zone={zones["walkertown.refinery"]}
-        eventIcon={eventIcon}
+        eventIcon={EventIcon}
+        eventIconDepleted={EventIconDepleted}
+        eventIconSuccessful={EventIconSuccessful}
         placement="top-start"
       >
         <Box
@@ -75,7 +71,9 @@ export const WalkertownZones: React.FC<Props> = ({ zones }) => {
 
       <ZoneTooltip
         zone={zones["walkertown.docks"]}
-        eventIcon={eventIcon}
+        eventIcon={EventIcon}
+        eventIconDepleted={EventIconDepleted}
+        eventIconSuccessful={EventIconSuccessful}
         placement="top-start"
       >
         <Box
@@ -95,7 +93,9 @@ export const WalkertownZones: React.FC<Props> = ({ zones }) => {
 
       <ZoneTooltip
         zone={zones["walkertown.chapel"]}
-        eventIcon={eventIcon}
+        eventIcon={EventIcon}
+        eventIconDepleted={EventIconDepleted}
+        eventIconSuccessful={EventIconSuccessful}
         placement="top-end"
       >
         <Box
@@ -115,7 +115,9 @@ export const WalkertownZones: React.FC<Props> = ({ zones }) => {
 
       <ZoneTooltip
         zone={zones["walkertown.wulang"]}
-        eventIcon={eventIcon}
+        eventIcon={EventIcon}
+        eventIconDepleted={EventIconDepleted}
+        eventIconSuccessful={EventIconSuccessful}
         placement="top-end"
       >
         <Box
@@ -135,7 +137,9 @@ export const WalkertownZones: React.FC<Props> = ({ zones }) => {
 
       <ZoneTooltip
         zone={zones["walkertown.cargoport"]}
-        eventIcon={eventIcon}
+        eventIcon={EventIcon}
+        eventIconDepleted={EventIconDepleted}
+        eventIconSuccessful={EventIconSuccessful}
         placement="top-start"
       >
         <Box
@@ -155,7 +159,9 @@ export const WalkertownZones: React.FC<Props> = ({ zones }) => {
 
       <ZoneTooltip
         zone={zones["walkertown.transport"]}
-        eventIcon={eventIcon}
+        eventIcon={EventIcon}
+        eventIconDepleted={EventIconDepleted}
+        eventIconSuccessful={EventIconSuccessful}
         placement="bottom-start"
       >
         <Box
@@ -175,7 +181,9 @@ export const WalkertownZones: React.FC<Props> = ({ zones }) => {
 
       <ZoneTooltip
         zone={zones["walkertown.comms"]}
-        eventIcon={eventIcon}
+        eventIcon={EventIcon}
+        eventIconDepleted={EventIconDepleted}
+        eventIconSuccessful={EventIconSuccessful}
         placement="bottom-end"
       >
         <Box
@@ -195,7 +203,9 @@ export const WalkertownZones: React.FC<Props> = ({ zones }) => {
 
       <ZoneTooltip
         zone={zones["walkertown.mines"]}
-        eventIcon={eventIcon}
+        eventIcon={EventIcon}
+        eventIconDepleted={EventIconDepleted}
+        eventIconSuccessful={EventIconSuccessful}
         placement="bottom-end"
       >
         <Box
@@ -215,7 +225,9 @@ export const WalkertownZones: React.FC<Props> = ({ zones }) => {
 
       <ZoneTooltip
         zone={zones["walkertown.processing"]}
-        eventIcon={eventIcon}
+        eventIcon={EventIcon}
+        eventIconDepleted={EventIconDepleted}
+        eventIconSuccessful={EventIconSuccessful}
         placement="bottom-start"
       >
         <Box

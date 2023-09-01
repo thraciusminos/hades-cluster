@@ -5,10 +5,37 @@ import chaosFleet from "@assets/artwork/banners/chaos-fleet.jpg";
 import dropPods from "@assets/artwork/banners/drop-pods.jpeg";
 import chaosSymbol from "@assets/artwork/banners/chaos-symbol.jpeg";
 import ghoulshead from "@assets/artwork/ghoulshead/ghoulshead-wetland.png";
+import walkertown from "@assets/artwork/ghoulshead/ghoulshead-walkertown.jpeg";
 import koras from "@assets/artwork/celestials/koras-respite-banner.jpeg";
 
 export const useScenarioEvents = (): ScenarioEvent[] => {
   return [
+    {
+      title: "Ghoulshead Davis Estate under Imperial control",
+      date: new Date("2023-08-27"),
+      bannerImg: (
+        <img src={ghoulshead} alt={"banner"} width={"100%"} height={"180px"} />
+      ),
+      description:
+        "Ground engagements at Davis' Plantation are already decreasing in volume and severity, after Imperial forces gained control of the installation's primary command center earlier today.",
+      description2:
+        'Imperial seizure has allowed us to recover of many of the valuable "Bloodstone" caches, but search still continues to find any remaining stashes.',
+      view: "respiteSurface",
+      location: "ghoulshead",
+    },
+    {
+      title: "Faction rivalry escalating in Walkertown, Ghoulshead",
+      date: new Date("2023-08-14"),
+      bannerImg: (
+        <img src={walkertown} alt={"banner"} width={"100%"} height={"180px"} />
+      ),
+      description:
+        "Disagreements between the two main factions, Walkertown Miner's Guild and Carbonium Refiner's Association, have peaked in severity recently.",
+      description2:
+        "Last week things escalated to violence, as several vehicle borne explosives were detonated and gun battles were fought on the hab block streets.",
+      view: "respiteSurface",
+      location: "ghoulshead",
+    },
     {
       title: "Xenos Raiders",
       date: new Date("2023-08-05"),

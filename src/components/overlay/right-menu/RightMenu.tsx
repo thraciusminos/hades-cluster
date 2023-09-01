@@ -8,6 +8,7 @@ import { ScenarioEventCard } from "./ScenarioEventCard";
 import { useScenarioEvents } from "@resources/events/scenarioEvents";
 import { View, Celestial, Sector } from "@resources/locationUtils";
 import BloodshardHuntEvent from "@resources/events/BloodshardHunt";
+import { WalkertownTroublesEvent } from "@app/resources/events/Walkertown Troubles";
 
 const StyledRightMenuWrapper = styled(Box)`
   position: absolute;
@@ -75,9 +76,14 @@ export const RightMenu: React.FC<Props> = ({
           </RightMenuBody>
         )}
         {open === "rules" && (
-          <RightMenuBody>
-            <BloodshardHuntEvent />
-          </RightMenuBody>
+          <Stack rowGap={3} width="48vw">
+            <RightMenuBody>
+              <WalkertownTroublesEvent />
+            </RightMenuBody>
+            <RightMenuBody>
+              <BloodshardHuntEvent />
+            </RightMenuBody>
+          </Stack>
         )}
       </StyledRightMenuWrapper>
     </ClickAwayListener>

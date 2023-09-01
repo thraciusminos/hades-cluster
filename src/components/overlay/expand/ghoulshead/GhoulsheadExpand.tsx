@@ -1,5 +1,6 @@
-import { Box } from "@mui/material";
-import { Construction, Grass, WarningAmber } from "@mui/icons-material";
+import { Box, Stack, Typography } from "@mui/material";
+import { Construction, Grass, Search, WarningAmber } from "@mui/icons-material";
+import { theme } from "@app/theme/theme";
 import { Image } from "@app/components/common/Image";
 import { factions } from "@resources/factions/factions";
 import { MapMarker } from "@app/components/common/MapMarker";
@@ -9,10 +10,41 @@ import {
   Sector,
   Site,
 } from "@app/resources/locationUtils";
+import { EventIconsRow } from "@app/components/common/EventIconsRow";
 import { ExpandFactionsPanel } from "../ExpandFactionsPanel";
 import { getExpandImages } from "../ExpandUtils";
 import { DavisZones } from "./DavisZones";
 import { WalkertownZones } from "./WalkertownZones";
+
+export const EventIconDepleted = (
+  <Box borderRadius={"50%"} bgcolor={theme.palette.error.main}>
+    <Search
+      htmlColor={theme.palette.grey[900]}
+      fontSize="small"
+      sx={{ verticalAlign: "middle" }}
+    />
+  </Box>
+);
+
+export const EventIcon = (
+  <Box borderRadius={"50%"} bgcolor={"GrayText"}>
+    <Search
+      htmlColor={theme.palette.grey[900]}
+      fontSize="small"
+      sx={{ verticalAlign: "middle" }}
+    />
+  </Box>
+);
+
+export const EventIconSuccessful = (
+  <Box borderRadius={"50%"} bgcolor={theme.palette.success.light}>
+    <Search
+      htmlColor={theme.palette.grey[900]}
+      fontSize="small"
+      sx={{ verticalAlign: "middle" }}
+    />
+  </Box>
+);
 
 interface Props {
   sites: Site[];
@@ -41,9 +73,65 @@ export const GhoulsheadExpand: React.FC<Props> = ({
     );
   }
 
+  const items = Object.values(siteZones).reduce(
+    (acc, curr) => {
+      acc.depleted = acc.depleted + (curr.depletedItems || 0);
+      acc.open = acc.open + (curr.eventItems || 0);
+      acc.successful = acc.successful + (curr.successfulItems || 0);
+      return acc;
+    },
+    { depleted: 0, open: 0, successful: 0 }
+  );
+
   return (
     <Box>
-      <Box className="bannersContainer">{expandImages?.banners}</Box>
+      <Box className="bannersContainer">
+        <>
+          {activeSite?.name === "Walkertown" ? (
+            <>
+              {expandImages?.banners[0]}
+              <Box
+                sx={{
+                  width: "65.5%",
+                  padding: `${theme.spacing(2.7)} 0`,
+                  borderRadius: theme.spacing(0.5),
+                  backgroundColor: theme.palette.grey[900],
+                  color: theme.palette.primary.dark,
+                }}
+              >
+                <Stack display="flex" alignItems="center" rowGap={2.3}>
+                  <Typography
+                    fontWeight="bold"
+                    color={theme.palette.primary.main}
+                  >
+                    Investigation Progress
+                  </Typography>
+                  <Stack rowGap={1.3}>
+                    <EventIconsRow
+                      depletedItems={items.depleted}
+                      openItems={items.open}
+                      successsfulItems={items.successful}
+                      eventIconDepleted={EventIconDepleted}
+                      eventIcon={EventIcon}
+                      eventIconSuccessful={EventIconSuccessful}
+                      boxProps={{ gap: 0.6 }}
+                    />
+
+                    <Box display="flex" justifyContent="space-between">
+                      <Typography color={theme.palette.error.light}>
+                        Conspirators
+                      </Typography>
+                      <Typography>Investigators</Typography>
+                    </Box>
+                  </Stack>
+                </Stack>
+              </Box>
+            </>
+          ) : (
+            expandImages?.banners
+          )}
+        </>
+      </Box>
 
       <Box className="expandBody">
         {activeSite ? (
@@ -89,8 +177,25 @@ export const GhoulsheadExpand: React.FC<Props> = ({
             <Box
               sx={{
                 position: "absolute",
-                top: "44%",
-                left: "80%",
+                top: "40%",
+                left: "57%",
+                fontSize: "2rem",
+                zIndex: 4,
+              }}
+            >
+              <WarningAmber
+                sx={{
+                  color: theme.palette.error.main,
+                  backgroundColor: "black",
+                  clipPath: "polygon(50% 0%, 0 91%, 100% 91%);",
+                }}
+              />
+            </Box>
+            <Box
+              sx={{
+                position: "absolute",
+                top: "45%",
+                left: "79%",
                 fontSize: "2rem",
                 zIndex: 4,
               }}

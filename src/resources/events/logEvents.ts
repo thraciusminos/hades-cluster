@@ -2,6 +2,21 @@ import { LogEvent } from "../eventUtils";
 
 export const getLogEvents: LogEvent[] = [
   {
+    date: new Date("2023-08-26"),
+    location: "davis.estate",
+    players: [
+      { side: 1, faction: "Templars Detachment" },
+      { side: 1, faction: "Devoted Following" },
+      { side: 2, faction: "The Harvesters" },
+      { side: 2, faction: "Tau Infiltration Force" },
+      { side: 2, faction: "Ultramarines Detachment" },
+    ],
+    impacts: [
+      { faction: "Templars Detachment", delta: 3 },
+      { faction: "Devoted Following", delta: 3 },
+    ],
+  },
+  {
     date: new Date("2023-08-20"),
     location: "davis.processing",
     players: [

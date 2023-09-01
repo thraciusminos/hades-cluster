@@ -55,4 +55,5 @@ export interface ControlZone extends Location {
   factions: { name: string; control: number }[];
   eventItems?: number;
   depletedItems?: number;
+  successfulItems?: number;
 }

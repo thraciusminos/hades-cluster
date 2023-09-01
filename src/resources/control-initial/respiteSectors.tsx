@@ -152,7 +152,7 @@ export const respiteSectors: { [id: string]: Sector } = {
     left: "95.00",
     name: "Ghoulshead",
     description:
-      "Ghoulshead is a foetid wetland. It has no major exportable goods and owes its continued existance to the original rush of prospectors after a discovery of exotically valuable gemstones among the ancient ruins of the wetlans. And the uncompromising stubbornness of the human species.",
+      "Ghoulshead is a fetid wetland. It has no major exportable goods and owes its continued existance to the original rush of prospectors after a discovery of exotically valuable gemstones among the ancient ruins of the wetlans. And the uncompromising stubbornness of the human species.",
     category: "outpost",
     active: true,
     hasExpand: true,

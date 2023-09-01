@@ -131,4 +131,20 @@ export const factions: { [id: string]: Faction } = {
     bgColor: "rgba(255, 0, 102, 50%)",
     meta: "Joonas",
   },
+  "Devoted Following": {
+    name: "Devoted Following",
+    description: "",
+    icon: "chaos",
+    color: "rgba(255, 87, 51, 90%)",
+    bgColor: "rgba(255, 87, 51, 50%)",
+    meta: "Pete",
+  },
+  "The Harvesters": {
+    name: "The Harvesters",
+    description: "",
+    icon: "xenos",
+    color: "rgba(153, 47, 233, 90%)",
+    bgColor: "rgba(153, 47, 233, 50%)",
+    meta: "Oskari",
+  },
 };

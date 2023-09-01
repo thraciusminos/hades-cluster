@@ -51,7 +51,7 @@ export const respiteZones: { [id: string]: ControlZone } = {
         control: 2,
       },
     ],
-    eventItems: 2,
+    eventItems: 1,
   },
   "davis.habs-east": {
     top: "31.70",
@@ -79,7 +79,7 @@ export const respiteZones: { [id: string]: ControlZone } = {
         control: 3,
       },
     ],
-    eventItems: 3,
+    eventItems: 1,
   },
   "davis.aquacology": {
     top: "31.70",
@@ -202,7 +202,9 @@ export const respiteZones: { [id: string]: ControlZone } = {
         control: 2,
       },
     ],
+    depletedItems: 0,
     eventItems: 3,
+    successfulItems: 0,
   },
   "walkertown.cargoport": {
     top: "31.70",

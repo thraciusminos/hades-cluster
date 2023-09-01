@@ -17,7 +17,7 @@ export const BloodshardHuntEvent: React.FC = () => {
         </Box>
       </Box>
       <Typography>
-        Duration: Now, until August 31st or caches remain. (3 months)
+        Duration: June to August 31st 2023 (3 months). Extended to while caches last.
       </Typography>
       <Typography>
         Gain control of zones in Davis Plantation that have Bloodshard icons to
@@ -61,9 +61,14 @@ export const BloodshardHuntEvent: React.FC = () => {
           <Typography>Templars Detachment: </Typography>
           <Grass sx={{ paddingLeft: "12px" }} color="error" />
           <Grass sx={{ paddingLeft: "12px" }} color="error" />
+          <Grass sx={{ paddingLeft: "12px" }} color="error" />
         </Box>
         <Box display="flex" flexDirection="row" pl={2} pt={1}>
           <Typography>Eyes of the Emperor: </Typography>
+          <Grass sx={{ paddingLeft: "12px" }} color="error" />
+        </Box>
+        <Box display="flex" flexDirection="row" pl={2} pt={1}>
+          <Typography>Devoted Following: </Typography>
           <Grass sx={{ paddingLeft: "12px" }} color="error" />
         </Box>
         <Box display="flex" flexDirection="row" pl={2} pt={1}>
